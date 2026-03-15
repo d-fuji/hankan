@@ -84,5 +84,103 @@
   { "key": "appt_matsudaira_masataka_otaki", "personKey": "person_matsudaira_masataka_otaki", "roleType": "藩主", "territoryKey": "territory_otaki", "generation": 14, "startYear": 1808, "endYear": 1826 },
   { "key": "appt_matsudaira_masayoshi_otaki", "personKey": "person_matsudaira_masayoshi_otaki", "roleType": "藩主", "territoryKey": "territory_otaki", "generation": 15, "startYear": 1826, "endYear": 1837 },
   { "key": "appt_matsudaira_masakazu_otaki", "personKey": "person_matsudaira_masakazu", "roleType": "藩主", "territoryKey": "territory_otaki", "generation": 16, "startYear": 1837, "endYear": 1862 },
-  { "key": "appt_matsudaira_masatada_otaki", "personKey": "person_matsudaira_masatada", "roleType": "藩主", "territoryKey": "territory_otaki", "generation": 17, "startYear": 1862, "endYear": 1871 }
+  { "key": "appt_matsudaira_masatada_otaki", "personKey": "person_matsudaira_masatada", "roleType": "藩主", "territoryKey": "territory_otaki", "generation": 17, "startYear": 1862, "endYear": 1871 },
+
+  { "key": "appt_ii_naomasa_hikone", "personKey": "person_ii_naomasa", "roleType": "藩主", "territoryKey": "territory_hikone", "generation": 1, "startYear": 1600, "endYear": 1602 },
+  { "key": "appt_ii_naotsugu_hikone", "personKey": "person_ii_naotsugu", "roleType": "藩主", "territoryKey": "territory_hikone", "generation": 2, "startYear": 1602, "endYear": 1615 },
+  { "key": "appt_ii_naotaka_hikone", "personKey": "person_ii_naotaka", "roleType": "藩主", "territoryKey": "territory_hikone", "generation": 3, "startYear": 1615, "endYear": 1659 },
+  { "key": "appt_ii_naozumi_hikone", "personKey": "person_ii_naozumi", "roleType": "藩主", "territoryKey": "territory_hikone", "generation": 4, "startYear": 1659, "endYear": 1676 },
+  { "key": "appt_ii_naooki_hikone", "personKey": "person_ii_naooki", "roleType": "藩主", "territoryKey": "territory_hikone", "generation": 5, "startYear": 1676, "endYear": 1701 },
+
+  { "key": "appt_hoshina_masayuki_aizu", "personKey": "person_hoshina_masayuki", "roleType": "藩主", "territoryKey": "territory_aizu", "generation": 1, "startYear": 1643, "endYear": 1669 },
+  { "key": "appt_matsudaira_masatsune_aizu", "personKey": "person_matsudaira_masatsune", "roleType": "藩主", "territoryKey": "territory_aizu", "generation": 2, "startYear": 1669, "endYear": 1681 },
+  { "key": "appt_matsudaira_masakata_aizu", "personKey": "person_matsudaira_masakata", "roleType": "藩主", "territoryKey": "territory_aizu", "generation": 3, "startYear": 1681, "endYear": 1731 },
+  { "key": "appt_matsudaira_katanobu_aizu", "personKey": "person_matsudaira_katanobu", "roleType": "藩主", "territoryKey": "territory_aizu", "generation": 4, "startYear": 1731, "endYear": 1750 },
+  { "key": "appt_matsudaira_katahiro_aizu", "personKey": "person_matsudaira_katahiro", "roleType": "藩主", "territoryKey": "territory_aizu", "generation": 5, "startYear": 1750, "endYear": 1805 },
+
+  { "key": "appt_ikeda_mitsunaka_tottori", "personKey": "person_ikeda_mitsunaka", "roleType": "藩主", "territoryKey": "territory_tottori", "generation": 1, "startYear": 1632, "endYear": 1670 },
+  { "key": "appt_ikeda_tsunakiyo_tottori", "personKey": "person_ikeda_tsunakiyo", "roleType": "藩主", "territoryKey": "territory_tottori", "generation": 2, "startYear": 1670, "endYear": 1700 },
+  { "key": "appt_ikeda_yoshitaka_tottori", "personKey": "person_ikeda_yoshitaka", "roleType": "藩主", "territoryKey": "territory_tottori", "generation": 3, "startYear": 1700, "endYear": 1739 },
+  { "key": "appt_ikeda_munehiro_tottori", "personKey": "person_ikeda_munehiro", "roleType": "藩主", "territoryKey": "territory_tottori", "generation": 4, "startYear": 1739, "endYear": 1739 },
+
+  { "key": "appt_hachisuka_iemasa_tokushima", "personKey": "person_hachisuka_iemasa", "roleType": "藩主", "territoryKey": "territory_tokushima", "generation": 1, "startYear": 1586, "endYear": 1620 },
+  { "key": "appt_hachisuka_yoshishige_tokushima", "personKey": "person_hachisuka_yoshishige", "roleType": "藩主", "territoryKey": "territory_tokushima", "generation": 2, "startYear": 1620, "endYear": 1620 },
+  { "key": "appt_hachisuka_tadateru_tokushima", "personKey": "person_hachisuka_tadateru", "roleType": "藩主", "territoryKey": "territory_tokushima", "generation": 3, "startYear": 1620, "endYear": 1652 },
+  { "key": "appt_hachisuka_tsunanori_tokushima", "personKey": "person_hachisuka_tsunanori", "roleType": "藩主", "territoryKey": "territory_tokushima", "generation": 4, "startYear": 1652, "endYear": 1666 },
+
+  { "key": "appt_uesugi_kagekatsu_yonezawa", "personKey": "person_uesugi_kagekatsu", "roleType": "藩主", "territoryKey": "territory_yonezawa", "generation": 1, "startYear": 1601, "endYear": 1623 },
+  { "key": "appt_uesugi_sadakatsu_yonezawa", "personKey": "person_uesugi_sadakatsu", "roleType": "藩主", "territoryKey": "territory_yonezawa", "generation": 2, "startYear": 1623, "endYear": 1645 },
+  { "key": "appt_uesugi_tsunanori_yonezawa", "personKey": "person_uesugi_tsunanori", "roleType": "藩主", "territoryKey": "territory_yonezawa", "generation": 3, "startYear": 1645, "endYear": 1664 },
+  { "key": "appt_uesugi_tsunaakira_yonezawa", "personKey": "person_uesugi_tsunaakira", "roleType": "藩主", "territoryKey": "territory_yonezawa", "generation": 4, "startYear": 1664, "endYear": 1703 },
+
+  { "key": "appt_hideyasu_fukui", "personKey": "person_matsudaira_hideyasu", "roleType": "藩主", "territoryKey": "territory_fukui", "generation": 1, "startYear": 1601, "endYear": 1607 },
+  { "key": "appt_tadanao_fukui", "personKey": "person_matsudaira_tadanao", "roleType": "藩主", "territoryKey": "territory_fukui", "generation": 2, "startYear": 1607, "endYear": 1623 },
+  { "key": "appt_mitsunaga_fukui", "personKey": "person_matsudaira_mitsunaga", "roleType": "藩主", "territoryKey": "territory_fukui", "generation": 3, "startYear": 1623, "endYear": 1635 },
+  { "key": "appt_tadamasa_fukui", "personKey": "person_matsudaira_tadamasa_fukui", "roleType": "藩主", "territoryKey": "territory_fukui", "generation": 4, "startYear": 1635, "endYear": 1645 },
+  { "key": "appt_mitsumichi_fukui", "personKey": "person_matsudaira_mitsumichi", "roleType": "藩主", "territoryKey": "territory_fukui", "generation": 5, "startYear": 1645, "endYear": 1674 },
+
+  { "key": "appt_naomasa_matsue", "personKey": "person_matsudaira_naomasa_izumo", "roleType": "藩主", "territoryKey": "territory_matsue", "generation": 1, "startYear": 1638, "endYear": 1666 },
+  { "key": "appt_tsunataka_matsue", "personKey": "person_matsudaira_tsunataka_izumo", "roleType": "藩主", "territoryKey": "territory_matsue", "generation": 2, "startYear": 1666, "endYear": 1704 },
+  { "key": "appt_tsunachika_matsue", "personKey": "person_matsudaira_yoshitoru_izumo", "roleType": "藩主", "territoryKey": "territory_matsue", "generation": 3, "startYear": 1704, "endYear": 1704 },
+  { "key": "appt_yoshitoo_matsue", "personKey": "person_matsudaira_yoshitoo_izumo", "roleType": "藩主", "territoryKey": "territory_matsue", "generation": 4, "startYear": 1704, "endYear": 1720 },
+
+  { "key": "appt_tsugaru_tamenobu_hirosaki", "personKey": "person_tsugaru_tamenobu", "roleType": "藩主", "territoryKey": "territory_hirosaki", "generation": 1, "startYear": 1603, "endYear": 1607 },
+  { "key": "appt_tsugaru_nobuhira_hirosaki", "personKey": "person_tsugaru_nobuhira", "roleType": "藩主", "territoryKey": "territory_hirosaki", "generation": 2, "startYear": 1607, "endYear": 1631 },
+  { "key": "appt_tsugaru_nobuyoshi_hirosaki", "personKey": "person_tsugaru_nobuyoshi", "roleType": "藩主", "territoryKey": "territory_hirosaki", "generation": 3, "startYear": 1631, "endYear": 1655 },
+  { "key": "appt_tsugaru_nobumasa_hirosaki", "personKey": "person_tsugaru_nobumasa", "roleType": "藩主", "territoryKey": "territory_hirosaki", "generation": 4, "startYear": 1655, "endYear": 1710 },
+
+  { "key": "appt_nanbu_toshinao_morioka", "personKey": "person_nanbu_toshinao", "roleType": "藩主", "territoryKey": "territory_morioka", "generation": 1, "startYear": 1600, "endYear": 1632 },
+  { "key": "appt_nanbu_shigenao_morioka", "personKey": "person_nanbu_shigenao", "roleType": "藩主", "territoryKey": "territory_morioka", "generation": 2, "startYear": 1632, "endYear": 1664 },
+  { "key": "appt_nanbu_shigenobu_morioka", "personKey": "person_nanbu_shigenobu", "roleType": "藩主", "territoryKey": "territory_morioka", "generation": 3, "startYear": 1664, "endYear": 1692 },
+  { "key": "appt_nanbu_yukimori_morioka", "personKey": "person_nanbu_yukimori", "roleType": "藩主", "territoryKey": "territory_morioka", "generation": 4, "startYear": 1692, "endYear": 1725 },
+
+  { "key": "appt_satake_yoshinobu_kubota", "personKey": "person_satake_yoshinobu", "roleType": "藩主", "territoryKey": "territory_kubota", "generation": 1, "startYear": 1602, "endYear": 1633 },
+  { "key": "appt_satake_yoshitaka_kubota", "personKey": "person_satake_yoshitaka", "roleType": "藩主", "territoryKey": "territory_kubota", "generation": 2, "startYear": 1633, "endYear": 1671 },
+  { "key": "appt_satake_yoshinaka_kubota", "personKey": "person_satake_yoshinaka", "roleType": "藩主", "territoryKey": "territory_kubota", "generation": 3, "startYear": 1671, "endYear": 1703 },
+  { "key": "appt_satake_yoshisumi_kubota", "personKey": "person_satake_yoshisumi", "roleType": "藩主", "territoryKey": "territory_kubota", "generation": 4, "startYear": 1703, "endYear": 1715 },
+
+  { "key": "appt_todo_takatora_tsu", "personKey": "person_todo_takatora", "roleType": "藩主", "territoryKey": "territory_tsu", "generation": 1, "startYear": 1608, "endYear": 1630 },
+  { "key": "appt_todo_takatsugu_tsu", "personKey": "person_todo_takatsugu", "roleType": "藩主", "territoryKey": "territory_tsu", "generation": 2, "startYear": 1630, "endYear": 1669 },
+  { "key": "appt_todo_takahisa_tsu", "personKey": "person_todo_takahisa", "roleType": "藩主", "territoryKey": "territory_tsu", "generation": 3, "startYear": 1669, "endYear": 1703 },
+  { "key": "appt_todo_takanaga_tsu", "personKey": "person_todo_takanaga", "roleType": "藩主", "territoryKey": "territory_tsu", "generation": 4, "startYear": 1703, "endYear": 1710 },
+
+  { "key": "appt_sadayuki_matsuyama", "personKey": "person_matsudaira_sadayuki", "roleType": "藩主", "territoryKey": "territory_matsuyama", "generation": 1, "startYear": 1635, "endYear": 1657 },
+  { "key": "appt_sadanao_matsuyama", "personKey": "person_matsudaira_sadanao", "roleType": "藩主", "territoryKey": "territory_matsuyama", "generation": 2, "startYear": 1657, "endYear": 1662 },
+  { "key": "appt_sadanaga_matsuyama", "personKey": "person_matsudaira_sadanaga", "roleType": "藩主", "territoryKey": "territory_matsuyama", "generation": 3, "startYear": 1662, "endYear": 1674 },
+  { "key": "appt_sadahide_matsuyama", "personKey": "person_matsudaira_sadahide", "roleType": "藩主", "territoryKey": "territory_matsuyama", "generation": 4, "startYear": 1674, "endYear": 1720 },
+
+  { "key": "appt_date_hidemune_uwajima", "personKey": "person_date_hidemune", "roleType": "藩主", "territoryKey": "territory_uwajima", "generation": 1, "startYear": 1615, "endYear": 1657 },
+  { "key": "appt_date_munetoshi_uwajima", "personKey": "person_date_munetoshi", "roleType": "藩主", "territoryKey": "territory_uwajima", "generation": 2, "startYear": 1657, "endYear": 1693 },
+  { "key": "appt_date_muneyoshi_uwajima", "personKey": "person_date_muneyoshi", "roleType": "藩主", "territoryKey": "territory_uwajima", "generation": 3, "startYear": 1693, "endYear": 1711 },
+  { "key": "appt_date_muranaga_uwajima", "personKey": "person_date_muranaga", "roleType": "藩主", "territoryKey": "territory_uwajima", "generation": 4, "startYear": 1711, "endYear": 1735 },
+
+  { "key": "appt_ogasawara_tadazane_kokura", "personKey": "person_ogasawara_tadazane", "roleType": "藩主", "territoryKey": "territory_kokura", "generation": 1, "startYear": 1632, "endYear": 1667 },
+  { "key": "appt_ogasawara_tadao_kokura", "personKey": "person_ogasawara_tadao", "roleType": "藩主", "territoryKey": "territory_kokura", "generation": 2, "startYear": 1667, "endYear": 1697 },
+  { "key": "appt_ogasawara_tadachika_kokura", "personKey": "person_ogasawara_tadachika", "roleType": "藩主", "territoryKey": "territory_kokura", "generation": 3, "startYear": 1697, "endYear": 1725 },
+  { "key": "appt_ogasawara_tadanori_kokura", "personKey": "person_ogasawara_tadanori", "roleType": "藩主", "territoryKey": "territory_kokura", "generation": 4, "startYear": 1725, "endYear": 1743 },
+
+  { "key": "appt_tachibana_muneshige_yanagawa", "personKey": "person_tachibana_muneshige", "roleType": "藩主", "territoryKey": "territory_yanagawa", "generation": 1, "startYear": 1620, "endYear": 1637 },
+  { "key": "appt_tachibana_tadashige_yanagawa", "personKey": "person_tachibana_tadashige", "roleType": "藩主", "territoryKey": "territory_yanagawa", "generation": 2, "startYear": 1637, "endYear": 1668 },
+  { "key": "appt_tachibana_akitora_yanagawa", "personKey": "person_tachibana_akitora", "roleType": "藩主", "territoryKey": "territory_yanagawa", "generation": 3, "startYear": 1668, "endYear": 1707 },
+  { "key": "appt_tachibana_akiyoshi_yanagawa", "personKey": "person_tachibana_akiyoshi", "roleType": "藩主", "territoryKey": "territory_yanagawa", "generation": 4, "startYear": 1707, "endYear": 1729 },
+
+  { "key": "appt_yorishige_takamatsu", "personKey": "person_matsudaira_yorishige", "roleType": "藩主", "territoryKey": "territory_takamatsu", "generation": 1, "startYear": 1642, "endYear": 1673 },
+  { "key": "appt_yoritsune_takamatsu", "personKey": "person_matsudaira_yoritsune", "roleType": "藩主", "territoryKey": "territory_takamatsu", "generation": 2, "startYear": 1673, "endYear": 1700 },
+  { "key": "appt_yoriyuki_takamatsu", "personKey": "person_matsudaira_yoriyuki", "roleType": "藩主", "territoryKey": "territory_takamatsu", "generation": 3, "startYear": 1700, "endYear": 1735 },
+  { "key": "appt_yoritaka_takamatsu", "personKey": "person_matsudaira_yoritaka", "roleType": "藩主", "territoryKey": "territory_takamatsu", "generation": 4, "startYear": 1735, "endYear": 1739 },
+
+  { "key": "appt_makino_tadanari_nagaoka", "personKey": "person_makino_tadanari", "roleType": "藩主", "territoryKey": "territory_nagaoka", "generation": 1, "startYear": 1618, "endYear": 1634 },
+  { "key": "appt_makino_tadanari2_nagaoka", "personKey": "person_makino_tadanari2", "roleType": "藩主", "territoryKey": "territory_nagaoka", "generation": 2, "startYear": 1634, "endYear": 1674 },
+  { "key": "appt_makino_tadatoshi_nagaoka", "personKey": "person_makino_tadatoshi", "roleType": "藩主", "territoryKey": "territory_nagaoka", "generation": 3, "startYear": 1674, "endYear": 1721 },
+  { "key": "appt_makino_tadaatsu_nagaoka", "personKey": "person_makino_tadaatsu", "roleType": "藩主", "territoryKey": "territory_nagaoka", "generation": 4, "startYear": 1721, "endYear": 1735 },
+
+  { "key": "appt_hotta_masatoshi_sakura", "personKey": "person_hotta_masatoshi", "roleType": "藩主", "territoryKey": "territory_sakura", "generation": 1, "startYear": 1678, "endYear": 1684 },
+  { "key": "appt_hotta_masanaka_sakura", "personKey": "person_hotta_masanaka", "roleType": "藩主", "territoryKey": "territory_sakura", "generation": 2, "startYear": 1684, "endYear": 1686 },
+  { "key": "appt_hotta_masasuke_sakura", "personKey": "person_hotta_masasuke", "roleType": "藩主", "territoryKey": "territory_sakura", "generation": 3, "startYear": 1746, "endYear": 1761 },
+  { "key": "appt_hotta_masatomo_sakura", "personKey": "person_hotta_masatomo", "roleType": "藩主", "territoryKey": "territory_sakura", "generation": 4, "startYear": 1761, "endYear": 1778 },
+
+  { "key": "appt_sakai_tadakatsu_shonai", "personKey": "person_sakai_tadakatsu_shonai", "roleType": "藩主", "territoryKey": "territory_shonai", "generation": 1, "startYear": 1622, "endYear": 1647 },
+  { "key": "appt_sakai_tadatoyo_shonai", "personKey": "person_sakai_tadatoyo_shonai", "roleType": "藩主", "territoryKey": "territory_shonai", "generation": 2, "startYear": 1647, "endYear": 1672 },
+  { "key": "appt_sakai_tadayoshi_shonai", "personKey": "person_sakai_tadayoshi_shonai", "roleType": "藩主", "territoryKey": "territory_shonai", "generation": 3, "startYear": 1672, "endYear": 1694 },
+  { "key": "appt_sakai_tadamasa_shonai", "personKey": "person_sakai_tadamasa_shonai", "roleType": "藩主", "territoryKey": "territory_shonai", "generation": 4, "startYear": 1694, "endYear": 1718 }
 ]

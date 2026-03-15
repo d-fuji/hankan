@@ -24,6 +24,17 @@
 
   { "key": "person_maeda_toshiie", "name": "前田利家", "nameKana": "まえだとしいえ", "nameRomaji": "Maeda Toshiie", "imina": "利家", "commonName": "犬千代", "clanKey": "clan_maeda" },
   { "key": "person_maeda_toshinaga", "name": "前田利長", "nameKana": "まえだとしなが", "nameRomaji": "Maeda Toshinaga", "imina": "利長", "clanKey": "clan_maeda", "fatherKey": "person_maeda_toshiie", "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_maeda_toshitsune", "name": "前田利常", "nameKana": "まえだとしつね", "nameRomaji": "Maeda Toshitsune", "imina": "利常", "clanKey": "clan_maeda", "fatherKey": "person_maeda_toshiie", "birthOrder": 4, "birthOrderType": "男" },
+  { "key": "person_maeda_mitsutaka", "name": "前田光高", "nameKana": "まえだみつたか", "nameRomaji": "Maeda Mitsutaka", "imina": "光高", "clanKey": "clan_maeda", "fatherKey": "person_maeda_toshitsune", "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_maeda_tsunanori", "name": "前田綱紀", "nameKana": "まえだつなのり", "nameRomaji": "Maeda Tsunanori", "imina": "綱紀", "clanKey": "clan_maeda", "fatherKey": "person_maeda_mitsutaka", "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_maeda_yoshinori", "name": "前田吉徳", "nameKana": "まえだよしのり", "nameRomaji": "Maeda Yoshinori", "imina": "吉徳", "clanKey": "clan_maeda", "fatherKey": "person_maeda_tsunanori", "isAdopted": true },
+  { "key": "person_maeda_munenori", "name": "前田宗辰", "nameKana": "まえだむねのり", "nameRomaji": "Maeda Munenori", "imina": "宗辰", "clanKey": "clan_maeda", "fatherKey": "person_maeda_yoshinori", "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_maeda_shigemichi", "name": "前田重煕", "nameKana": "まえだしげみち", "nameRomaji": "Maeda Shigemichi", "imina": "重煕", "clanKey": "clan_maeda", "fatherKey": "person_maeda_yoshinori", "birthOrder": 3, "birthOrderType": "男" },
+  { "key": "person_maeda_shigenori", "name": "前田重教", "nameKana": "まえだしげのり", "nameRomaji": "Maeda Shigenori", "imina": "重教", "clanKey": "clan_maeda", "fatherKey": "person_maeda_yoshinori", "birthOrder": 7, "birthOrderType": "男" },
+  { "key": "person_maeda_harunaga", "name": "前田治脩", "nameKana": "まえだはるなが", "nameRomaji": "Maeda Harunaga", "imina": "治脩", "clanKey": "clan_maeda", "fatherKey": "person_maeda_yoshinori", "birthOrder": 11, "birthOrderType": "男" },
+  { "key": "person_maeda_narinaga", "name": "前田斉広", "nameKana": "まえだなりなが", "nameRomaji": "Maeda Narinaga", "imina": "斉広", "clanKey": "clan_maeda", "fatherKey": "person_maeda_harunaga", "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_maeda_nariyasu", "name": "前田斉泰", "nameKana": "まえだなりやす", "nameRomaji": "Maeda Nariyasu", "imina": "斉泰", "clanKey": "clan_maeda", "fatherKey": "person_maeda_narinaga", "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_maeda_yoshiyasu", "name": "前田慶寧", "nameKana": "まえだよしやす", "nameRomaji": "Maeda Yoshiyasu", "imina": "慶寧", "clanKey": "clan_maeda", "fatherKey": "person_maeda_nariyasu", "birthOrder": 1, "birthOrderType": "男" },
 
   { "key": "person_shimazu_yoshihiro", "name": "島津義弘", "nameKana": "しまづよしひろ", "nameRomaji": "Shimazu Yoshihiro", "imina": "義弘", "clanKey": "clan_shimazu" },
   { "key": "person_shimazu_iehisa", "name": "島津家久", "nameKana": "しまづいえひさ", "nameRomaji": "Shimazu Iehisa", "imina": "家久", "commonName": "忠恒", "clanKey": "clan_shimazu", "fatherKey": "person_shimazu_yoshihiro", "birthOrder": 3, "birthOrderType": "男" },
@@ -95,5 +106,103 @@
   { "key": "person_matsudaira_masataka_otaki", "name": "松平正敬", "nameKana": "まつだいらまさたか", "nameRomaji": "Matsudaira Masataka", "imina": "正敬", "clanKey": "clan_okochi_matsudaira", "fatherKey": "person_matsudaira_masamichi" },
   { "key": "person_matsudaira_masayoshi_otaki", "name": "松平正義", "nameKana": "まつだいらまさよし", "nameRomaji": "Matsudaira Masayoshi", "imina": "正義", "clanKey": "clan_okochi_matsudaira" },
   { "key": "person_matsudaira_masakazu", "name": "松平正和", "nameKana": "まつだいらまさかず", "nameRomaji": "Matsudaira Masakazu", "imina": "正和", "clanKey": "clan_okochi_matsudaira", "fatherKey": "person_matsudaira_masayoshi_otaki" },
-  { "key": "person_matsudaira_masatada", "name": "松平正質", "nameKana": "まつだいらまさただ", "nameRomaji": "Matsudaira Masatada", "imina": "正質", "clanKey": "clan_okochi_matsudaira", "fatherKey": "person_matsudaira_masakazu" }
+  { "key": "person_matsudaira_masatada", "name": "松平正質", "nameKana": "まつだいらまさただ", "nameRomaji": "Matsudaira Masatada", "imina": "正質", "clanKey": "clan_okochi_matsudaira", "fatherKey": "person_matsudaira_masakazu" },
+
+  { "key": "person_ii_naomasa", "name": "井伊直政", "nameKana": "いいなおまさ", "nameRomaji": "Ii Naomasa", "imina": "直政", "commonName": "万千代", "clanKey": "clan_ii" },
+  { "key": "person_ii_naotsugu", "name": "井伊直継", "nameKana": "いいなおつぐ", "nameRomaji": "Ii Naotsugu", "imina": "直継", "clanKey": "clan_ii", "fatherKey": "person_ii_naomasa", "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_ii_naotaka", "name": "井伊直孝", "nameKana": "いいなおたか", "nameRomaji": "Ii Naotaka", "imina": "直孝", "clanKey": "clan_ii", "fatherKey": "person_ii_naomasa", "birthOrder": 2, "birthOrderType": "男" },
+  { "key": "person_ii_naozumi", "name": "井伊直澄", "nameKana": "いいなおずみ", "nameRomaji": "Ii Naozumi", "imina": "直澄", "clanKey": "clan_ii", "fatherKey": "person_ii_naotaka", "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_ii_naooki", "name": "井伊直興", "nameKana": "いいなおおき", "nameRomaji": "Ii Naooki", "imina": "直興", "clanKey": "clan_ii", "fatherKey": "person_ii_naotaka", "birthOrder": 5, "birthOrderType": "男" },
+
+  { "key": "person_hoshina_masayuki", "name": "保科正之", "nameKana": "ほしなまさゆき", "nameRomaji": "Hoshina Masayuki", "imina": "正之", "clanKey": "clan_hoshina", "fatherKey": "person_tokugawa_hidetada", "birthOrder": 4, "birthOrderType": "男" },
+  { "key": "person_matsudaira_masatsune", "name": "松平正経", "nameKana": "まつだいらまさつね", "nameRomaji": "Matsudaira Masatsune", "imina": "正経", "clanKey": "clan_aizu_matsudaira", "fatherKey": "person_hoshina_masayuki", "birthOrder": 3, "birthOrderType": "男" },
+  { "key": "person_matsudaira_masakata", "name": "松平正容", "nameKana": "まつだいらまさかた", "nameRomaji": "Matsudaira Masakata", "imina": "正容", "clanKey": "clan_aizu_matsudaira", "fatherKey": "person_hoshina_masayuki", "birthOrder": 6, "birthOrderType": "男" },
+  { "key": "person_matsudaira_katanobu", "name": "松平容貞", "nameKana": "まつだいらかたのぶ", "nameRomaji": "Matsudaira Katanobu", "imina": "容貞", "clanKey": "clan_aizu_matsudaira", "fatherKey": "person_matsudaira_masakata", "birthOrder": 5, "birthOrderType": "男" },
+  { "key": "person_matsudaira_katahiro", "name": "松平容頌", "nameKana": "まつだいらかたひろ", "nameRomaji": "Matsudaira Katahiro", "imina": "容頌", "clanKey": "clan_aizu_matsudaira", "fatherKey": "person_matsudaira_katanobu", "birthOrder": 1, "birthOrderType": "男" },
+
+  { "key": "person_ikeda_mitsunaka", "name": "池田光仲", "nameKana": "いけだみつなか", "nameRomaji": "Ikeda Mitsunaka", "imina": "光仲", "clanKey": "clan_ikeda" },
+  { "key": "person_ikeda_tsunakiyo", "name": "池田綱清", "nameKana": "いけだつなきよ", "nameRomaji": "Ikeda Tsunakiyo", "imina": "綱清", "clanKey": "clan_ikeda", "fatherKey": "person_ikeda_mitsunaka", "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_ikeda_yoshitaka", "name": "池田吉泰", "nameKana": "いけだよしやす", "nameRomaji": "Ikeda Yoshitaka", "imina": "吉泰", "clanKey": "clan_ikeda", "fatherKey": "person_ikeda_tsunakiyo", "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_ikeda_munehiro", "name": "池田宗泰", "nameKana": "いけだむねひろ", "nameRomaji": "Ikeda Munehiro", "imina": "宗泰", "clanKey": "clan_ikeda", "fatherKey": "person_ikeda_yoshitaka", "birthOrder": 1, "birthOrderType": "男" },
+
+  { "key": "person_hachisuka_iemasa", "name": "蜂須賀家政", "nameKana": "はちすかいえまさ", "nameRomaji": "Hachisuka Iemasa", "imina": "家政", "clanKey": "clan_hachisuka" },
+  { "key": "person_hachisuka_yoshishige", "name": "蜂須賀至鎮", "nameKana": "はちすかよししげ", "nameRomaji": "Hachisuka Yoshishige", "imina": "至鎮", "clanKey": "clan_hachisuka", "fatherKey": "person_hachisuka_iemasa", "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_hachisuka_tadateru", "name": "蜂須賀忠英", "nameKana": "はちすかただてる", "nameRomaji": "Hachisuka Tadateru", "imina": "忠英", "clanKey": "clan_hachisuka", "fatherKey": "person_hachisuka_yoshishige", "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_hachisuka_tsunanori", "name": "蜂須賀綱通", "nameKana": "はちすかつなのり", "nameRomaji": "Hachisuka Tsunanori", "imina": "綱通", "clanKey": "clan_hachisuka", "fatherKey": "person_hachisuka_tadateru", "birthOrder": 1, "birthOrderType": "男" },
+
+  { "key": "person_uesugi_kagekatsu", "name": "上杉景勝", "nameKana": "うえすぎかげかつ", "nameRomaji": "Uesugi Kagekatsu", "imina": "景勝", "clanKey": "clan_uesugi" },
+  { "key": "person_uesugi_sadakatsu", "name": "上杉定勝", "nameKana": "うえすぎさだかつ", "nameRomaji": "Uesugi Sadakatsu", "imina": "定勝", "clanKey": "clan_uesugi", "fatherKey": "person_uesugi_kagekatsu", "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_uesugi_tsunanori", "name": "上杉綱勝", "nameKana": "うえすぎつなのり", "nameRomaji": "Uesugi Tsunanori", "imina": "綱勝", "clanKey": "clan_uesugi", "fatherKey": "person_uesugi_sadakatsu", "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_uesugi_tsunaakira", "name": "上杉綱憲", "nameKana": "うえすぎつなあきら", "nameRomaji": "Uesugi Tsunaakira", "imina": "綱憲", "clanKey": "clan_uesugi", "isAdopted": true },
+
+  { "key": "person_matsudaira_hideyasu", "name": "結城秀康", "nameKana": "ゆうきひでやす", "nameRomaji": "Yuki Hideyasu", "imina": "秀康", "clanKey": "clan_echizen_matsudaira", "fatherKey": "person_tokugawa_ieyasu", "birthOrder": 2, "birthOrderType": "男" },
+  { "key": "person_matsudaira_tadanao", "name": "松平忠直", "nameKana": "まつだいらただなお", "nameRomaji": "Matsudaira Tadanao", "imina": "忠直", "clanKey": "clan_echizen_matsudaira", "fatherKey": "person_matsudaira_hideyasu", "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_matsudaira_mitsunaga", "name": "松平光長", "nameKana": "まつだいらみつなが", "nameRomaji": "Matsudaira Mitsunaga", "imina": "光長", "clanKey": "clan_echizen_matsudaira", "fatherKey": "person_matsudaira_tadanao", "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_matsudaira_tadamasa_fukui", "name": "松平忠昌", "nameKana": "まつだいらただまさ", "nameRomaji": "Matsudaira Tadamasa", "imina": "忠昌", "clanKey": "clan_echizen_matsudaira", "fatherKey": "person_matsudaira_hideyasu", "birthOrder": 5, "birthOrderType": "男" },
+  { "key": "person_matsudaira_mitsumichi", "name": "松平光通", "nameKana": "まつだいらみつみち", "nameRomaji": "Matsudaira Mitsumichi", "imina": "光通", "clanKey": "clan_echizen_matsudaira", "fatherKey": "person_matsudaira_tadamasa_fukui", "birthOrder": 1, "birthOrderType": "男" },
+
+  { "key": "person_matsudaira_naomasa_izumo", "name": "松平直政", "nameKana": "まつだいらなおまさ", "nameRomaji": "Matsudaira Naomasa", "imina": "直政", "clanKey": "clan_matsudaira_izumo", "fatherKey": "person_matsudaira_hideyasu", "birthOrder": 3, "birthOrderType": "男" },
+  { "key": "person_matsudaira_tsunataka_izumo", "name": "松平綱隆", "nameKana": "まつだいらつなたか", "nameRomaji": "Matsudaira Tsunataka", "imina": "綱隆", "clanKey": "clan_matsudaira_izumo", "fatherKey": "person_matsudaira_naomasa_izumo", "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_matsudaira_yoshitoru_izumo", "name": "松平綱近", "nameKana": "まつだいらよしとる", "nameRomaji": "Matsudaira Tsunachika", "imina": "綱近", "clanKey": "clan_matsudaira_izumo", "fatherKey": "person_matsudaira_tsunataka_izumo", "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_matsudaira_yoshitoo_izumo", "name": "松平吉透", "nameKana": "まつだいらよしとお", "nameRomaji": "Matsudaira Yoshitoo", "imina": "吉透", "clanKey": "clan_matsudaira_izumo", "fatherKey": "person_matsudaira_naomasa_izumo", "birthOrder": 4, "birthOrderType": "男" },
+
+  { "key": "person_tsugaru_tamenobu", "name": "津軽為信", "nameKana": "つがるためのぶ", "nameRomaji": "Tsugaru Tamenobu", "imina": "為信", "clanKey": "clan_tsugaru" },
+  { "key": "person_tsugaru_nobuhira", "name": "津軽信枚", "nameKana": "つがるのぶひら", "nameRomaji": "Tsugaru Nobuhira", "imina": "信枚", "clanKey": "clan_tsugaru", "fatherKey": "person_tsugaru_tamenobu", "birthOrder": 3, "birthOrderType": "男" },
+  { "key": "person_tsugaru_nobuyoshi", "name": "津軽信義", "nameKana": "つがるのぶよし", "nameRomaji": "Tsugaru Nobuyoshi", "imina": "信義", "clanKey": "clan_tsugaru", "fatherKey": "person_tsugaru_nobuhira", "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_tsugaru_nobumasa", "name": "津軽信政", "nameKana": "つがるのぶまさ", "nameRomaji": "Tsugaru Nobumasa", "imina": "信政", "clanKey": "clan_tsugaru", "fatherKey": "person_tsugaru_nobuyoshi", "birthOrder": 1, "birthOrderType": "男" },
+
+  { "key": "person_nanbu_toshinao", "name": "南部利直", "nameKana": "なんぶとしなお", "nameRomaji": "Nanbu Toshinao", "imina": "利直", "clanKey": "clan_nanbu" },
+  { "key": "person_nanbu_shigenao", "name": "南部重直", "nameKana": "なんぶしげなお", "nameRomaji": "Nanbu Shigenao", "imina": "重直", "clanKey": "clan_nanbu", "fatherKey": "person_nanbu_toshinao", "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_nanbu_shigenobu", "name": "南部重信", "nameKana": "なんぶしげのぶ", "nameRomaji": "Nanbu Shigenobu", "imina": "重信", "clanKey": "clan_nanbu", "fatherKey": "person_nanbu_toshinao", "birthOrder": 3, "birthOrderType": "男" },
+  { "key": "person_nanbu_yukimori", "name": "南部行信", "nameKana": "なんぶゆきもり", "nameRomaji": "Nanbu Yukimori", "imina": "行信", "clanKey": "clan_nanbu", "fatherKey": "person_nanbu_shigenobu", "birthOrder": 1, "birthOrderType": "男" },
+
+  { "key": "person_satake_yoshinobu", "name": "佐竹義宣", "nameKana": "さたけよしのぶ", "nameRomaji": "Satake Yoshinobu", "imina": "義宣", "clanKey": "clan_satake" },
+  { "key": "person_satake_yoshitaka", "name": "佐竹義隆", "nameKana": "さたけよしたか", "nameRomaji": "Satake Yoshitaka", "imina": "義隆", "clanKey": "clan_satake", "isAdopted": true },
+  { "key": "person_satake_yoshinaka", "name": "佐竹義処", "nameKana": "さたけよしなか", "nameRomaji": "Satake Yoshinaka", "imina": "義処", "clanKey": "clan_satake", "fatherKey": "person_satake_yoshitaka", "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_satake_yoshisumi", "name": "佐竹義格", "nameKana": "さたけよしずみ", "nameRomaji": "Satake Yoshisumi", "imina": "義格", "clanKey": "clan_satake", "fatherKey": "person_satake_yoshinaka", "birthOrder": 1, "birthOrderType": "男" },
+
+  { "key": "person_todo_takatora", "name": "藤堂高虎", "nameKana": "とうどうたかとら", "nameRomaji": "Todo Takatora", "imina": "高虎", "clanKey": "clan_todo" },
+  { "key": "person_todo_takatsugu", "name": "藤堂高次", "nameKana": "とうどうたかつぐ", "nameRomaji": "Todo Takatsugu", "imina": "高次", "clanKey": "clan_todo", "fatherKey": "person_todo_takatora", "isAdopted": true },
+  { "key": "person_todo_takahisa", "name": "藤堂高久", "nameKana": "とうどうたかひさ", "nameRomaji": "Todo Takahisa", "imina": "高久", "clanKey": "clan_todo", "fatherKey": "person_todo_takatsugu", "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_todo_takanaga", "name": "藤堂高睦", "nameKana": "とうどうたかなが", "nameRomaji": "Todo Takanaga", "imina": "高睦", "clanKey": "clan_todo", "fatherKey": "person_todo_takahisa", "birthOrder": 1, "birthOrderType": "男" },
+
+  { "key": "person_matsudaira_sadayuki", "name": "松平定行", "nameKana": "まつだいらさだゆき", "nameRomaji": "Matsudaira Sadayuki", "imina": "定行", "clanKey": "clan_hisamatsu_matsudaira" },
+  { "key": "person_matsudaira_sadanao", "name": "松平定頼", "nameKana": "まつだいらさだなお", "nameRomaji": "Matsudaira Sadanao", "imina": "定頼", "clanKey": "clan_hisamatsu_matsudaira", "fatherKey": "person_matsudaira_sadayuki", "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_matsudaira_sadanaga", "name": "松平定長", "nameKana": "まつだいらさだなが", "nameRomaji": "Matsudaira Sadanaga", "imina": "定長", "clanKey": "clan_hisamatsu_matsudaira", "fatherKey": "person_matsudaira_sadayuki", "birthOrder": 3, "birthOrderType": "男" },
+  { "key": "person_matsudaira_sadahide", "name": "松平定直", "nameKana": "まつだいらさだひで", "nameRomaji": "Matsudaira Sadahide", "imina": "定直", "clanKey": "clan_hisamatsu_matsudaira", "fatherKey": "person_matsudaira_sadanaga", "birthOrder": 1, "birthOrderType": "男" },
+
+  { "key": "person_date_hidemune", "name": "伊達秀宗", "nameKana": "だてひでむね", "nameRomaji": "Date Hidemune", "imina": "秀宗", "clanKey": "clan_uwajima_date", "fatherKey": "person_date_masamune", "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_date_munetoshi", "name": "伊達宗利", "nameKana": "だてむねとし", "nameRomaji": "Date Munetoshi", "imina": "宗利", "clanKey": "clan_uwajima_date", "fatherKey": "person_date_hidemune", "birthOrder": 3, "birthOrderType": "男" },
+  { "key": "person_date_muneyoshi", "name": "伊達宗贇", "nameKana": "だてむねよし", "nameRomaji": "Date Muneyoshi", "imina": "宗贇", "clanKey": "clan_uwajima_date", "fatherKey": "person_date_munetoshi", "birthOrder": 2, "birthOrderType": "男" },
+  { "key": "person_date_muranaga", "name": "伊達村年", "nameKana": "だてむらなが", "nameRomaji": "Date Muranaga", "imina": "村年", "clanKey": "clan_uwajima_date", "fatherKey": "person_date_muneyoshi", "birthOrder": 1, "birthOrderType": "男" },
+
+  { "key": "person_ogasawara_tadazane", "name": "小笠原忠真", "nameKana": "おがさわらただざね", "nameRomaji": "Ogasawara Tadazane", "imina": "忠真", "clanKey": "clan_ogasawara" },
+  { "key": "person_ogasawara_tadao", "name": "小笠原忠雄", "nameKana": "おがさわらただお", "nameRomaji": "Ogasawara Tadao", "imina": "忠雄", "clanKey": "clan_ogasawara", "fatherKey": "person_ogasawara_tadazane", "birthOrder": 2, "birthOrderType": "男" },
+  { "key": "person_ogasawara_tadachika", "name": "小笠原忠基", "nameKana": "おがさわらただちか", "nameRomaji": "Ogasawara Tadachika", "imina": "忠基", "clanKey": "clan_ogasawara", "fatherKey": "person_ogasawara_tadao", "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_ogasawara_tadanori", "name": "小笠原忠総", "nameKana": "おがさわらただのり", "nameRomaji": "Ogasawara Tadanori", "imina": "忠総", "clanKey": "clan_ogasawara", "fatherKey": "person_ogasawara_tadachika", "birthOrder": 1, "birthOrderType": "男" },
+
+  { "key": "person_tachibana_muneshige", "name": "立花宗茂", "nameKana": "たちばなむねしげ", "nameRomaji": "Tachibana Muneshige", "imina": "宗茂", "clanKey": "clan_tachibana" },
+  { "key": "person_tachibana_tadashige", "name": "立花忠茂", "nameKana": "たちばなただしげ", "nameRomaji": "Tachibana Tadashige", "imina": "忠茂", "clanKey": "clan_tachibana", "isAdopted": true },
+  { "key": "person_tachibana_akitora", "name": "立花鑑虎", "nameKana": "たちばなあきとら", "nameRomaji": "Tachibana Akitora", "imina": "鑑虎", "clanKey": "clan_tachibana", "fatherKey": "person_tachibana_tadashige", "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_tachibana_akiyoshi", "name": "立花貞俶", "nameKana": "たちばなあきよし", "nameRomaji": "Tachibana Akiyoshi", "imina": "貞俶", "clanKey": "clan_tachibana", "fatherKey": "person_tachibana_akitora", "birthOrder": 1, "birthOrderType": "男" },
+
+  { "key": "person_matsudaira_yorishige", "name": "松平頼重", "nameKana": "まつだいらよりしげ", "nameRomaji": "Matsudaira Yorishige", "imina": "頼重", "clanKey": "clan_matsudaira_takamatsu", "fatherKey": "person_tokugawa_iemitsu" },
+  { "key": "person_matsudaira_yoritsune", "name": "松平頼常", "nameKana": "まつだいらよりつね", "nameRomaji": "Matsudaira Yoritsune", "imina": "頼常", "clanKey": "clan_matsudaira_takamatsu", "fatherKey": "person_matsudaira_yorishige", "isAdopted": true },
+  { "key": "person_matsudaira_yoriyuki", "name": "松平頼豊", "nameKana": "まつだいらよりゆき", "nameRomaji": "Matsudaira Yoriyuki", "imina": "頼豊", "clanKey": "clan_matsudaira_takamatsu", "isAdopted": true },
+  { "key": "person_matsudaira_yoritaka", "name": "松平頼桓", "nameKana": "まつだいらよりたか", "nameRomaji": "Matsudaira Yoritaka", "imina": "頼桓", "clanKey": "clan_matsudaira_takamatsu", "isAdopted": true },
+
+  { "key": "person_makino_tadanari", "name": "牧野忠成", "nameKana": "まきのただなり", "nameRomaji": "Makino Tadanari", "imina": "忠成", "clanKey": "clan_makino" },
+  { "key": "person_makino_tadanari2", "name": "牧野忠成（二代）", "nameKana": "まきのただなり", "nameRomaji": "Makino Tadanari II", "imina": "忠成", "clanKey": "clan_makino", "fatherKey": "person_makino_tadanari", "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_makino_tadatoshi", "name": "牧野忠辰", "nameKana": "まきのただとき", "nameRomaji": "Makino Tadatoshi", "imina": "忠辰", "clanKey": "clan_makino", "fatherKey": "person_makino_tadanari2", "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_makino_tadaatsu", "name": "牧野忠寿", "nameKana": "まきのただあつ", "nameRomaji": "Makino Tadaatsu", "imina": "忠寿", "clanKey": "clan_makino", "fatherKey": "person_makino_tadatoshi", "birthOrder": 1, "birthOrderType": "男" },
+
+  { "key": "person_hotta_masatoshi", "name": "堀田正俊", "nameKana": "ほったまさとし", "nameRomaji": "Hotta Masatoshi", "imina": "正俊", "clanKey": "clan_hotta" },
+  { "key": "person_hotta_masanaka", "name": "堀田正仲", "nameKana": "ほったまさなか", "nameRomaji": "Hotta Masanaka", "imina": "正仲", "clanKey": "clan_hotta", "fatherKey": "person_hotta_masatoshi", "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_hotta_masasuke", "name": "堀田正亮", "nameKana": "ほったまさすけ", "nameRomaji": "Hotta Masasuke", "imina": "正亮", "clanKey": "clan_hotta" },
+  { "key": "person_hotta_masatomo", "name": "堀田正順", "nameKana": "ほったまさとも", "nameRomaji": "Hotta Masatomo", "imina": "正順", "clanKey": "clan_hotta", "fatherKey": "person_hotta_masasuke", "birthOrder": 1, "birthOrderType": "男" },
+
+  { "key": "person_sakai_tadakatsu_shonai", "name": "酒井忠勝", "nameKana": "さかいただかつ", "nameRomaji": "Sakai Tadakatsu", "imina": "忠勝", "clanKey": "clan_sakai_shonai" },
+  { "key": "person_sakai_tadatoyo_shonai", "name": "酒井忠当", "nameKana": "さかいただとよ", "nameRomaji": "Sakai Tadatoyo", "imina": "忠当", "clanKey": "clan_sakai_shonai", "fatherKey": "person_sakai_tadakatsu_shonai", "birthOrder": 2, "birthOrderType": "男" },
+  { "key": "person_sakai_tadayoshi_shonai", "name": "酒井忠義", "nameKana": "さかいただよし", "nameRomaji": "Sakai Tadayoshi", "imina": "忠義", "clanKey": "clan_sakai_shonai", "fatherKey": "person_sakai_tadatoyo_shonai", "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_sakai_tadamasa_shonai", "name": "酒井忠真", "nameKana": "さかいただまさ", "nameRomaji": "Sakai Tadamasa", "imina": "忠真", "clanKey": "clan_sakai_shonai", "fatherKey": "person_sakai_tadayoshi_shonai", "birthOrder": 1, "birthOrderType": "男" }
 ]

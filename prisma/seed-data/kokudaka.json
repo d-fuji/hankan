@@ -26,5 +26,62 @@
   { "key": "kokudaka_otaki_1617", "territoryKey": "territory_otaki", "year": 1617, "amount": 3.0, "changeType": "入封", "changeDetail": "阿部正次入封、3万石" },
   { "key": "kokudaka_otaki_1623", "territoryKey": "territory_otaki", "year": 1623, "amount": 2.0, "changeType": "入封", "changeDetail": "青山忠俊入封、2万石" },
   { "key": "kokudaka_otaki_1638", "territoryKey": "territory_otaki", "year": 1638, "amount": 1.6, "changeType": "再立藩", "changeDetail": "阿部正能により再立藩、1万6千石" },
-  { "key": "kokudaka_otaki_1703", "territoryKey": "territory_otaki", "year": 1703, "amount": 2.0, "changeType": "入封", "changeDetail": "松平正久入封、以降2万石で固定" }
+  { "key": "kokudaka_otaki_1703", "territoryKey": "territory_otaki", "year": 1703, "amount": 2.0, "changeType": "入封", "changeDetail": "松平正久入封、以降2万石で固定" },
+
+  { "key": "kokudaka_hikone_1600", "territoryKey": "territory_hikone", "year": 1600, "amount": 18.0, "changeType": "立藩", "changeDetail": "井伊直政入封、近江国18万石" },
+  { "key": "kokudaka_hikone_1633", "territoryKey": "territory_hikone", "year": 1633, "amount": 35.0, "changeType": "加増", "changeDetail": "井伊直孝、大坂の陣等の功により35万石に加増" },
+
+  { "key": "kokudaka_aizu_1643", "territoryKey": "territory_aizu", "year": 1643, "amount": 23.0, "changeType": "立藩", "changeDetail": "保科正之入封、岩代国23万石" },
+  { "key": "kokudaka_aizu_1700", "territoryKey": "territory_aizu", "year": 1700, "amount": 23.0, "changeType": "維持", "changeDetail": "会津松平家として23万石を維持" },
+
+  { "key": "kokudaka_tottori_1632", "territoryKey": "territory_tottori", "year": 1632, "amount": 32.0, "changeType": "入封", "changeDetail": "池田光仲入封、因幡・伯耆二カ国32万石" },
+  { "key": "kokudaka_tottori_1700", "territoryKey": "territory_tottori", "year": 1700, "amount": 32.0, "changeType": "維持", "changeDetail": "池田家32万石で安定" },
+
+  { "key": "kokudaka_tokushima_1586", "territoryKey": "territory_tokushima", "year": 1586, "amount": 17.5, "changeType": "立藩", "changeDetail": "蜂須賀家政入封、阿波一国" },
+  { "key": "kokudaka_tokushima_1615", "territoryKey": "territory_tokushima", "year": 1615, "amount": 25.7, "changeType": "加増", "changeDetail": "淡路加増により25万7千石" },
+
+  { "key": "kokudaka_yonezawa_1601", "territoryKey": "territory_yonezawa", "year": 1601, "amount": 30.0, "changeType": "減封", "changeDetail": "上杉景勝、関ヶ原後に会津120万石から30万石に減封" },
+  { "key": "kokudaka_yonezawa_1664", "territoryKey": "territory_yonezawa", "year": 1664, "amount": 15.0, "changeType": "減封", "changeDetail": "上杉綱勝急死、断絶危機を経て15万石に半減" },
+
+  { "key": "kokudaka_fukui_1601", "territoryKey": "territory_fukui", "year": 1601, "amount": 68.0, "changeType": "立藩", "changeDetail": "結城秀康入封、越前一国68万石（北ノ庄藩）" },
+  { "key": "kokudaka_fukui_1635", "territoryKey": "territory_fukui", "year": 1635, "amount": 32.0, "changeType": "減封", "changeDetail": "松平忠昌入封、分知により32万石" },
+
+  { "key": "kokudaka_matsue_1638", "territoryKey": "territory_matsue", "year": 1638, "amount": 18.6, "changeType": "入封", "changeDetail": "松平直政入封、出雲国18万6千石" },
+  { "key": "kokudaka_matsue_1700", "territoryKey": "territory_matsue", "year": 1700, "amount": 18.6, "changeType": "維持", "changeDetail": "松平家18万6千石で安定" },
+
+  { "key": "kokudaka_hirosaki_1603", "territoryKey": "territory_hirosaki", "year": 1603, "amount": 4.7, "changeType": "立藩", "changeDetail": "津軽為信、津軽地方4万7千石" },
+  { "key": "kokudaka_hirosaki_1808", "territoryKey": "territory_hirosaki", "year": 1808, "amount": 10.0, "changeType": "加増", "changeDetail": "蝦夷地警備の功により10万石に高直し" },
+
+  { "key": "kokudaka_morioka_1600", "territoryKey": "territory_morioka", "year": 1600, "amount": 10.0, "changeType": "立藩", "changeDetail": "南部利直、陸奥国10万石（表高）" },
+  { "key": "kokudaka_morioka_1808", "territoryKey": "territory_morioka", "year": 1808, "amount": 20.0, "changeType": "加増", "changeDetail": "蝦夷地警備の功により20万石に高直し" },
+
+  { "key": "kokudaka_kubota_1602", "territoryKey": "territory_kubota", "year": 1602, "amount": 20.5, "changeType": "立藩", "changeDetail": "佐竹義宣、出羽国秋田20万5千石" },
+  { "key": "kokudaka_kubota_1700", "territoryKey": "territory_kubota", "year": 1700, "amount": 20.5, "changeType": "維持", "changeDetail": "佐竹家20万5千石で安定" },
+
+  { "key": "kokudaka_tsu_1608", "territoryKey": "territory_tsu", "year": 1608, "amount": 22.0, "changeType": "立藩", "changeDetail": "藤堂高虎入封、伊勢・伊賀22万石" },
+  { "key": "kokudaka_tsu_1619", "territoryKey": "territory_tsu", "year": 1619, "amount": 32.3, "changeType": "加増", "changeDetail": "大坂の陣等の功により32万3千石に加増" },
+
+  { "key": "kokudaka_matsuyama_1635", "territoryKey": "territory_matsuyama", "year": 1635, "amount": 15.0, "changeType": "入封", "changeDetail": "松平定行入封、伊予国15万石" },
+  { "key": "kokudaka_matsuyama_1700", "territoryKey": "territory_matsuyama", "year": 1700, "amount": 15.0, "changeType": "維持", "changeDetail": "久松松平家15万石で安定" },
+
+  { "key": "kokudaka_uwajima_1615", "territoryKey": "territory_uwajima", "year": 1615, "amount": 10.0, "changeType": "立藩", "changeDetail": "伊達秀宗入封、伊予国宇和郡10万石" },
+  { "key": "kokudaka_uwajima_1700", "territoryKey": "territory_uwajima", "year": 1700, "amount": 10.0, "changeType": "維持", "changeDetail": "宇和島伊達家10万石で安定" },
+
+  { "key": "kokudaka_kokura_1632", "territoryKey": "territory_kokura", "year": 1632, "amount": 15.0, "changeType": "入封", "changeDetail": "小笠原忠真入封、豊前国15万石" },
+  { "key": "kokudaka_kokura_1700", "territoryKey": "territory_kokura", "year": 1700, "amount": 15.0, "changeType": "維持", "changeDetail": "小笠原家15万石で安定" },
+
+  { "key": "kokudaka_yanagawa_1620", "territoryKey": "territory_yanagawa", "year": 1620, "amount": 10.9, "changeType": "立藩", "changeDetail": "立花宗茂、関ヶ原後の改易を経て筑後柳川に復帰、10万9千石" },
+  { "key": "kokudaka_yanagawa_1669", "territoryKey": "territory_yanagawa", "year": 1669, "amount": 10.9, "changeType": "維持", "changeDetail": "立花家10万9千石で安定" },
+
+  { "key": "kokudaka_takamatsu_1642", "territoryKey": "territory_takamatsu", "year": 1642, "amount": 12.0, "changeType": "立藩", "changeDetail": "松平頼重入封、讃岐国12万石" },
+  { "key": "kokudaka_takamatsu_1700", "territoryKey": "territory_takamatsu", "year": 1700, "amount": 12.0, "changeType": "維持", "changeDetail": "高松松平家12万石で安定" },
+
+  { "key": "kokudaka_nagaoka_1618", "territoryKey": "territory_nagaoka", "year": 1618, "amount": 6.4, "changeType": "立藩", "changeDetail": "牧野忠成入封、越後国6万4千石" },
+  { "key": "kokudaka_nagaoka_1634", "territoryKey": "territory_nagaoka", "year": 1634, "amount": 7.4, "changeType": "加増", "changeDetail": "加増により7万4千石" },
+
+  { "key": "kokudaka_sakura_1678", "territoryKey": "territory_sakura", "year": 1678, "amount": 11.0, "changeType": "入封", "changeDetail": "堀田正俊入封、下総国11万石" },
+  { "key": "kokudaka_sakura_1746", "territoryKey": "territory_sakura", "year": 1746, "amount": 11.0, "changeType": "入封", "changeDetail": "堀田正亮入封、堀田家復帰11万石" },
+
+  { "key": "kokudaka_shonai_1622", "territoryKey": "territory_shonai", "year": 1622, "amount": 14.0, "changeType": "立藩", "changeDetail": "酒井忠勝入封、出羽国14万石" },
+  { "key": "kokudaka_shonai_1700", "territoryKey": "territory_shonai", "year": 1700, "amount": 14.0, "changeType": "維持", "changeDetail": "酒井家14万石で安定" }
 ]
