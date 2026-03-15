@@ -7,9 +7,6 @@
   { "key": "kokudaka_sendai_1800", "territoryKey": "territory_sendai", "year": 1800, "amount": 62.0, "changeType": "維持", "changeDetail": "伊達家62万石で安定、実高は100万石に近いとされる" },
   { "key": "kokudaka_choshu_1600", "territoryKey": "territory_choshu", "year": 1600, "amount": 36.9, "changeType": "減封", "changeDetail": "関ヶ原敗戦により周防・長門二カ国に減封" },
   { "key": "kokudaka_fukuoka_1600", "territoryKey": "territory_fukuoka", "year": 1600, "amount": 52.3, "changeType": "立藩", "changeDetail": "筑前国" },
-  { "key": "kokudaka_kumamoto_1632", "territoryKey": "territory_kumamoto", "year": 1632, "amount": 54.0, "changeType": "入封", "changeDetail": "細川家入封" },
-  { "key": "kokudaka_hiroshima_1619", "territoryKey": "territory_hiroshima", "year": 1619, "amount": 42.6, "changeType": "入封", "changeDetail": "浅野家入封" },
-  { "key": "kokudaka_okayama_1632", "territoryKey": "territory_okayama", "year": 1632, "amount": 31.5, "changeType": "入封", "changeDetail": "池田家入封" },
   { "key": "kokudaka_okayama_1700", "territoryKey": "territory_okayama", "year": 1700, "amount": 31.5, "changeType": "維持", "changeDetail": "池田家治世安定期" },
   { "key": "kokudaka_okayama_1830", "territoryKey": "territory_okayama", "year": 1830, "amount": 31.5, "changeType": "維持", "changeDetail": "幕末まで31万5千石で安定" },
   { "key": "kokudaka_saga_1607", "territoryKey": "territory_saga", "year": 1607, "amount": 35.7, "changeType": "立藩", "changeDetail": "肥前国" },
@@ -37,7 +34,6 @@
   { "key": "kokudaka_aizu_1643", "territoryKey": "territory_aizu", "year": 1643, "amount": 23.0, "changeType": "立藩", "changeDetail": "保科正之入封、岩代国23万石" },
   { "key": "kokudaka_aizu_1700", "territoryKey": "territory_aizu", "year": 1700, "amount": 23.0, "changeType": "維持", "changeDetail": "会津松平家として23万石を維持" },
 
-  { "key": "kokudaka_tottori_1632", "territoryKey": "territory_tottori", "year": 1632, "amount": 32.0, "changeType": "入封", "changeDetail": "池田光仲入封、因幡・伯耆二カ国32万石" },
   { "key": "kokudaka_tottori_1700", "territoryKey": "territory_tottori", "year": 1700, "amount": 32.0, "changeType": "維持", "changeDetail": "池田家32万石で安定" },
 
   { "key": "kokudaka_tokushima_1586", "territoryKey": "territory_tokushima", "year": 1586, "amount": 17.5, "changeType": "立藩", "changeDetail": "蜂須賀家政入封、阿波一国" },
@@ -64,7 +60,6 @@
   { "key": "kokudaka_tsu_1608", "territoryKey": "territory_tsu", "year": 1608, "amount": 22.0, "changeType": "立藩", "changeDetail": "藤堂高虎入封、伊勢・伊賀22万石" },
   { "key": "kokudaka_tsu_1619", "territoryKey": "territory_tsu", "year": 1619, "amount": 32.3, "changeType": "加増", "changeDetail": "大坂の陣等の功により32万3千石に加増" },
 
-  { "key": "kokudaka_matsuyama_1635", "territoryKey": "territory_matsuyama", "year": 1635, "amount": 15.0, "changeType": "入封", "changeDetail": "松平定行入封、伊予国15万石" },
   { "key": "kokudaka_matsuyama_1700", "territoryKey": "territory_matsuyama", "year": 1700, "amount": 15.0, "changeType": "維持", "changeDetail": "久松松平家15万石で安定" },
 
   { "key": "kokudaka_uwajima_1615", "territoryKey": "territory_uwajima", "year": 1615, "amount": 10.0, "changeType": "立藩", "changeDetail": "伊達秀宗入封、伊予国宇和郡10万石" },
@@ -284,7 +279,6 @@
   { "key": "kokudaka_iida_1800", "territoryKey": "territory_iida", "year": 1800, "amount": 2.0, "changeType": "維持", "changeDetail": "堀家2万石で安定" },
   { "key": "kokudaka_saga_1800", "territoryKey": "territory_saga", "year": 1800, "amount": 35.7, "changeType": "維持", "changeDetail": "鍋島家35万7千石で安定、幕末には洋式軍備を整備" },
   { "key": "kokudaka_sendai_1664", "territoryKey": "territory_sendai", "year": 1664, "amount": 62.0, "changeType": "維持", "changeDetail": "伊達綱宗隠居後も62万石を維持" },
-  { "key": "kokudaka_kumamoto_1632_hosokawa", "territoryKey": "territory_kumamoto", "year": 1632, "amount": 54.0, "changeType": "入封", "changeDetail": "加藤家改易後、細川忠利入封54万石" },
   { "key": "kokudaka_tosa_1690", "territoryKey": "territory_tosa", "year": 1690, "amount": 20.26, "changeType": "維持", "changeDetail": "山内家20万2千6百石、実高は倍以上とされる" },
   { "key": "kokudaka_hikone_1860", "territoryKey": "territory_hikone", "year": 1860, "amount": 35.0, "changeType": "維持", "changeDetail": "安政の大獄後も井伊家35万石を維持" },
   { "key": "kokudaka_aizu_1868", "territoryKey": "territory_aizu", "year": 1868, "amount": 23.0, "changeType": "改易", "changeDetail": "戊辰戦争により松平容保降伏、会津藩消滅" },
