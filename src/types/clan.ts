@@ -33,8 +33,14 @@ export type ClanTerritory = {
   territoryType: string;
 };
 
-/** 家の石高推移データポイント */
-export type ClanKokudakaPoint = {
+/** 家の石高推移（年別合計） */
+export type ClanKokudakaSummary = {
+  year: number;
+  totalAmount: number;
+};
+
+/** 家の石高推移（領地別明細） */
+export type ClanKokudakaDetail = {
   year: number;
   amount: number;
   territoryName: string;
@@ -44,5 +50,6 @@ export type ClanKokudakaPoint = {
 export type ClanKokudakaResponse = {
   clanId: number;
   clanName: string;
-  data: ClanKokudakaPoint[];
+  summary: ClanKokudakaSummary[];
+  detail: ClanKokudakaDetail[];
 };

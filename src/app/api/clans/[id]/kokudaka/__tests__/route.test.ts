@@ -51,10 +51,13 @@ describe("GET /api/clans/[id]/kokudaka", () => {
     expect(res.status).toBe(200);
     expect(json.clanId).toBe(1);
     expect(json.clanName).toBe("前田");
-    expect(json.data).toHaveLength(2);
-    expect(json.data[0].year).toBe(1600);
-    expect(json.data[0].amount).toBe(102.5);
-    expect(json.data[0].territoryName).toBe("加賀藩");
+    // summary: 年ごとの合計
+    expect(json.summary).toHaveLength(2);
+    expect(json.summary[0].year).toBe(1600);
+    expect(json.summary[0].totalAmount).toBe(102.5);
+    // detail: 個別データ
+    expect(json.detail).toHaveLength(2);
+    expect(json.detail[0].territoryName).toBe("加賀藩");
   });
 
   it("存在しない家で404を返す", async () => {
@@ -73,6 +76,43 @@ describe("GET /api/clans/[id]/kokudaka", () => {
     expect(res.status).toBe(400);
   });
 
+  it("複数領地の同年石高を合算してtotalに含める", async () => {
+    mockClanFindUnique.mockResolvedValue({ id: 3, name: "松平" });
+    mockAppointmentFindMany.mockResolvedValue([{ territoryId: 20 }, { territoryId: 30 }]);
+    mockKokudakaFindMany.mockResolvedValue([
+      {
+        year: 1639,
+        amount: { toNumber: () => 6.0 },
+        territory: { name: "川越藩" },
+      },
+      {
+        year: 1639,
+        amount: { toNumber: () => 5.0 },
+        territory: { name: "忍藩" },
+      },
+      {
+        year: 1840,
+        amount: { toNumber: () => 17.0 },
+        territory: { name: "川越藩" },
+      },
+    ]);
+
+    const res = await GET(createRequest("3"), {
+      params: Promise.resolve({ id: "3" }),
+    });
+    const json = await res.json();
+
+    // summaryは年ごとに合算
+    expect(json.summary).toHaveLength(2);
+    expect(json.summary[0].year).toBe(1639);
+    expect(json.summary[0].totalAmount).toBe(11.0); // 6 + 5
+    expect(json.summary[1].year).toBe(1840);
+    expect(json.summary[1].totalAmount).toBe(17.0);
+
+    // detailは個別データ
+    expect(json.detail).toHaveLength(3);
+  });
+
   it("藩主としての領地がない家は空配列を返す", async () => {
     mockClanFindUnique.mockResolvedValue({ id: 2, name: "徳川" });
     mockAppointmentFindMany.mockResolvedValue([]);
@@ -82,6 +122,7 @@ describe("GET /api/clans/[id]/kokudaka", () => {
     });
     const json = await res.json();
 
-    expect(json.data).toHaveLength(0);
+    expect(json.summary).toHaveLength(0);
+    expect(json.detail).toHaveLength(0);
   });
 });

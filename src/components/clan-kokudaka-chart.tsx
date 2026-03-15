@@ -29,7 +29,7 @@ export function ClanKokudakaChart({ clanId }: ClanKokudakaChartProps) {
   );
 
   if (isLoading) return null;
-  if (error || !data || data.data.length === 0) return null;
+  if (error || !data || data.summary.length === 0) return null;
 
   return (
     <section>
@@ -37,20 +37,20 @@ export function ClanKokudakaChart({ clanId }: ClanKokudakaChartProps) {
         石高推移
       </h3>
 
-      {/* グラフ */}
+      {/* グラフ（年別合計） */}
       <div className="mb-4 rounded-lg border border-[var(--color-gold)]/20 bg-white p-4">
         <ResponsiveContainer width="100%" height={300}>
-          <LineChart data={data.data}>
+          <LineChart data={data.summary}>
             <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
             <XAxis dataKey="year" tick={{ fontSize: 12 }} tickFormatter={(v) => `${v}`} />
             <YAxis tick={{ fontSize: 12 }} tickFormatter={(v) => `${v}万石`} />
             <Tooltip
-              formatter={(value: number) => [`${value}万石`, "石高"]}
+              formatter={(value: number) => [`${value}万石`, "合計石高"]}
               labelFormatter={(label) => `${label}年`}
             />
             <Line
               type="monotone"
-              dataKey="amount"
+              dataKey="totalAmount"
               stroke="#C9A96E"
               strokeWidth={2}
               dot={{ fill: "#1B2A4A", r: 4 }}
@@ -60,9 +60,9 @@ export function ClanKokudakaChart({ clanId }: ClanKokudakaChartProps) {
         </ResponsiveContainer>
       </div>
 
-      {/* データテーブル */}
+      {/* データテーブル（領地別明細） */}
       <div className="space-y-2">
-        {data.data.map((point) => (
+        {data.detail.map((point) => (
           <div
             key={`${point.year}-${point.territoryName}`}
             className="flex items-center justify-between rounded-lg border border-[var(--color-gold)]/20 bg-white p-3"

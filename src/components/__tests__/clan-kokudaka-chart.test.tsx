@@ -8,7 +8,11 @@ import { ClanKokudakaChart } from "@/components/clan-kokudaka-chart";
 const mockData = {
   clanId: 1,
   clanName: "前田",
-  data: [
+  summary: [
+    { year: 1600, totalAmount: 102.5 },
+    { year: 1700, totalAmount: 102.5 },
+  ],
+  detail: [
     { year: 1600, amount: 102.5, territoryName: "加賀藩" },
     { year: 1700, amount: 102.5, territoryName: "加賀藩" },
   ],
@@ -17,7 +21,8 @@ const mockData = {
 const mockEmpty = {
   clanId: 2,
   clanName: "徳川",
-  data: [],
+  summary: [],
+  detail: [],
 };
 
 const server = setupServer(
@@ -46,7 +51,7 @@ describe("ClanKokudakaChart", () => {
     });
   });
 
-  it("石高データポイントの年と値を表示する", async () => {
+  it("領地別明細の年と値を表示する", async () => {
     render(
       <SWRTestProvider>
         <ClanKokudakaChart clanId={1} />
@@ -60,6 +65,7 @@ describe("ClanKokudakaChart", () => {
     expect(screen.getByText("1600年")).toBeInTheDocument();
     expect(screen.getByText("1700年")).toBeInTheDocument();
     expect(screen.getAllByText("102.5万石")).toHaveLength(2);
+    expect(screen.getAllByText("加賀藩")).toHaveLength(2);
   });
 
   it("石高データがない場合はセクション非表示", async () => {
@@ -69,7 +75,6 @@ describe("ClanKokudakaChart", () => {
       </SWRTestProvider>
     );
 
-    // 空データの場合、レンダリング完了後もセクションが出ないことを確認
     await new Promise((r) => setTimeout(r, 100));
     expect(screen.queryByText("石高推移")).not.toBeInTheDocument();
   });
