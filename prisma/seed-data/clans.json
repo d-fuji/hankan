@@ -96,5 +96,6 @@
   {"key":"clan_akizuki","name":"秋月","nameKana":"あきづき","nameRomaji":"Akizuki","crestName":"撫子"},
   {"key":"clan_okabe","name":"岡部","nameKana":"おかべ","nameRomaji":"Okabe","crestName":"三つ盛亀甲に花菱"},
   {"key":"clan_wakisaka","name":"脇坂","nameKana":"わきさか","nameRomaji":"Wakisaka","crestName":"輪違い"},
-  {"key":"clan_matsumae","name":"松前","nameKana":"まつまえ","nameRomaji":"Matsumae","crestName":"丸に武田菱"}
+  {"key":"clan_matsumae","name":"松前","nameKana":"まつまえ","nameRomaji":"Matsumae","crestName":"丸に武田菱"},
+  {"key":"clan_hori","name":"堀","nameKana":"ほり","nameRomaji":"Hori","crestName":"丸に片喰"}
 ]

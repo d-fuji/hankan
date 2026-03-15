@@ -97,5 +97,6 @@
   {"key":"territory_takanabe","name":"高鍋藩","nameKana":"たかなべはん","nameRomaji":"Takanabe-han","territoryType":"藩","provinceKey":"province_hyuga","modernPrefecture":"宮崎県","modernCity":"高鍋町","location":"高鍋城","establishedYear":1587},
   {"key":"territory_kishiwada","name":"岸和田藩","nameKana":"きしわだはん","nameRomaji":"Kishiwada-han","territoryType":"藩","provinceKey":"province_izumi","modernPrefecture":"大阪府","modernCity":"岸和田市","location":"岸和田城","establishedYear":1640},
   {"key":"territory_tatsuno","name":"龍野藩","nameKana":"たつのはん","nameRomaji":"Tatsuno-han","territoryType":"藩","provinceKey":"province_harima","modernPrefecture":"兵庫県","modernCity":"たつの市","location":"龍野城","establishedYear":1672},
-  {"key":"territory_matsumae","name":"松前藩","nameKana":"まつまえはん","nameRomaji":"Matsumae-han","territoryType":"藩","provinceKey":"province_ezo","modernPrefecture":"北海道","modernCity":"松前町","location":"福山城","establishedYear":1600}
+  {"key":"territory_matsumae","name":"松前藩","nameKana":"まつまえはん","nameRomaji":"Matsumae-han","territoryType":"藩","provinceKey":"province_ezo","modernPrefecture":"北海道","modernCity":"松前町","location":"福山城","establishedYear":1600},
+  {"key":"territory_iida","name":"飯田藩","nameKana":"いいだはん","nameRomaji":"Iida-han","territoryType":"藩","provinceKey":"province_shinano","modernPrefecture":"長野県","modernCity":"飯田市","location":"飯田城","establishedYear":1672}
 ]
