@@ -86,5 +86,12 @@
   { "key": "kokudaka_sakura_1746", "territoryKey": "territory_sakura", "year": 1746, "amount": 11.0, "changeType": "入封", "changeDetail": "堀田正亮入封、堀田家復帰11万石" },
 
   { "key": "kokudaka_shonai_1622", "territoryKey": "territory_shonai", "year": 1622, "amount": 14.0, "changeType": "立藩", "changeDetail": "酒井忠勝入封、出羽国14万石" },
-  { "key": "kokudaka_shonai_1700", "territoryKey": "territory_shonai", "year": 1700, "amount": 14.0, "changeType": "維持", "changeDetail": "酒井家14万石で安定" }
+  { "key": "kokudaka_shonai_1700", "territoryKey": "territory_shonai", "year": 1700, "amount": 14.0, "changeType": "維持", "changeDetail": "酒井家14万石で安定" },
+
+  { "key": "kokudaka_choshu_1700", "territoryKey": "territory_choshu", "year": 1700, "amount": 36.9, "changeType": "維持", "changeDetail": "毛利家36万9千石で安定、実高は倍以上とされる" },
+  { "key": "kokudaka_fukuoka_1700", "territoryKey": "territory_fukuoka", "year": 1700, "amount": 47.3, "changeType": "減封", "changeDetail": "分知により47万3千石" },
+  { "key": "kokudaka_kumamoto_1600", "territoryKey": "territory_kumamoto", "year": 1600, "amount": 52.0, "changeType": "立藩", "changeDetail": "加藤清正入封、肥後国52万石" },
+  { "key": "kokudaka_kumamoto_1800", "territoryKey": "territory_kumamoto", "year": 1800, "amount": 54.0, "changeType": "維持", "changeDetail": "細川家54万石で安定" },
+  { "key": "kokudaka_hiroshima_1600", "territoryKey": "territory_hiroshima", "year": 1600, "amount": 49.8, "changeType": "立藩", "changeDetail": "福島正則入封、安芸・備後49万8千石" },
+  { "key": "kokudaka_hiroshima_1800", "territoryKey": "territory_hiroshima", "year": 1800, "amount": 42.6, "changeType": "維持", "changeDetail": "浅野家42万6千石で安定" }
 ]
