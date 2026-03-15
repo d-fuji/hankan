@@ -173,5 +173,59 @@
   { "key": "kokudaka_tsushima_1587", "territoryKey": "territory_tsushima", "year": 1587, "amount": 10.0, "changeType": "立藩", "changeDetail": "宗義智入封、対馬国10万石格（実高は約1万石）" },
   { "key": "kokudaka_tsushima_1800", "territoryKey": "territory_tsushima", "year": 1800, "amount": 10.0, "changeType": "維持", "changeDetail": "宗家10万石格で安定、朝鮮貿易による実収入は大" },
   { "key": "kokudaka_iwakuni_1600", "territoryKey": "territory_iwakuni", "year": 1600, "amount": 6.0, "changeType": "立藩", "changeDetail": "吉川広家入封、周防国6万石" },
-  { "key": "kokudaka_iwakuni_1800", "territoryKey": "territory_iwakuni", "year": 1800, "amount": 6.0, "changeType": "維持", "changeDetail": "吉川家6万石で安定、長州藩の支藩的性格" }
+  { "key": "kokudaka_iwakuni_1800", "territoryKey": "territory_iwakuni", "year": 1800, "amount": 6.0, "changeType": "維持", "changeDetail": "吉川家6万石で安定、長州藩の支藩的性格" },
+
+  { "key": "kokudaka_kakegawa_1746", "territoryKey": "territory_kakegawa", "year": 1746, "amount": 5.0, "changeType": "入封", "changeDetail": "太田資俊入封、遠江国5万石" },
+  { "key": "kokudaka_kakegawa_1800", "territoryKey": "territory_kakegawa", "year": 1800, "amount": 5.0, "changeType": "維持", "changeDetail": "太田家5万石で安定" },
+
+  { "key": "kokudaka_hamamatsu_1601", "territoryKey": "territory_hamamatsu", "year": 1601, "amount": 6.0, "changeType": "立藩", "changeDetail": "井上正就入封、遠江国6万石" },
+  { "key": "kokudaka_hamamatsu_1700", "territoryKey": "territory_hamamatsu", "year": 1700, "amount": 6.0, "changeType": "維持", "changeDetail": "譜代大名の要衝として6万石を維持" },
+
+  { "key": "kokudaka_numazu_1777", "territoryKey": "territory_numazu", "year": 1777, "amount": 5.0, "changeType": "立藩", "changeDetail": "水野忠友入封、駿河国5万石" },
+  { "key": "kokudaka_numazu_1800", "territoryKey": "territory_numazu", "year": 1800, "amount": 5.0, "changeType": "維持", "changeDetail": "水野家5万石で安定" },
+
+  { "key": "kokudaka_kofu_1704", "territoryKey": "territory_kofu", "year": 1704, "amount": 15.0, "changeType": "入封", "changeDetail": "柳沢吉保入封、甲斐国15万石" },
+  { "key": "kokudaka_kofu_1724", "territoryKey": "territory_kofu", "year": 1724, "amount": 15.0, "changeType": "転封", "changeDetail": "柳沢吉里大和郡山へ転封、以後天領化" },
+
+  { "key": "kokudaka_takasaki_1748", "territoryKey": "territory_takasaki", "year": 1748, "amount": 8.2, "changeType": "入封", "changeDetail": "安藤重秋入封、上野国8万2千石" },
+  { "key": "kokudaka_takasaki_1800", "territoryKey": "territory_takasaki", "year": 1800, "amount": 8.2, "changeType": "維持", "changeDetail": "安藤家8万2千石で安定" },
+
+  { "key": "kokudaka_maebashi_1601", "territoryKey": "territory_maebashi", "year": 1601, "amount": 15.0, "changeType": "立藩", "changeDetail": "酒井重忠入封、上野国15万石" },
+  { "key": "kokudaka_maebashi_1749", "territoryKey": "territory_maebashi", "year": 1749, "amount": 15.0, "changeType": "入封", "changeDetail": "松平朝矩入封、15万石で幕末まで" },
+
+  { "key": "kokudaka_tatebayashi_1712", "territoryKey": "territory_tatebayashi", "year": 1712, "amount": 11.0, "changeType": "入封", "changeDetail": "秋元喬知入封、上野国11万石（一時天領含む）" },
+  { "key": "kokudaka_tatebayashi_1800", "territoryKey": "territory_tatebayashi", "year": 1800, "amount": 6.0, "changeType": "維持", "changeDetail": "秋元家6万石で安定" },
+
+  { "key": "kokudaka_utsunomiya_1774", "territoryKey": "territory_utsunomiya", "year": 1774, "amount": 7.7, "changeType": "入封", "changeDetail": "戸田忠真入封、下野国7万7千石" },
+  { "key": "kokudaka_utsunomiya_1800", "territoryKey": "territory_utsunomiya", "year": 1800, "amount": 7.7, "changeType": "維持", "changeDetail": "戸田家7万7千石で安定" },
+
+  { "key": "kokudaka_koriyama_1724", "territoryKey": "territory_koriyama", "year": 1724, "amount": 15.0, "changeType": "入封", "changeDetail": "柳沢吉里甲府より転封、大和国15万石" },
+  { "key": "kokudaka_koriyama_1800", "territoryKey": "territory_koriyama", "year": 1800, "amount": 15.0, "changeType": "維持", "changeDetail": "柳沢家15万石で安定" },
+
+  { "key": "kokudaka_sasayama_1748", "territoryKey": "territory_sasayama", "year": 1748, "amount": 5.0, "changeType": "入封", "changeDetail": "青山忠朗入封、丹波国5万石" },
+  { "key": "kokudaka_sasayama_1800", "territoryKey": "territory_sasayama", "year": 1800, "amount": 5.0, "changeType": "維持", "changeDetail": "青山家5万石で安定" },
+
+  { "key": "kokudaka_bicchu_matsuyama_1744", "territoryKey": "territory_bicchu_matsuyama", "year": 1744, "amount": 5.0, "changeType": "入封", "changeDetail": "板倉勝職入封、備中国5万石" },
+  { "key": "kokudaka_bicchu_matsuyama_1800", "territoryKey": "territory_bicchu_matsuyama", "year": 1800, "amount": 5.0, "changeType": "維持", "changeDetail": "板倉家5万石で安定、老中板倉勝静を輩出" },
+
+  { "key": "kokudaka_tsuyama_1603", "territoryKey": "territory_tsuyama", "year": 1603, "amount": 18.6, "changeType": "立藩", "changeDetail": "森忠政入封、美作国18万6千石" },
+  { "key": "kokudaka_tsuyama_1726", "territoryKey": "territory_tsuyama", "year": 1726, "amount": 10.0, "changeType": "入封", "changeDetail": "松平宣富入封、10万石" },
+
+  { "key": "kokudaka_imabari_1635", "territoryKey": "territory_imabari", "year": 1635, "amount": 3.5, "changeType": "入封", "changeDetail": "松平定房入封、伊予国3万5千石" },
+  { "key": "kokudaka_imabari_1800", "territoryKey": "territory_imabari", "year": 1800, "amount": 3.5, "changeType": "維持", "changeDetail": "久松松平家3万5千石で安定" },
+
+  { "key": "kokudaka_ozu_1617", "territoryKey": "territory_ozu", "year": 1617, "amount": 6.0, "changeType": "立藩", "changeDetail": "加藤貞泰入封、伊予国6万石" },
+  { "key": "kokudaka_ozu_1800", "territoryKey": "territory_ozu", "year": 1800, "amount": 6.0, "changeType": "維持", "changeDetail": "加藤家6万石で安定" },
+
+  { "key": "kokudaka_shibata_1598", "territoryKey": "territory_shibata", "year": 1598, "amount": 6.0, "changeType": "立藩", "changeDetail": "溝口秀勝入封、越後国6万石" },
+  { "key": "kokudaka_shibata_1700", "territoryKey": "territory_shibata", "year": 1700, "amount": 5.0, "changeType": "維持", "changeDetail": "溝口家5万石で安定" },
+
+  { "key": "kokudaka_soma_1600", "territoryKey": "territory_soma", "year": 1600, "amount": 6.0, "changeType": "立藩", "changeDetail": "相馬義胤、陸奥国6万石" },
+  { "key": "kokudaka_soma_1800", "territoryKey": "territory_soma", "year": 1800, "amount": 6.0, "changeType": "維持", "changeDetail": "相馬家6万石で安定" },
+
+  { "key": "kokudaka_iwaki_taira_1622", "territoryKey": "territory_iwaki_taira", "year": 1622, "amount": 7.0, "changeType": "入封", "changeDetail": "内藤政長入封、陸奥国7万石" },
+  { "key": "kokudaka_iwaki_taira_1800", "territoryKey": "territory_iwaki_taira", "year": 1800, "amount": 7.0, "changeType": "維持", "changeDetail": "安藤家7万石で安定" },
+
+  { "key": "kokudaka_ise_kameyama_1636", "territoryKey": "territory_ise_kameyama", "year": 1636, "amount": 6.0, "changeType": "立藩", "changeDetail": "石川家成入封、伊勢国6万石" },
+  { "key": "kokudaka_ise_kameyama_1800", "territoryKey": "territory_ise_kameyama", "year": 1800, "amount": 6.0, "changeType": "維持", "changeDetail": "石川家6万石で安定" }
 ]
