@@ -281,5 +281,12 @@
   { "key": "kokudaka_matsumae_1800", "territoryKey": "territory_matsumae", "year": 1800, "amount": 1.0, "changeType": "維持", "changeDetail": "松前家1万石格で安定、米の収穫なく交易による収入" },
 
   { "key": "kokudaka_iida_1672", "territoryKey": "territory_iida", "year": 1672, "amount": 2.0, "changeType": "立藩", "changeDetail": "堀親昌入封、信濃国飯田2万石" },
-  { "key": "kokudaka_iida_1800", "territoryKey": "territory_iida", "year": 1800, "amount": 2.0, "changeType": "維持", "changeDetail": "堀家2万石で安定" }
+  { "key": "kokudaka_iida_1800", "territoryKey": "territory_iida", "year": 1800, "amount": 2.0, "changeType": "維持", "changeDetail": "堀家2万石で安定" },
+  { "key": "kokudaka_saga_1800", "territoryKey": "territory_saga", "year": 1800, "amount": 35.7, "changeType": "維持", "changeDetail": "鍋島家35万7千石で安定、幕末には洋式軍備を整備" },
+  { "key": "kokudaka_sendai_1664", "territoryKey": "territory_sendai", "year": 1664, "amount": 62.0, "changeType": "維持", "changeDetail": "伊達綱宗隠居後も62万石を維持" },
+  { "key": "kokudaka_kumamoto_1632_hosokawa", "territoryKey": "territory_kumamoto", "year": 1632, "amount": 54.0, "changeType": "入封", "changeDetail": "加藤家改易後、細川忠利入封54万石" },
+  { "key": "kokudaka_tosa_1690", "territoryKey": "territory_tosa", "year": 1690, "amount": 20.26, "changeType": "維持", "changeDetail": "山内家20万2千6百石、実高は倍以上とされる" },
+  { "key": "kokudaka_hikone_1860", "territoryKey": "territory_hikone", "year": 1860, "amount": 35.0, "changeType": "維持", "changeDetail": "安政の大獄後も井伊家35万石を維持" },
+  { "key": "kokudaka_aizu_1868", "territoryKey": "territory_aizu", "year": 1868, "amount": 23.0, "changeType": "改易", "changeDetail": "戊辰戦争により松平容保降伏、会津藩消滅" },
+  { "key": "kokudaka_yonezawa_1767", "territoryKey": "territory_yonezawa", "year": 1767, "amount": 15.0, "changeType": "維持", "changeDetail": "上杉鷹山藩政改革開始、実収入の大幅増を実現" }
 ]
