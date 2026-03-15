@@ -1,0 +1,15 @@
+[
+  { "key": "appt_tokugawa_ieyasu_shogun", "personKey": "person_tokugawa_ieyasu", "roleType": "征夷大将軍", "generation": 1, "startYear": 1603, "endYear": 1605 },
+  { "key": "appt_tokugawa_hidetada_shogun", "personKey": "person_tokugawa_hidetada", "roleType": "征夷大将軍", "generation": 2, "startYear": 1605, "endYear": 1623 },
+  { "key": "appt_tokugawa_iemitsu_shogun", "personKey": "person_tokugawa_iemitsu", "roleType": "征夷大将軍", "generation": 3, "startYear": 1623, "endYear": 1651 },
+  { "key": "appt_tokugawa_yoshimune_shogun", "personKey": "person_tokugawa_yoshimune", "roleType": "征夷大将軍", "generation": 8, "startYear": 1716, "endYear": 1745 },
+  { "key": "appt_tokugawa_yoshinobu_shogun", "personKey": "person_tokugawa_yoshinobu", "roleType": "征夷大将軍", "generation": 15, "startYear": 1867, "endYear": 1868 },
+
+  { "key": "appt_maeda_toshiie_kaga", "personKey": "person_maeda_toshiie", "roleType": "藩主", "territoryKey": "territory_kaga", "generation": 1, "startYear": 1583, "endYear": 1599 },
+  { "key": "appt_maeda_toshinaga_kaga", "personKey": "person_maeda_toshinaga", "roleType": "藩主", "territoryKey": "territory_kaga", "generation": 2, "startYear": 1599, "endYear": 1614 },
+  { "key": "appt_shimazu_iehisa_satsuma", "personKey": "person_shimazu_iehisa", "roleType": "藩主", "territoryKey": "territory_satsuma", "generation": 1, "startYear": 1601, "endYear": 1638 },
+  { "key": "appt_date_masamune_sendai", "personKey": "person_date_masamune", "roleType": "藩主", "territoryKey": "territory_sendai", "generation": 1, "startYear": 1601, "endYear": 1636 },
+  { "key": "appt_mori_terumoto_choshu", "personKey": "person_mori_terumoto", "roleType": "藩主", "territoryKey": "territory_choshu", "generation": 1, "startYear": 1600, "endYear": 1625 },
+  { "key": "appt_kuroda_nagamasa_fukuoka", "personKey": "person_kuroda_nagamasa", "roleType": "藩主", "territoryKey": "territory_fukuoka", "generation": 1, "startYear": 1600, "endYear": 1623 },
+  { "key": "appt_yamauchi_kazutoyo_tosa", "personKey": "person_yamauchi_kazutoyo", "roleType": "藩主", "territoryKey": "territory_tosa", "generation": 1, "startYear": 1601, "endYear": 1605 }
+]

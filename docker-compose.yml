@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:17
+    container_name: hankan-db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: hankan
+      POSTGRES_PASSWORD: hankan
+      POSTGRES_DB: hankan
+    volumes:
+      - hankan-data:/var/lib/postgresql/data
+
+volumes:
+  hankan-data:

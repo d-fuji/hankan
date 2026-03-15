@@ -1,0 +1,167 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ========================================
+// 旧国マスタ (Province)
+// ========================================
+model Province {
+  id               Int    @id @default(autoincrement()) @map("province_id")
+  key              String @unique // seed用安定キー（例: province_settsu）
+  name             String // 旧国名（例: 摂津）
+  nameKana         String @map("name_kana") // 読み仮名
+  nameRomaji       String @map("name_romaji") // ローマ字表記
+  modernPrefecture String @map("modern_prefecture") // 現代の主たる都道府県
+  region           String // 五畿七道の地域区分
+
+  territories Territory[]
+
+  @@map("provinces")
+}
+
+// ========================================
+// 家 (Clan)
+// ========================================
+model Clan {
+  id         Int     @id @default(autoincrement()) @map("clan_id")
+  key        String  @unique // seed用安定キー（例: clan_tokugawa）
+  name       String // 家名（例: 徳川）
+  nameKana   String  @map("name_kana")
+  nameRomaji String  @map("name_romaji")
+  crestName  String? @map("crest_name") // 家紋名
+  crestImage String? @map("crest_image") // 家紋画像URL
+
+  members     Person[] @relation("ClanMembers")
+  adoptedFrom Person[] @relation("AdoptedFromClan")
+
+  @@map("clans")
+}
+
+// ========================================
+// 人物 (Person)
+// ========================================
+model Person {
+  id                Int     @id @default(autoincrement()) @map("person_id")
+  key               String  @unique // seed用安定キー（例: person_tokugawa_ieyasu）
+  name              String // 人物名（例: 徳川吉宗）
+  nameKana          String  @map("name_kana")
+  nameRomaji        String  @map("name_romaji")
+  imina             String? // 諱
+  commonName        String? @map("common_name") // 通称
+  clanId            Int     @map("clan_id")
+  fatherId          Int?    @map("father_id")
+  motherName        String? @map("mother_name")
+  birthOrder        Int?    @map("birth_order")
+  birthOrderType    String? @map("birth_order_type") // 男/女
+  isAdopted         Boolean @default(false) @map("is_adopted")
+  adoptedFromClanId Int?    @map("adopted_from_clan_id")
+
+  clan            Clan          @relation("ClanMembers", fields: [clanId], references: [id])
+  father          Person?       @relation("FatherChild", fields: [fatherId], references: [id])
+  children        Person[]      @relation("FatherChild")
+  adoptedFromClan Clan?         @relation("AdoptedFromClan", fields: [adoptedFromClanId], references: [id])
+  appointments    Appointment[]
+
+  @@map("persons")
+}
+
+// ========================================
+// 領地 (Territory)
+// ========================================
+model Territory {
+  id               Int     @id @default(autoincrement()) @map("territory_id")
+  key              String  @unique // seed用安定キー（例: territory_kaga）
+  name             String // 領地名（例: 加賀藩, 大坂）
+  nameKana         String  @map("name_kana")
+  nameRomaji       String  @map("name_romaji")
+  territoryType    String  @map("territory_type") // 藩/天領/旗本領
+  provinceId       Int     @map("province_id")
+  modernPrefecture String  @map("modern_prefecture")
+  modernCity       String? @map("modern_city")
+  location         String? // 城下町・陣屋所在地
+  establishedYear  Int     @map("established_year")
+  abolishedYear    Int?    @map("abolished_year")
+
+  province        Province      @relation(fields: [provinceId], references: [id])
+  appointments    Appointment[]
+  kokudakaHistory Kokudaka[]
+
+  @@map("territories")
+}
+
+// ========================================
+// 役職履歴 (Appointment)
+// ========================================
+model Appointment {
+  id          Int     @id @default(autoincrement()) @map("appointment_id")
+  key         String  @unique // seed用安定キー（例: appt_tokugawa_ieyasu_shogun）
+  personId    Int     @map("person_id")
+  roleType    String  @map("role_type") // 藩主/将軍/代官/奉行等
+  territoryId Int?    @map("territory_id")
+  generation  Int? // 第何代
+  startYear   Int     @map("start_year")
+  endYear     Int?    @map("end_year")
+
+  person          Person     @relation(fields: [personId], references: [id])
+  territory       Territory? @relation(fields: [territoryId], references: [id])
+  kokudakaRecords Kokudaka[]
+
+  @@map("appointments")
+}
+
+// ========================================
+// 石高履歴 (Kokudaka)
+// ========================================
+model Kokudaka {
+  id            Int     @id @default(autoincrement()) @map("kokudaka_id")
+  key           String  @unique // seed用安定キー（例: kokudaka_kaga_1600）
+  territoryId   Int     @map("territory_id")
+  year          Int
+  amount        Decimal @db.Decimal(10, 2) // 万石単位
+  changeType    String? @map("change_type") // 加増/減封/改易等
+  changeDetail  String? @map("change_detail")
+  appointmentId Int?    @map("appointment_id")
+
+  territory   Territory    @relation(fields: [territoryId], references: [id])
+  appointment Appointment? @relation(fields: [appointmentId], references: [id])
+
+  @@map("kokudaka")
+}
+
+// ========================================
+// 出典 (Source)
+// ========================================
+model Source {
+  id      Int     @id @default(autoincrement()) @map("source_id")
+  key     String  @unique // seed用安定キー（例: source_hanshi_daijiten）
+  title   String // 出典名
+  author  String?
+  pubYear Int?    @map("pub_year")
+  url     String?
+  note    String?
+
+  links SourceLink[]
+
+  @@map("sources")
+}
+
+// ========================================
+// 出典紐付け (SourceLink)
+// ========================================
+model SourceLink {
+  id             Int     @id @default(autoincrement()) @map("link_id")
+  sourceId       Int     @map("source_id")
+  targetTable    String  @map("target_table") // 対象テーブル名
+  targetRecordId Int     @map("target_record_id")
+  pageNumber     String? @map("page_number")
+  note           String?
+
+  source Source @relation(fields: [sourceId], references: [id])
+
+  @@map("source_links")
+}
