@@ -49,18 +49,18 @@ describe("GET /api/clans/[id]/kokudaka", () => {
   });
 
   it("他家が治めた時代の石高を除外する", async () => {
-    // 久松松平家: 松山藩を1635-1871に治めた
+    // 久松松平家: 白河藩を1783-1823に治めた（1823年に阿部家へ交代）
     mockClanFindUnique.mockResolvedValue({ id: 5, name: "久松松平" });
     mockAppointmentFindMany.mockResolvedValue([
-      { territoryId: 20, startYear: 1635, endYear: 1871 },
+      { territoryId: 20, startYear: 1783, endYear: 1823 },
     ]);
     mockKokudakaFindMany.mockResolvedValue([
-      // 1600年は本多家時代 → 除外されるべき
-      { year: 1600, amount: { toNumber: () => 10.0 }, territoryId: 20, territory: { name: "桑名藩" } },
-      // 1635年は久松松平家の入封 → 含まれるべき
-      { year: 1635, amount: { toNumber: () => 15.0 }, territoryId: 20, territory: { name: "松山藩" } },
-      // 1700年は久松松平家時代 → 含まれるべき
-      { year: 1700, amount: { toNumber: () => 15.0 }, territoryId: 20, territory: { name: "松山藩" } },
+      // 1627年は丹羽家時代 → 除外
+      { year: 1627, amount: { toNumber: () => 10.0 }, territoryId: 20, territory: { name: "白河藩" } },
+      // 1800年は久松松平家時代 → 含まれる
+      { year: 1800, amount: { toNumber: () => 11.0 }, territoryId: 20, territory: { name: "白河藩" } },
+      // 1823年は阿部家への交代年 → 除外（endYear未満でフィルタ）
+      { year: 1823, amount: { toNumber: () => 11.0 }, territoryId: 20, territory: { name: "白河藩" } },
     ]);
 
     const res = await GET(createRequest("5"), {
@@ -68,11 +68,9 @@ describe("GET /api/clans/[id]/kokudaka", () => {
     });
     const json = await res.json();
 
-    // 1600年の桑名藩データは除外される
-    expect(json.detail).toHaveLength(2);
-    expect(json.detail[0].year).toBe(1635);
-    expect(json.detail[1].year).toBe(1700);
-    expect(json.summary).toHaveLength(2);
+    expect(json.detail).toHaveLength(1);
+    expect(json.detail[0].year).toBe(1800);
+    expect(json.summary).toHaveLength(1);
   });
 
   it("複数領地の同年石高を合算する", async () => {

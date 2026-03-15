@@ -64,10 +64,11 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
   });
 
   // 家が治めていた期間内の石高のみフィルタ
+  // endYearは退任年（=次の藩主の就任年）なので、endYear未満でフィルタ
   const filtered = kokudakaRows.filter((row) => {
     const period = territoryPeriods.get(row.territoryId);
     if (!period) return false;
-    return row.year >= period.minStart && row.year <= period.maxEnd;
+    return row.year >= period.minStart && row.year < period.maxEnd;
   });
 
   // detail: 領地別の個別データ
