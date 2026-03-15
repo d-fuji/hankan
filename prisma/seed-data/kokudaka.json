@@ -93,5 +93,9 @@
   { "key": "kokudaka_kumamoto_1600", "territoryKey": "territory_kumamoto", "year": 1600, "amount": 52.0, "changeType": "立藩", "changeDetail": "加藤清正入封、肥後国52万石" },
   { "key": "kokudaka_kumamoto_1800", "territoryKey": "territory_kumamoto", "year": 1800, "amount": 54.0, "changeType": "維持", "changeDetail": "細川家54万石で安定" },
   { "key": "kokudaka_hiroshima_1600", "territoryKey": "territory_hiroshima", "year": 1600, "amount": 49.8, "changeType": "立藩", "changeDetail": "福島正則入封、安芸・備後49万8千石" },
-  { "key": "kokudaka_hiroshima_1800", "territoryKey": "territory_hiroshima", "year": 1800, "amount": 42.6, "changeType": "維持", "changeDetail": "浅野家42万6千石で安定" }
+  { "key": "kokudaka_hiroshima_1800", "territoryKey": "territory_hiroshima", "year": 1800, "amount": 42.6, "changeType": "維持", "changeDetail": "浅野家42万6千石で安定" },
+
+  { "key": "kokudaka_tosa_1700", "territoryKey": "territory_tosa", "year": 1700, "amount": 20.26, "changeType": "維持", "changeDetail": "山内家20万2千6百石で安定" },
+  { "key": "kokudaka_kishu_1700", "territoryKey": "territory_kishu", "year": 1700, "amount": 55.5, "changeType": "維持", "changeDetail": "紀伊徳川家55万5千石で安定、御三家筆頭格" },
+  { "key": "kokudaka_owari_1700", "territoryKey": "territory_owari", "year": 1700, "amount": 61.95, "changeType": "維持", "changeDetail": "尾張徳川家61万9千5百石で安定、御三家筆頭" }
 ]
