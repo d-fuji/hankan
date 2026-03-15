@@ -2,8 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import type { LineageNode } from "@/types/person";
 
-const ANCESTOR_DEPTH_LIMIT = 5;
-const DESCENDANT_DEPTH_LIMIT = 3;
+const ANCESTOR_DEPTH_LIMIT = 10;
+const DESCENDANT_DEPTH_LIMIT = 10;
 
 const personSelect = {
   id: true,
