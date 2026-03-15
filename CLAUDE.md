@@ -37,6 +37,9 @@ npm run db:generate      # Prisma Client 再生成
 npm run db:migrate       # マイグレーション作成・適用
 npm run db:seed          # シードデータ投入（upsert、冪等）
 npm run db:reset         # DB 初期化
+npm run db:prod:migrate  # 本番マイグレーション適用
+npm run db:prod:seed     # 本番シードデータ投入
+npm run db:prod:status   # 本番マイグレーション状態確認
 ```
 
 ## ディレクトリ構成
@@ -45,12 +48,18 @@ npm run db:reset         # DB 初期化
 src/
 ├── app/                  # ページ + API Routes
 │   ├── api/              # API エンドポイント
-│   └── territories/      # 領地ページ
+│   │   ├── clans/        # 家API
+│   │   ├── persons/      # 人物API（lineage含む）
+│   │   ├── territories/  # 領地API
+│   │   └── annual/       # 年代ビューAPI
+│   ├── clans/            # 家ページ
+│   ├── persons/          # 人物ページ
+│   ├── territories/      # 領地ページ
+│   ├── shoguns/          # 将軍一覧ページ
+│   └── annual/           # 年代ビューページ
 ├── components/           # UIコンポーネント
 │   └── ui/               # shadcn/ui
-├── lib/                  # ユーティリティ
-│   ├── prisma.ts         # Prisma インスタンス
-│   └── utils.ts          # shadcn cn()
+├── lib/                  # ユーティリティ・マッパー
 ├── types/                # 型定義
 └── generated/            # Prisma Client（gitignore済み）
 

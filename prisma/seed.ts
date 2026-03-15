@@ -3,7 +3,10 @@ import { PrismaPg } from "@prisma/adapter-pg";
 import { readFileSync } from "fs";
 import { join } from "path";
 
-const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL! });
+const url = new URL(process.env.DATABASE_URL!);
+url.searchParams.set("connect_timeout", "60");
+url.searchParams.set("statement_timeout", "60000");
+const adapter = new PrismaPg({ connectionString: url.toString() });
 const prisma = new PrismaClient({ adapter });
 
 function loadJson<T>(filename: string): T {

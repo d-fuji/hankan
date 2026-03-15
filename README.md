@@ -65,7 +65,21 @@ npm run db:generate      # Prisma Client 再生成
 npm run db:migrate       # マイグレーション作成・適用
 npm run db:seed          # シードデータ投入（upsert、冪等）
 npm run db:reset         # DB 初期化
+
+# 本番DB操作（Neon）— .env.production を参照
+npm run db:prod:migrate  # 本番マイグレーション適用
+npm run db:prod:seed     # 本番シードデータ投入
+npm run db:prod:status   # 本番マイグレーション状態確認
 ```
+
+## 環境変数
+
+| ファイル | 用途 |
+|---|---|
+| `.env` | ローカル開発（Docker PostgreSQL） |
+| `.env.production` | 本番DB操作（Neon） |
+
+Vercel デプロイ時は Vercel ダッシュボードの Environment Variables に `DATABASE_URL` を設定。
 
 ## ディレクトリ構成
 
