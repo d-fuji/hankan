@@ -18,38 +18,58 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
     return NextResponse.json({ error: "Not found" }, { status: 404 });
   }
 
-  // 家の人物が藩主として治めた領地IDを取得
-  const territories = await prisma.appointment.findMany({
+  // 家の人物が藩主として治めた領地と在任期間を取得
+  const appointments = await prisma.appointment.findMany({
     where: {
       person: { clanId: id },
       roleType: "藩主",
       territoryId: { not: null },
     },
-    select: { territoryId: true },
-    distinct: ["territoryId"],
+    select: { territoryId: true, startYear: true, endYear: true },
   });
 
-  const territoryIds = territories
-    .map((t) => t.territoryId)
-    .filter((tid): tid is number => tid !== null);
-
-  if (territoryIds.length === 0) {
+  if (appointments.length === 0) {
     return NextResponse.json({ clanId: clan.id, clanName: clan.name, summary: [], detail: [] });
   }
 
-  // それらの領地の石高履歴を取得
+  // 領地ごとに家が治めた期間を算出（最初の就任〜最後の退任）
+  const territoryPeriods = new Map<number, { minStart: number; maxEnd: number }>();
+  for (const a of appointments) {
+    if (!a.territoryId) continue;
+    const existing = territoryPeriods.get(a.territoryId);
+    const start = a.startYear;
+    const end = a.endYear ?? 9999;
+    if (!existing) {
+      territoryPeriods.set(a.territoryId, { minStart: start, maxEnd: end });
+    } else {
+      existing.minStart = Math.min(existing.minStart, start);
+      existing.maxEnd = Math.max(existing.maxEnd, end);
+    }
+  }
+
+  const territoryIds = [...territoryPeriods.keys()];
+
+  // 領地の石高履歴を取得
   const kokudakaRows = await prisma.kokudaka.findMany({
     where: { territoryId: { in: territoryIds } },
     select: {
       year: true,
       amount: true,
+      territoryId: true,
       territory: { select: { name: true } },
     },
     orderBy: { year: "asc" },
   });
 
+  // 家が治めていた期間内の石高のみフィルタ
+  const filtered = kokudakaRows.filter((row) => {
+    const period = territoryPeriods.get(row.territoryId);
+    if (!period) return false;
+    return row.year >= period.minStart && row.year <= period.maxEnd;
+  });
+
   // detail: 領地別の個別データ
-  const detail: ClanKokudakaDetail[] = kokudakaRows.map((row) => ({
+  const detail: ClanKokudakaDetail[] = filtered.map((row) => ({
     year: row.year,
     amount: row.amount.toNumber(),
     territoryName: row.territory.name,
@@ -57,7 +77,7 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
 
   // summary: 年ごとに石高を合算
   const yearMap = new Map<number, number>();
-  for (const row of kokudakaRows) {
+  for (const row of filtered) {
     const amount = row.amount.toNumber();
     yearMap.set(row.year, (yearMap.get(row.year) ?? 0) + amount);
   }

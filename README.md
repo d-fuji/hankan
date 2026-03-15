@@ -14,14 +14,14 @@
 
 ## 技術スタック
 
-| レイヤー | 技術 |
-|---|---|
+| レイヤー  | 技術                                       |
+| --------- | ------------------------------------------ |
 | Framework | Next.js 16 (App Router, TypeScript strict) |
-| UI | Tailwind CSS v4 + shadcn/ui v4 |
-| DB | PostgreSQL 17 (Docker local / Neon prod) |
-| ORM | Prisma 7 |
-| Test | Vitest + Testing Library + MSW |
-| Lint | ESLint 9 (flat config) + Prettier |
+| UI        | Tailwind CSS v4 + shadcn/ui v4             |
+| DB        | PostgreSQL 17 (Docker local / Neon prod)   |
+| ORM       | Prisma 7                                   |
+| Test      | Vitest + Testing Library + MSW             |
+| Lint      | ESLint 9 (flat config) + Prettier          |
 
 ## セットアップ
 
@@ -74,10 +74,10 @@ npm run db:prod:status   # 本番マイグレーション状態確認
 
 ## 環境変数
 
-| ファイル | 用途 |
-|---|---|
-| `.env` | ローカル開発（Docker PostgreSQL） |
-| `.env.production` | 本番DB操作（Neon） |
+| ファイル          | 用途                              |
+| ----------------- | --------------------------------- |
+| `.env`            | ローカル開発（Docker PostgreSQL） |
+| `.env.production` | 本番DB操作（Neon）                |
 
 Vercel デプロイ時は Vercel ダッシュボードの Environment Variables に `DATABASE_URL` を設定。
 

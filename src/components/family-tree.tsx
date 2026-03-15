@@ -64,11 +64,17 @@ function TreeNode({ node }: { node: LineageNode }) {
         {(node.isAdopted || birthOrderLabel) && (
           <div className="mt-1 text-xs text-[var(--color-ink)]/60">
             {birthOrderLabel && (
-              <span className="rounded bg-[var(--color-navy)]/10 px-1.5 py-0.5">{birthOrderLabel}</span>
+              <span className="rounded bg-[var(--color-navy)]/10 px-1.5 py-0.5">
+                {birthOrderLabel}
+              </span>
             )}
             {node.isAdopted && (
               <>
-                <span className={`rounded bg-amber-100 px-1.5 py-0.5 ${birthOrderLabel ? "ml-1" : ""}`}>養子</span>
+                <span
+                  className={`rounded bg-amber-100 px-1.5 py-0.5 ${birthOrderLabel ? "ml-1" : ""}`}
+                >
+                  養子
+                </span>
                 {node.adoptedFromClanName && (
                   <span className="ml-1">（{node.adoptedFromClanName}家より）</span>
                 )}

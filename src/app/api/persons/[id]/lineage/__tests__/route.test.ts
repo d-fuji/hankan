@@ -186,9 +186,7 @@ describe("GET /api/persons/[id]/lineage", () => {
   it("父なしの人物自身がルートになる", async () => {
     mockFindUnique.mockResolvedValueOnce({ ...focusPerson, fatherId: null });
 
-    mockFindMany
-      .mockResolvedValueOnce([child])
-      .mockResolvedValueOnce([]);
+    mockFindMany.mockResolvedValueOnce([child]).mockResolvedValueOnce([]);
 
     const res = await GET(createRequest("3"), {
       params: Promise.resolve({ id: "3" }),
