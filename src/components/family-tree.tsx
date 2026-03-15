@@ -14,7 +14,28 @@ type FamilyTreeProps = {
   personId: number;
 };
 
+const BIRTH_ORDER_LABELS: Record<number, string> = {
+  1: "長",
+  2: "次",
+  3: "三",
+  4: "四",
+  5: "五",
+  6: "六",
+  7: "七",
+  8: "八",
+  9: "九",
+  10: "十",
+};
+
+function formatBirthOrder(order?: number, type?: string): string | null {
+  if (!order || !type) return null;
+  const label = BIRTH_ORDER_LABELS[order] ?? String(order);
+  return `${label}${type}`;
+}
+
 function TreeNode({ node }: { node: LineageNode }) {
+  const birthOrderLabel = formatBirthOrder(node.birthOrder, node.birthOrderType);
+
   const nameContent = (
     <>
       <span className="font-medium">{node.name}</span>
@@ -40,11 +61,18 @@ function TreeNode({ node }: { node: LineageNode }) {
             {nameContent}
           </Link>
         )}
-        {node.isAdopted && (
+        {(node.isAdopted || birthOrderLabel) && (
           <div className="mt-1 text-xs text-[var(--color-ink)]/60">
-            <span className="rounded bg-amber-100 px-1.5 py-0.5">養子</span>
-            {node.adoptedFromClanName && (
-              <span className="ml-1">（{node.adoptedFromClanName}家より）</span>
+            {birthOrderLabel && (
+              <span className="rounded bg-[var(--color-navy)]/10 px-1.5 py-0.5">{birthOrderLabel}</span>
+            )}
+            {node.isAdopted && (
+              <>
+                <span className={`rounded bg-amber-100 px-1.5 py-0.5 ${birthOrderLabel ? "ml-1" : ""}`}>養子</span>
+                {node.adoptedFromClanName && (
+                  <span className="ml-1">（{node.adoptedFromClanName}家より）</span>
+                )}
+              </>
             )}
           </div>
         )}

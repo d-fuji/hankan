@@ -12,6 +12,8 @@ const personSelect = {
   fatherId: true,
   isAdopted: true,
   adoptedFromClan: { select: { name: true } },
+  birthOrder: true,
+  birthOrderType: true,
 };
 
 type PersonRow = {
@@ -21,6 +23,8 @@ type PersonRow = {
   fatherId: number | null;
   isAdopted: boolean;
   adoptedFromClan: { name: string } | null;
+  birthOrder: number | null;
+  birthOrderType: string | null;
 };
 
 /** 先祖を辿ってルート人物を見つける（最大 ANCESTOR_LIMIT 世代上） */
@@ -66,6 +70,8 @@ async function buildTree(
     clanName: person.clan.name,
     isAdopted: person.isAdopted,
     adoptedFromClanName: person.adoptedFromClan?.name,
+    birthOrder: person.birthOrder ?? undefined,
+    birthOrderType: person.birthOrderType ?? undefined,
     isFocusPerson: person.id === focusId,
     children,
   };

@@ -14,6 +14,7 @@ const mockLineage: LineageResponse = {
     clanName: "徳川",
     isAdopted: false,
     isFocusPerson: false,
+    roles: [],
     children: [
       {
         id: 2,
@@ -21,6 +22,9 @@ const mockLineage: LineageResponse = {
         clanName: "徳川",
         isAdopted: false,
         isFocusPerson: true,
+        birthOrder: 3,
+        birthOrderType: "男",
+        roles: [],
         children: [
           {
             id: 3,
@@ -28,6 +32,9 @@ const mockLineage: LineageResponse = {
             clanName: "徳川",
             isAdopted: false,
             isFocusPerson: false,
+            birthOrder: 2,
+            birthOrderType: "男",
+            roles: [],
             children: [],
           },
         ],
@@ -44,6 +51,7 @@ const mockLineageWithAdoption: LineageResponse = {
     clanName: "紀州徳川",
     isAdopted: false,
     isFocusPerson: false,
+    roles: [],
     children: [
       {
         id: 4,
@@ -51,7 +59,10 @@ const mockLineageWithAdoption: LineageResponse = {
         clanName: "徳川",
         isAdopted: true,
         adoptedFromClanName: "紀州徳川",
+        birthOrder: 4,
+        birthOrderType: "男",
         isFocusPerson: true,
+        roles: [],
         children: [],
       },
     ],
@@ -118,6 +129,23 @@ describe("FamilyTree", () => {
 
     expect(screen.getByText("養子")).toBeInTheDocument();
     expect(screen.getByText(/紀州徳川家より/)).toBeInTheDocument();
+  });
+
+  it("出生順が表示される", async () => {
+    render(
+      <SWRTestProvider>
+        <FamilyTree personId={2} />
+      </SWRTestProvider>
+    );
+
+    await waitFor(() => {
+      expect(screen.getByText("徳川秀忠")).toBeInTheDocument();
+    });
+
+    // 秀忠は三男
+    expect(screen.getByText("三男")).toBeInTheDocument();
+    // 家光は次男
+    expect(screen.getByText("次男")).toBeInTheDocument();
   });
 
   it("セクションタイトル「血統」が表示される", async () => {

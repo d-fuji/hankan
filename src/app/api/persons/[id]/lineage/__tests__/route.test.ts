@@ -35,6 +35,8 @@ const father = {
   fatherId: 1,
   isAdopted: false,
   adoptedFromClan: null,
+  birthOrder: 1,
+  birthOrderType: "男",
 };
 
 const focusPerson = {
@@ -44,6 +46,8 @@ const focusPerson = {
   fatherId: 2,
   isAdopted: false,
   adoptedFromClan: null,
+  birthOrder: 3,
+  birthOrderType: "男",
 };
 
 const child = {
@@ -112,6 +116,11 @@ describe("GET /api/persons/[id]/lineage", () => {
     expect(json.tree.children[0].name).toBe("父");
     expect(json.tree.children[0].children[0].name).toBe("本人");
     expect(json.tree.children[0].children[0].isFocusPerson).toBe(true);
+    // 出生順が含まれる
+    expect(json.tree.children[0].birthOrder).toBe(1);
+    expect(json.tree.children[0].birthOrderType).toBe("男");
+    expect(json.tree.children[0].children[0].birthOrder).toBe(3);
+    expect(json.tree.children[0].children[0].birthOrderType).toBe("男");
     expect(json.tree.children[0].children[0].children[0].name).toBe("子");
     expect(json.tree.children[0].children[0].children[0].children[0].name).toBe("孫");
   });

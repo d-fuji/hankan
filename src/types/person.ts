@@ -53,6 +53,8 @@ export type LineageNode = {
   clanName: string;
   isAdopted: boolean;
   adoptedFromClanName?: string;
+  birthOrder?: number;
+  birthOrderType?: string;
   isFocusPerson: boolean;
   children: LineageNode[];
 };
