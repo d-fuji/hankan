@@ -1,5 +1,6 @@
 import type { TerritorySummary, TerritoryDetail } from "@/types/territory";
-import type { Decimal } from "@/generated/prisma/client";
+import type { Prisma } from "@/generated/prisma/client";
+type Decimal = Prisma.Decimal;
 
 /** Prisma queryの戻り値型（一覧用） */
 export type TerritoryWithRelations = {
