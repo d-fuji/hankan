@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import useSWR from "swr";
 import type { TerritoryDetail as TerritoryDetailType } from "@/types/territory";
 
@@ -77,12 +78,13 @@ export function TerritoryDetail({ id }: TerritoryDetailProps) {
           </h3>
           <div className="space-y-2">
             {data.lords.map((lord) => (
-              <div
+              <Link
                 key={`${lord.id}-${lord.startYear}`}
-                className="flex items-center justify-between rounded-lg border border-[var(--color-gold)]/20 bg-white p-3"
+                href={`/persons/${lord.id}`}
+                className="flex items-center justify-between rounded-lg border border-[var(--color-gold)]/20 bg-white p-3 hover:shadow-sm"
               >
                 <div>
-                  <span className="font-medium">{lord.name}</span>
+                  <span className="font-medium text-[var(--color-navy)]">{lord.name}</span>
                   <span className="ml-2 text-sm text-[var(--color-ink)]/50">{lord.clanName}家</span>
                 </div>
                 <div className="text-sm text-[var(--color-ink)]/60">
@@ -95,7 +97,7 @@ export function TerritoryDetail({ id }: TerritoryDetailProps) {
                     {lord.startYear}–{lord.endYear ?? ""}
                   </span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </section>

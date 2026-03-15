@@ -91,6 +91,12 @@ describe("TerritoryDetail", () => {
     expect(screen.getByText("前田利長")).toBeInTheDocument();
     expect(screen.getByText("初代")).toBeInTheDocument();
     expect(screen.getByText("2代")).toBeInTheDocument();
+
+    // 藩主名が人物詳細へのリンクになっている
+    const toshiieLink = screen.getByText("前田利家").closest("a");
+    expect(toshiieLink).toHaveAttribute("href", "/persons/10");
+    const toshinagaLink = screen.getByText("前田利長").closest("a");
+    expect(toshinagaLink).toHaveAttribute("href", "/persons/11");
   });
 
   it("石高履歴を表示する", async () => {
