@@ -1,114 +1,28 @@
 [
-  {
-    "key": "kokudaka_kaga_1600",
-    "territoryKey": "territory_kaga",
-    "year": 1600,
-    "amount": 102.5,
-    "changeType": "立藩",
-    "changeDetail": "加賀・能登・越中三カ国"
-  },
-  {
-    "key": "kokudaka_satsuma_1601",
-    "territoryKey": "territory_satsuma",
-    "year": 1601,
-    "amount": 72.95,
-    "changeType": "立藩",
-    "changeDetail": "薩摩・大隅・日向三カ国"
-  },
-  {
-    "key": "kokudaka_sendai_1601",
-    "territoryKey": "territory_sendai",
-    "year": 1601,
-    "amount": 62.0,
-    "changeType": "立藩",
-    "changeDetail": "陸奥国"
-  },
-  {
-    "key": "kokudaka_choshu_1600",
-    "territoryKey": "territory_choshu",
-    "year": 1600,
-    "amount": 36.9,
-    "changeType": "減封",
-    "changeDetail": "関ヶ原敗戦により周防・長門二カ国に減封"
-  },
-  {
-    "key": "kokudaka_fukuoka_1600",
-    "territoryKey": "territory_fukuoka",
-    "year": 1600,
-    "amount": 52.3,
-    "changeType": "立藩",
-    "changeDetail": "筑前国"
-  },
-  {
-    "key": "kokudaka_kumamoto_1632",
-    "territoryKey": "territory_kumamoto",
-    "year": 1632,
-    "amount": 54.0,
-    "changeType": "入封",
-    "changeDetail": "細川家入封"
-  },
-  {
-    "key": "kokudaka_hiroshima_1619",
-    "territoryKey": "territory_hiroshima",
-    "year": 1619,
-    "amount": 42.6,
-    "changeType": "入封",
-    "changeDetail": "浅野家入封"
-  },
-  {
-    "key": "kokudaka_okayama_1632",
-    "territoryKey": "territory_okayama",
-    "year": 1632,
-    "amount": 31.5,
-    "changeType": "入封",
-    "changeDetail": "池田家入封"
-  },
-  {
-    "key": "kokudaka_saga_1607",
-    "territoryKey": "territory_saga",
-    "year": 1607,
-    "amount": 35.7,
-    "changeType": "立藩",
-    "changeDetail": "肥前国"
-  },
-  {
-    "key": "kokudaka_tosa_1601",
-    "territoryKey": "territory_tosa",
-    "year": 1601,
-    "amount": 20.26,
-    "changeType": "立藩",
-    "changeDetail": "土佐一国"
-  },
-  {
-    "key": "kokudaka_kishu_1619",
-    "territoryKey": "territory_kishu",
-    "year": 1619,
-    "amount": 55.5,
-    "changeType": "入封",
-    "changeDetail": "徳川頼宣入封"
-  },
-  {
-    "key": "kokudaka_mito_1609",
-    "territoryKey": "territory_mito",
-    "year": 1609,
-    "amount": 25.0,
-    "changeType": "立藩",
-    "changeDetail": "徳川頼房入封"
-  },
-  {
-    "key": "kokudaka_mito_1701",
-    "territoryKey": "territory_mito",
-    "year": 1701,
-    "amount": 35.0,
-    "changeType": "加増",
-    "changeDetail": "加増により35万石"
-  },
-  {
-    "key": "kokudaka_owari_1610",
-    "territoryKey": "territory_owari",
-    "year": 1610,
-    "amount": 61.95,
-    "changeType": "立藩",
-    "changeDetail": "徳川義直入封"
-  }
+  { "key": "kokudaka_kaga_1600", "territoryKey": "territory_kaga", "year": 1600, "amount": 102.5, "changeType": "立藩", "changeDetail": "加賀・能登・越中三カ国" },
+  { "key": "kokudaka_satsuma_1601", "territoryKey": "territory_satsuma", "year": 1601, "amount": 72.95, "changeType": "立藩", "changeDetail": "薩摩・大隅・日向三カ国" },
+  { "key": "kokudaka_sendai_1601", "territoryKey": "territory_sendai", "year": 1601, "amount": 62.0, "changeType": "立藩", "changeDetail": "陸奥国" },
+  { "key": "kokudaka_choshu_1600", "territoryKey": "territory_choshu", "year": 1600, "amount": 36.9, "changeType": "減封", "changeDetail": "関ヶ原敗戦により周防・長門二カ国に減封" },
+  { "key": "kokudaka_fukuoka_1600", "territoryKey": "territory_fukuoka", "year": 1600, "amount": 52.3, "changeType": "立藩", "changeDetail": "筑前国" },
+  { "key": "kokudaka_kumamoto_1632", "territoryKey": "territory_kumamoto", "year": 1632, "amount": 54.0, "changeType": "入封", "changeDetail": "細川家入封" },
+  { "key": "kokudaka_hiroshima_1619", "territoryKey": "territory_hiroshima", "year": 1619, "amount": 42.6, "changeType": "入封", "changeDetail": "浅野家入封" },
+  { "key": "kokudaka_okayama_1632", "territoryKey": "territory_okayama", "year": 1632, "amount": 31.5, "changeType": "入封", "changeDetail": "池田家入封" },
+  { "key": "kokudaka_saga_1607", "territoryKey": "territory_saga", "year": 1607, "amount": 35.7, "changeType": "立藩", "changeDetail": "肥前国" },
+  { "key": "kokudaka_tosa_1601", "territoryKey": "territory_tosa", "year": 1601, "amount": 20.26, "changeType": "立藩", "changeDetail": "土佐一国" },
+  { "key": "kokudaka_kishu_1619", "territoryKey": "territory_kishu", "year": 1619, "amount": 55.5, "changeType": "入封", "changeDetail": "徳川頼宣入封" },
+  { "key": "kokudaka_mito_1609", "territoryKey": "territory_mito", "year": 1609, "amount": 25.0, "changeType": "立藩", "changeDetail": "徳川頼房入封" },
+  { "key": "kokudaka_mito_1701", "territoryKey": "territory_mito", "year": 1701, "amount": 35.0, "changeType": "加増", "changeDetail": "加増により35万石" },
+  { "key": "kokudaka_owari_1610", "territoryKey": "territory_owari", "year": 1610, "amount": 61.95, "changeType": "立藩", "changeDetail": "徳川義直入封" },
+
+  { "key": "kokudaka_himeji_1600", "territoryKey": "territory_himeji", "year": 1600, "amount": 52.0, "changeType": "立藩", "changeDetail": "池田輝政入封、播磨一国52万石" },
+  { "key": "kokudaka_himeji_1617", "territoryKey": "territory_himeji", "year": 1617, "amount": 15.0, "changeType": "入封", "changeDetail": "本多忠政入封、15万石に減封" },
+  { "key": "kokudaka_himeji_1639", "territoryKey": "territory_himeji", "year": 1639, "amount": 18.0, "changeType": "入封", "changeDetail": "松平忠明入封、18万石に加増" },
+  { "key": "kokudaka_himeji_1648", "territoryKey": "territory_himeji", "year": 1648, "amount": 15.0, "changeType": "入封", "changeDetail": "松平直基入封、以降15万石で固定" },
+
+  { "key": "kokudaka_otaki_1590", "territoryKey": "territory_otaki", "year": 1590, "amount": 10.0, "changeType": "立藩", "changeDetail": "本多忠勝入封、上総国10万石" },
+  { "key": "kokudaka_otaki_1601", "territoryKey": "territory_otaki", "year": 1601, "amount": 5.0, "changeType": "減封", "changeDetail": "本多忠朝継承、忠勝桑名転封に伴い5万石" },
+  { "key": "kokudaka_otaki_1617", "territoryKey": "territory_otaki", "year": 1617, "amount": 3.0, "changeType": "入封", "changeDetail": "阿部正次入封、3万石" },
+  { "key": "kokudaka_otaki_1623", "territoryKey": "territory_otaki", "year": 1623, "amount": 2.0, "changeType": "入封", "changeDetail": "青山忠俊入封、2万石" },
+  { "key": "kokudaka_otaki_1638", "territoryKey": "territory_otaki", "year": 1638, "amount": 1.6, "changeType": "再立藩", "changeDetail": "阿部正能により再立藩、1万6千石" },
+  { "key": "kokudaka_otaki_1703", "territoryKey": "territory_otaki", "year": 1703, "amount": 2.0, "changeType": "入封", "changeDetail": "松平正久入封、以降2万石で固定" }
 ]
