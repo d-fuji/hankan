@@ -3,6 +3,7 @@ import Link from "next/link";
 const NAV_ITEMS = [
   { href: "/", label: "領地検索" },
   { href: "/annual/1700", label: "年代ビュー", matchPrefix: "/annual" },
+  { href: "/clans", label: "家一覧", matchPrefix: "/clans" },
   { href: "/shoguns", label: "将軍一覧" },
 ];
 

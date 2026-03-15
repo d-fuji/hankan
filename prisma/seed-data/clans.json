@@ -1,107 +1,26 @@
 [
-  {
-    "key": "clan_tokugawa",
-    "name": "徳川",
-    "nameKana": "とくがわ",
-    "nameRomaji": "Tokugawa",
-    "crestName": "三つ葉葵"
-  },
-  {
-    "key": "clan_maeda",
-    "name": "前田",
-    "nameKana": "まえだ",
-    "nameRomaji": "Maeda",
-    "crestName": "加賀梅鉢"
-  },
-  {
-    "key": "clan_shimazu",
-    "name": "島津",
-    "nameKana": "しまづ",
-    "nameRomaji": "Shimazu",
-    "crestName": "丸に十字"
-  },
-  {
-    "key": "clan_date",
-    "name": "伊達",
-    "nameKana": "だて",
-    "nameRomaji": "Date",
-    "crestName": "竹に雀"
-  },
-  {
-    "key": "clan_mori",
-    "name": "毛利",
-    "nameKana": "もうり",
-    "nameRomaji": "Mori",
-    "crestName": "一文字三つ星"
-  },
-  {
-    "key": "clan_kuroda",
-    "name": "黒田",
-    "nameKana": "くろだ",
-    "nameRomaji": "Kuroda",
-    "crestName": "黒田藤巴"
-  },
-  {
-    "key": "clan_hosokawa",
-    "name": "細川",
-    "nameKana": "ほそかわ",
-    "nameRomaji": "Hosokawa",
-    "crestName": "九曜"
-  },
-  {
-    "key": "clan_asano",
-    "name": "浅野",
-    "nameKana": "あさの",
-    "nameRomaji": "Asano",
-    "crestName": "違い鷹の羽"
-  },
-  {
-    "key": "clan_ikeda",
-    "name": "池田",
-    "nameKana": "いけだ",
-    "nameRomaji": "Ikeda",
-    "crestName": "揚羽蝶"
-  },
-  {
-    "key": "clan_nabeshima",
-    "name": "鍋島",
-    "nameKana": "なべしま",
-    "nameRomaji": "Nabeshima",
-    "crestName": "杏葉"
-  },
-  {
-    "key": "clan_yamauchi",
-    "name": "山内",
-    "nameKana": "やまうち",
-    "nameRomaji": "Yamauchi",
-    "crestName": "三つ柏"
-  },
-  {
-    "key": "clan_kii_tokugawa",
-    "name": "紀伊徳川",
-    "nameKana": "きいとくがわ",
-    "nameRomaji": "Kii-Tokugawa",
-    "crestName": "三つ葉葵"
-  },
-  {
-    "key": "clan_mito_tokugawa",
-    "name": "水戸徳川",
-    "nameKana": "みととくがわ",
-    "nameRomaji": "Mito-Tokugawa",
-    "crestName": "三つ葉葵"
-  },
-  {
-    "key": "clan_owari_tokugawa",
-    "name": "尾張徳川",
-    "nameKana": "おわりとくがわ",
-    "nameRomaji": "Owari-Tokugawa",
-    "crestName": "三つ葉葵"
-  },
-  {
-    "key": "clan_matsudaira",
-    "name": "松平",
-    "nameKana": "まつだいら",
-    "nameRomaji": "Matsudaira",
-    "crestName": "三つ葉葵"
-  }
+  {"key":"clan_tokugawa","name":"徳川","nameKana":"とくがわ","nameRomaji":"Tokugawa","crestName":"三つ葉葵"},
+  {"key":"clan_maeda","name":"前田","nameKana":"まえだ","nameRomaji":"Maeda","crestName":"加賀梅鉢"},
+  {"key":"clan_shimazu","name":"島津","nameKana":"しまづ","nameRomaji":"Shimazu","crestName":"丸に十字"},
+  {"key":"clan_date","name":"伊達","nameKana":"だて","nameRomaji":"Date","crestName":"竹に雀"},
+  {"key":"clan_mori","name":"毛利","nameKana":"もうり","nameRomaji":"Mori","crestName":"一文字三つ星"},
+  {"key":"clan_kuroda","name":"黒田","nameKana":"くろだ","nameRomaji":"Kuroda","crestName":"黒田藤巴"},
+  {"key":"clan_hosokawa","name":"細川","nameKana":"ほそかわ","nameRomaji":"Hosokawa","crestName":"九曜"},
+  {"key":"clan_asano","name":"浅野","nameKana":"あさの","nameRomaji":"Asano","crestName":"違い鷹の羽"},
+  {"key":"clan_ikeda","name":"池田","nameKana":"いけだ","nameRomaji":"Ikeda","crestName":"揚羽蝶"},
+  {"key":"clan_nabeshima","name":"鍋島","nameKana":"なべしま","nameRomaji":"Nabeshima","crestName":"杏葉"},
+  {"key":"clan_yamauchi","name":"山内","nameKana":"やまうち","nameRomaji":"Yamauchi","crestName":"三つ柏"},
+  {"key":"clan_kii_tokugawa","name":"紀伊徳川","nameKana":"きいとくがわ","nameRomaji":"Kii-Tokugawa","crestName":"三つ葉葵"},
+  {"key":"clan_mito_tokugawa","name":"水戸徳川","nameKana":"みととくがわ","nameRomaji":"Mito-Tokugawa","crestName":"三つ葉葵"},
+  {"key":"clan_owari_tokugawa","name":"尾張徳川","nameKana":"おわりとくがわ","nameRomaji":"Owari-Tokugawa","crestName":"三つ葉葵"},
+  {"key":"clan_matsudaira","name":"松平","nameKana":"まつだいら","nameRomaji":"Matsudaira","crestName":"三つ葉葵"},
+  {"key":"clan_honda","name":"本多","nameKana":"ほんだ","nameRomaji":"Honda","crestName":"本多立ち葵"},
+  {"key":"clan_sakakibara","name":"榊原","nameKana":"さかきばら","nameRomaji":"Sakakibara","crestName":"源氏車"},
+  {"key":"clan_sakai_utanokami","name":"酒井","nameKana":"さかい","nameRomaji":"Sakai","crestName":"剣酢漿草"},
+  {"key":"clan_okudaira_matsudaira","name":"奥平松平","nameKana":"おくだいらまつだいら","nameRomaji":"Okudaira-Matsudaira","crestName":"三つ葉葵"},
+  {"key":"clan_yuki_matsudaira","name":"結城松平","nameKana":"ゆうきまつだいら","nameRomaji":"Yuki-Matsudaira","crestName":"三つ葉葵"},
+  {"key":"clan_okochi_matsudaira","name":"大河内松平","nameKana":"おおこうちまつだいら","nameRomaji":"Okochi-Matsudaira","crestName":"三つ葉葵"},
+  {"key":"clan_abe","name":"阿部","nameKana":"あべ","nameRomaji":"Abe","crestName":"丸に違い鷹の羽"},
+  {"key":"clan_aoyama","name":"青山","nameKana":"あおやま","nameRomaji":"Aoyama","crestName":"大割菱"},
+  {"key":"clan_inagaki","name":"稲垣","nameKana":"いながき","nameRomaji":"Inagaki","crestName":"抱き稲"}
 ]

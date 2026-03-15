@@ -19,6 +19,7 @@ describe("SiteHeader", () => {
       "href",
       "/annual/1700"
     );
+    expect(screen.getByRole("link", { name: "家一覧" })).toHaveAttribute("href", "/clans");
     expect(screen.getByRole("link", { name: "将軍一覧" })).toHaveAttribute("href", "/shoguns");
   });
 
