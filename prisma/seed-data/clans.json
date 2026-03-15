@@ -13,6 +13,7 @@
   {"key":"clan_kii_tokugawa","name":"紀伊徳川","nameKana":"きいとくがわ","nameRomaji":"Kii-Tokugawa","crestName":"三つ葉葵"},
   {"key":"clan_mito_tokugawa","name":"水戸徳川","nameKana":"みととくがわ","nameRomaji":"Mito-Tokugawa","crestName":"三つ葉葵"},
   {"key":"clan_owari_tokugawa","name":"尾張徳川","nameKana":"おわりとくがわ","nameRomaji":"Owari-Tokugawa","crestName":"三つ葉葵"},
+  {"key":"clan_hitotsubashi_tokugawa","name":"一橋徳川","nameKana":"ひとつばしとくがわ","nameRomaji":"Hitotsubashi-Tokugawa","crestName":"三つ葉葵"},
   {"key":"clan_matsudaira","name":"松平","nameKana":"まつだいら","nameRomaji":"Matsudaira","crestName":"三つ葉葵"},
   {"key":"clan_honda","name":"本多","nameKana":"ほんだ","nameRomaji":"Honda","crestName":"本多立ち葵"},
   {"key":"clan_sakakibara","name":"榊原","nameKana":"さかきばら","nameRomaji":"Sakakibara","crestName":"源氏車"},
