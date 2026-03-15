@@ -3,6 +3,7 @@
 import Link from "next/link";
 import useSWR from "swr";
 import type { ClanDetail as ClanDetailType } from "@/types/clan";
+import { ClanKokudakaChart } from "@/components/clan-kokudaka-chart";
 
 const fetcher = async (url: string) => {
   const res = await fetch(url);
@@ -70,6 +71,9 @@ export function ClanDetail({ id }: ClanDetailProps) {
           </div>
         </section>
       )}
+
+      {/* 石高推移グラフ */}
+      <ClanKokudakaChart clanId={data.id} />
 
       {/* 所属人物一覧 */}
       {data.members.length > 0 && (

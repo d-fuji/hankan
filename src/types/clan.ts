@@ -32,3 +32,17 @@ export type ClanTerritory = {
   name: string;
   territoryType: string;
 };
+
+/** 家の石高推移データポイント */
+export type ClanKokudakaPoint = {
+  year: number;
+  amount: number;
+  territoryName: string;
+};
+
+/** 家の石高推移APIレスポンス */
+export type ClanKokudakaResponse = {
+  clanId: number;
+  clanName: string;
+  data: ClanKokudakaPoint[];
+};
