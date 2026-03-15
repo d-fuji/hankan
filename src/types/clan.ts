@@ -44,6 +44,8 @@ export type ClanKokudakaDetail = {
   year: number;
   amount: number;
   territoryName: string;
+  changeType?: string;
+  changeDetail?: string;
 };
 
 /** 家の石高推移APIレスポンス */

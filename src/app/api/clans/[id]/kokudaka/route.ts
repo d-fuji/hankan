@@ -55,6 +55,8 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
     select: {
       year: true,
       amount: true,
+      changeType: true,
+      changeDetail: true,
       territoryId: true,
       territory: { select: { name: true } },
     },
@@ -73,6 +75,8 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
     year: row.year,
     amount: row.amount.toNumber(),
     territoryName: row.territory.name,
+    changeType: row.changeType ?? undefined,
+    changeDetail: row.changeDetail ?? undefined,
   }));
 
   // summary: 年ごとに石高を合算

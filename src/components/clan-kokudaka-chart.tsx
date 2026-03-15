@@ -70,6 +70,14 @@ export function ClanKokudakaChart({ clanId }: ClanKokudakaChartProps) {
             <div>
               <span className="font-medium">{point.year}年</span>
               <span className="ml-2 text-sm text-[var(--color-ink)]/50">{point.territoryName}</span>
+              {point.changeType && (
+                <span className="ml-2 rounded bg-[var(--color-navy)]/10 px-2 py-0.5 text-xs text-[var(--color-navy)]">
+                  {point.changeType}
+                </span>
+              )}
+              {point.changeDetail && (
+                <span className="ml-2 text-xs text-[var(--color-ink)]/40">{point.changeDetail}</span>
+              )}
             </div>
             <span className="font-[family-name:var(--font-noto-serif)] text-lg font-bold text-[var(--color-navy)]">
               {point.amount}万石
