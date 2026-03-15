@@ -17,13 +17,13 @@ export type PersonDetailRow = {
   nameRomaji: string;
   imina: string | null;
   commonName: string | null;
-  clan: { name: string; crestName: string | null };
+  clan: { id: number; name: string; crestName: string | null };
   father: { id: number; name: string } | null;
   motherName: string | null;
   birthOrder: number | null;
   birthOrderType: string | null;
   isAdopted: boolean;
-  adoptedFromClan: { name: string } | null;
+  adoptedFromClan: { id: number; name: string } | null;
   appointments: {
     roleType: string;
     territory: { id: number; name: string } | null;
@@ -57,6 +57,7 @@ export function toPersonDetail(row: PersonDetailRow): PersonDetail {
     nameRomaji: row.nameRomaji,
     imina: row.imina ?? undefined,
     commonName: row.commonName ?? undefined,
+    clanId: row.clan.id,
     clanName: row.clan.name,
     crestName: row.clan.crestName ?? undefined,
     fatherName: row.father?.name ?? undefined,
@@ -65,6 +66,7 @@ export function toPersonDetail(row: PersonDetailRow): PersonDetail {
     birthOrder: row.birthOrder ?? undefined,
     birthOrderType: row.birthOrderType ?? undefined,
     isAdopted: row.isAdopted,
+    adoptedFromClanId: row.adoptedFromClan?.id ?? undefined,
     adoptedFromClanName: row.adoptedFromClan?.name ?? undefined,
     appointments: row.appointments.map((a) => ({
       roleType: a.roleType,

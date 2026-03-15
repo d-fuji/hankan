@@ -36,7 +36,11 @@ export function PersonDetail({ id }: PersonDetailProps) {
         <dl className="grid grid-cols-2 gap-x-8 gap-y-3 text-sm sm:grid-cols-3">
           <div>
             <dt className="text-[var(--color-ink)]/50">家</dt>
-            <dd className="font-medium">{data.clanName}</dd>
+            <dd className="font-medium">
+              <Link href={`/clans/${data.clanId}`} className="text-[var(--color-navy)] hover:underline">
+                {data.clanName}
+              </Link>
+            </dd>
           </div>
           {data.imina && (
             <div>
@@ -72,7 +76,14 @@ export function PersonDetail({ id }: PersonDetailProps) {
           {data.isAdopted && data.adoptedFromClanName && (
             <div>
               <dt className="text-[var(--color-ink)]/50">養子元</dt>
-              <dd className="font-medium">{data.adoptedFromClanName}家</dd>
+              <dd className="font-medium">
+                <Link
+                  href={`/clans/${data.adoptedFromClanId}`}
+                  className="text-[var(--color-navy)] hover:underline"
+                >
+                  {data.adoptedFromClanName}家
+                </Link>
+              </dd>
             </div>
           )}
         </dl>

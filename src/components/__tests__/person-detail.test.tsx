@@ -12,6 +12,7 @@ const mockDetail = {
   nameRomaji: "Tokugawa Ieyasu",
   imina: "家康",
   commonName: "竹千代",
+  clanId: 1,
   clanName: "徳川",
   crestName: "三つ葉葵",
   isAdopted: false,
@@ -51,7 +52,10 @@ describe("PersonDetail", () => {
       expect(screen.getByText("徳川家康")).toBeInTheDocument();
     });
 
-    expect(screen.getByText("徳川")).toBeInTheDocument();
+    // 家名が家詳細へのリンク
+    const clanLink = screen.getByText("徳川").closest("a");
+    expect(clanLink).toHaveAttribute("href", "/clans/1");
+
     expect(screen.getByText("家康")).toBeInTheDocument();
     expect(screen.getByText("竹千代")).toBeInTheDocument();
   });

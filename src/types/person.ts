@@ -15,6 +15,7 @@ export type PersonDetail = {
   nameRomaji: string;
   imina?: string;
   commonName?: string;
+  clanId: number;
   clanName: string;
   crestName?: string;
   fatherName?: string;
@@ -23,6 +24,7 @@ export type PersonDetail = {
   birthOrder?: number;
   birthOrderType?: string;
   isAdopted: boolean;
+  adoptedFromClanId?: number;
   adoptedFromClanName?: string;
   appointments: PersonAppointment[];
   children: PersonChild[];

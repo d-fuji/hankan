@@ -27,7 +27,7 @@ describe("GET /api/persons/[id]", () => {
       nameRomaji: "Tokugawa Ieyasu",
       imina: "家康",
       commonName: "竹千代",
-      clan: { name: "徳川", crestName: "三つ葉葵" },
+      clan: { id: 1, name: "徳川", crestName: "三つ葉葵" },
       father: null,
       motherName: null,
       birthOrder: null,

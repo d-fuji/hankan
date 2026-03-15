@@ -12,9 +12,9 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
   const person = await prisma.person.findUnique({
     where: { id },
     include: {
-      clan: { select: { name: true, crestName: true } },
+      clan: { select: { id: true, name: true, crestName: true } },
       father: { select: { id: true, name: true } },
-      adoptedFromClan: { select: { name: true } },
+      adoptedFromClan: { select: { id: true, name: true } },
       appointments: {
         include: {
           territory: { select: { id: true, name: true } },
