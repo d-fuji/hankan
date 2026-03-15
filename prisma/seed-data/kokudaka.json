@@ -1,7 +1,10 @@
 [
   { "key": "kokudaka_kaga_1600", "territoryKey": "territory_kaga", "year": 1600, "amount": 102.5, "changeType": "立藩", "changeDetail": "加賀・能登・越中三カ国" },
+  { "key": "kokudaka_kaga_1700", "territoryKey": "territory_kaga", "year": 1700, "amount": 102.5, "changeType": "維持", "changeDetail": "前田家102万5千石で安定、諸藩最大の外様大名" },
   { "key": "kokudaka_satsuma_1601", "territoryKey": "territory_satsuma", "year": 1601, "amount": 72.95, "changeType": "立藩", "changeDetail": "薩摩・大隅・日向三カ国" },
+  { "key": "kokudaka_satsuma_1800", "territoryKey": "territory_satsuma", "year": 1800, "amount": 77.0, "changeType": "維持", "changeDetail": "島津家77万石、実高は琉球支配を含みさらに大きい" },
   { "key": "kokudaka_sendai_1601", "territoryKey": "territory_sendai", "year": 1601, "amount": 62.0, "changeType": "立藩", "changeDetail": "陸奥国" },
+  { "key": "kokudaka_sendai_1800", "territoryKey": "territory_sendai", "year": 1800, "amount": 62.0, "changeType": "維持", "changeDetail": "伊達家62万石で安定、実高は100万石に近いとされる" },
   { "key": "kokudaka_choshu_1600", "territoryKey": "territory_choshu", "year": 1600, "amount": 36.9, "changeType": "減封", "changeDetail": "関ヶ原敗戦により周防・長門二カ国に減封" },
   { "key": "kokudaka_fukuoka_1600", "territoryKey": "territory_fukuoka", "year": 1600, "amount": 52.3, "changeType": "立藩", "changeDetail": "筑前国" },
   { "key": "kokudaka_kumamoto_1632", "territoryKey": "territory_kumamoto", "year": 1632, "amount": 54.0, "changeType": "入封", "changeDetail": "細川家入封" },

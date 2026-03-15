@@ -42,5 +42,7 @@
   {"key":"clan_matsudaira_takamatsu","name":"松平（高松）","nameKana":"まつだいら（たかまつ）","nameRomaji":"Matsudaira-Takamatsu","crestName":"三つ葉葵"},
   {"key":"clan_makino","name":"牧野","nameKana":"まきの","nameRomaji":"Makino","crestName":"三つ柏"},
   {"key":"clan_hotta","name":"堀田","nameKana":"ほった","nameRomaji":"Hotta","crestName":"木瓜"},
-  {"key":"clan_sakai_shonai","name":"酒井（庄内）","nameKana":"さかい（しょうない）","nameRomaji":"Sakai-Shonai","crestName":"剣酢漿草"}
+  {"key":"clan_sakai_shonai","name":"酒井（庄内）","nameKana":"さかい（しょうない）","nameRomaji":"Sakai-Shonai","crestName":"剣酢漿草"},
+  {"key":"clan_kato","name":"加藤","nameKana":"かとう","nameRomaji":"Kato","crestName":"蛇の目"},
+  {"key":"clan_fukushima","name":"福島","nameKana":"ふくしま","nameRomaji":"Fukushima","crestName":"福島沢瀉"}
 ]
