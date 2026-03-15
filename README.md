@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 藩鑑（はんかん / Hankan）
 
-## Getting Started
+江戸時代の藩・藩主・石高を横断的に検索・閲覧するデータベースWebアプリ。
 
-First, run the development server:
+## 主な機能
+
+- **領地検索** — 名前・地域・旧国・石高範囲で領地（藩・天領・旗本領）を検索
+- **領地詳細** — 石高推移グラフ、歴代藩主/代官一覧、現代地名
+- **人物詳細** — 役職履歴、親子関係、血統ツリー表示
+- **血統トラッキング** — 親子関係をツリー形式で可視化、養子関係を区別
+- **家一覧・詳細** — 武家の一覧、所属人物、関連領地
+- **年代ビュー** — 特定年のスナップショット（将軍・各領地の藩主・石高ランキング）
+- **将軍一覧** — 徳川将軍15代の一覧と詳細
+
+## 技術スタック
+
+| レイヤー | 技術 |
+|---|---|
+| Framework | Next.js 16 (App Router, TypeScript strict) |
+| UI | Tailwind CSS v4 + shadcn/ui v4 |
+| DB | PostgreSQL 17 (Docker local / Neon prod) |
+| ORM | Prisma 7 |
+| Test | Vitest + Testing Library + MSW |
+| Lint | ESLint 9 (flat config) + Prettier |
+
+## セットアップ
+
+### 前提
+
+- Node.js 20+
+- Docker（ローカルDB用）
+
+### 手順
 
 ```bash
+# 依存インストール
+npm install
+
+# ローカルDB起動
+docker compose up -d
+
+# Prisma Client生成 & マイグレーション
+npm run db:generate
+npm run db:migrate
+
+# シードデータ投入
+npm run db:seed
+
+# 開発サーバー起動
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+http://localhost:3000 でアクセス。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## コマンド
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run dev              # 開発サーバー
+npm run test             # テスト（watch）
+npm run test:run         # テスト（1回実行）
+npm run lint             # ESLint
+npm run format           # Prettier 修正
+npm run format:check     # Prettier チェック
+npm run db:generate      # Prisma Client 再生成
+npm run db:migrate       # マイグレーション作成・適用
+npm run db:seed          # シードデータ投入（upsert、冪等）
+npm run db:reset         # DB 初期化
+```
 
-## Learn More
+## ディレクトリ構成
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/                  # ページ + API Routes
+│   ├── api/              # API エンドポイント
+│   │   ├── clans/        # 家API
+│   │   ├── persons/      # 人物API（lineage含む）
+│   │   ├── territories/  # 領地API
+│   │   └── annual/       # 年代ビューAPI
+│   ├── clans/            # 家ページ
+│   ├── persons/          # 人物ページ
+│   ├── territories/      # 領地ページ
+│   ├── shoguns/          # 将軍一覧ページ
+│   └── annual/           # 年代ビューページ
+├── components/           # UIコンポーネント
+├── lib/                  # ユーティリティ・マッパー
+├── types/                # 型定義
+└── generated/            # Prisma Client（gitignore済み）
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+prisma/
+├── schema.prisma
+├── seed.ts               # upsertベースのシード
+└── seed-data/            # JSONマスタデータ（正のデータソース）
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 開発方針
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **TDD**: Red → Green → Refactor のサイクルで開発
+- **シードデータ**: `prisma/seed-data/*.json` に分離、upsertで冪等管理
+- **ID設計**: `Int @default(autoincrement())` + `String @unique` key（upsert用）
