@@ -1,13 +1,22 @@
 "use client";
 
+import Link from "next/link";
 import useSWR from "swr";
 import type { TerritorySummary, PaginatedResponse } from "@/types/territory";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-export function TerritoryList() {
+type TerritoryListProps = {
+  query?: string;
+};
+
+export function TerritoryList({ query }: TerritoryListProps = {}) {
+  const params = new URLSearchParams();
+  if (query) params.set("q", query);
+  const url = `/api/territories${params.toString() ? `?${params}` : ""}`;
+
   const { data, error, isLoading } = useSWR<PaginatedResponse<TerritorySummary>>(
-    "/api/territories",
+    url,
     fetcher
   );
 
@@ -28,8 +37,9 @@ export function TerritoryList() {
   return (
     <div className="grid gap-4">
       {data.data.map((territory) => (
-        <div
+        <Link
           key={territory.id}
+          href={`/territories/${territory.id}`}
           className="flex items-center justify-between rounded-lg border border-[var(--color-gold)]/20 bg-white p-4 shadow-sm transition-shadow hover:shadow-md"
         >
           <div>
@@ -47,7 +57,7 @@ export function TerritoryList() {
               {territory.kokudaka}万石
             </span>
           )}
-        </div>
+        </Link>
       ))}
     </div>
   );

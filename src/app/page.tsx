@@ -1,9 +1,14 @@
+"use client";
+
+import { useState } from "react";
+import { TerritorySearch } from "@/components/territory-search";
 import { TerritoryList } from "@/components/territory-list";
 
 export default function Home() {
+  const [query, setQuery] = useState("");
+
   return (
     <div className="flex min-h-screen flex-col">
-      {/* ヘッダー */}
       <header className="border-b border-[var(--color-gold)]/30 bg-[var(--color-navy)] text-white">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <h1 className="font-[family-name:var(--font-noto-serif)] text-2xl font-bold tracking-wider">
@@ -17,9 +22,8 @@ export default function Home() {
         </div>
       </header>
 
-      {/* メインコンテンツ */}
       <main className="mx-auto w-full max-w-6xl flex-1 px-6 py-8">
-        <section className="mb-8">
+        <section className="mb-6">
           <h2 className="mb-2 font-[family-name:var(--font-noto-serif)] text-2xl font-bold text-[var(--color-navy)]">
             領地一覧
           </h2>
@@ -28,10 +32,13 @@ export default function Home() {
           </p>
         </section>
 
-        <TerritoryList />
+        <section className="mb-8">
+          <TerritorySearch onSearch={setQuery} />
+        </section>
+
+        <TerritoryList query={query} />
       </main>
 
-      {/* フッター */}
       <footer className="border-t border-[var(--color-ink)]/10 py-6 text-center text-sm text-[var(--color-ink)]/40">
         藩鑑 — 江戸時代藩制度データベース
       </footer>
