@@ -3,9 +3,12 @@
 import { useState } from "react";
 import { TerritorySearch } from "@/components/territory-search";
 import { TerritoryList } from "@/components/territory-list";
+import { RegionFilter } from "@/components/region-filter";
+import { StatsBar } from "@/components/stats-bar";
 
 export default function Home() {
   const [query, setQuery] = useState("");
+  const [region, setRegion] = useState<string | undefined>(undefined);
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -24,19 +27,18 @@ export default function Home() {
 
       <main className="mx-auto w-full max-w-6xl flex-1 px-6 py-8">
         <section className="mb-6">
-          <h2 className="mb-2 font-[family-name:var(--font-noto-serif)] text-2xl font-bold text-[var(--color-navy)]">
-            領地一覧
-          </h2>
-          <p className="text-sm text-[var(--color-ink)]/60">
-            江戸時代の藩・天領・旗本領を検索・閲覧
-          </p>
+          <StatsBar />
         </section>
 
-        <section className="mb-8">
+        <section className="mb-4">
           <TerritorySearch onSearch={setQuery} />
         </section>
 
-        <TerritoryList query={query} />
+        <section className="mb-6">
+          <RegionFilter selected={region} onSelect={setRegion} />
+        </section>
+
+        <TerritoryList query={query} region={region} />
       </main>
 
       <footer className="border-t border-[var(--color-ink)]/10 py-6 text-center text-sm text-[var(--color-ink)]/40">

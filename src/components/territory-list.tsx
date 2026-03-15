@@ -8,11 +8,13 @@ const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 type TerritoryListProps = {
   query?: string;
+  region?: string;
 };
 
-export function TerritoryList({ query }: TerritoryListProps = {}) {
+export function TerritoryList({ query, region }: TerritoryListProps = {}) {
   const params = new URLSearchParams();
   if (query) params.set("q", query);
+  if (region) params.set("region", region);
   const url = `/api/territories${params.toString() ? `?${params}` : ""}`;
 
   const { data, error, isLoading } = useSWR<PaginatedResponse<TerritorySummary>>(
