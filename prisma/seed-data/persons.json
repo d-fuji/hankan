@@ -36,6 +36,15 @@
   { "key": "person_ikeda_terumasa", "name": "池田輝政", "nameKana": "いけだてるまさ", "nameRomaji": "Ikeda Terumasa", "imina": "輝政", "clanKey": "clan_ikeda" },
   { "key": "person_ikeda_toshitaka", "name": "池田利隆", "nameKana": "いけだとしたか", "nameRomaji": "Ikeda Toshitaka", "imina": "利隆", "clanKey": "clan_ikeda", "fatherKey": "person_ikeda_terumasa", "birthOrder": 1, "birthOrderType": "男" },
   { "key": "person_ikeda_mitsumasa", "name": "池田光政", "nameKana": "いけだみつまさ", "nameRomaji": "Ikeda Mitsumasa", "imina": "光政", "clanKey": "clan_ikeda", "fatherKey": "person_ikeda_toshitaka", "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_ikeda_tsunamasa", "name": "池田綱政", "nameKana": "いけだつなまさ", "nameRomaji": "Ikeda Tsunamasa", "imina": "綱政", "clanKey": "clan_ikeda", "fatherKey": "person_ikeda_mitsumasa", "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_ikeda_tsugumasa", "name": "池田継政", "nameKana": "いけだつぐまさ", "nameRomaji": "Ikeda Tsugumasa", "imina": "継政", "clanKey": "clan_ikeda", "fatherKey": "person_ikeda_tsunamasa", "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_ikeda_munemasa", "name": "池田宗政", "nameKana": "いけだむねまさ", "nameRomaji": "Ikeda Munemasa", "imina": "宗政", "clanKey": "clan_ikeda", "fatherKey": "person_ikeda_tsugumasa", "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_ikeda_harumasa", "name": "池田治政", "nameKana": "いけだはるまさ", "nameRomaji": "Ikeda Harumasa", "imina": "治政", "clanKey": "clan_ikeda", "fatherKey": "person_ikeda_munemasa", "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_ikeda_narimasa", "name": "池田斉政", "nameKana": "いけだなりまさ", "nameRomaji": "Ikeda Narimasa", "imina": "斉政", "clanKey": "clan_ikeda", "fatherKey": "person_ikeda_harumasa", "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_ikeda_naritoshi", "name": "池田斉敏", "nameKana": "いけだなりとし", "nameRomaji": "Ikeda Naritoshi", "imina": "斉敏", "clanKey": "clan_ikeda", "fatherKey": "person_ikeda_narimasa", "isAdopted": true, "birthOrder": 1, "birthOrderType": "男" },
+  { "key": "person_ikeda_yoshimasa", "name": "池田慶政", "nameKana": "いけだよしまさ", "nameRomaji": "Ikeda Yoshimasa", "imina": "慶政", "clanKey": "clan_ikeda", "isAdopted": true },
+  { "key": "person_ikeda_mochimasa", "name": "池田茂政", "nameKana": "いけだもちまさ", "nameRomaji": "Ikeda Mochimasa", "imina": "茂政", "clanKey": "clan_ikeda", "fatherKey": "person_tokugawa_nariaki", "isAdopted": true, "adoptedFromClanKey": "clan_mito_tokugawa" },
+  { "key": "person_ikeda_akimasa", "name": "池田章政", "nameKana": "いけだあきまさ", "nameRomaji": "Ikeda Akimasa", "imina": "章政", "clanKey": "clan_ikeda", "isAdopted": true },
 
   { "key": "person_honda_tadakatsu", "name": "本多忠勝", "nameKana": "ほんだただかつ", "nameRomaji": "Honda Tadakatsu", "imina": "忠勝", "commonName": "平八郎", "clanKey": "clan_honda" },
   { "key": "person_honda_tadamasa", "name": "本多忠政", "nameKana": "ほんだただまさ", "nameRomaji": "Honda Tadamasa", "imina": "忠政", "clanKey": "clan_honda", "fatherKey": "person_honda_tadakatsu", "birthOrder": 1, "birthOrderType": "男" },
@@ -82,9 +91,9 @@
   { "key": "person_matsudaira_masasada", "name": "松平正貞", "nameKana": "まつだいらまささだ", "nameRomaji": "Matsudaira Masasada", "imina": "正貞", "clanKey": "clan_okochi_matsudaira", "fatherKey": "person_matsudaira_masahisa" },
   { "key": "person_matsudaira_masaharu", "name": "松平正温", "nameKana": "まつだいらまさはる", "nameRomaji": "Matsudaira Masaharu", "imina": "正温", "clanKey": "clan_okochi_matsudaira", "fatherKey": "person_matsudaira_masasada" },
   { "key": "person_matsudaira_masanori_otaki", "name": "松平正升", "nameKana": "まつだいらまさのり", "nameRomaji": "Matsudaira Masanori", "imina": "正升", "clanKey": "clan_okochi_matsudaira", "fatherKey": "person_matsudaira_masaharu" },
-  { "key": "person_matsudaira_masamichi", "name": "松平正路", "nameKana": "まつだいらまさみち", "nameRomaji": "Matsudaira Masamichi", "imina": "正路", "clanKey": "clan_okochi_matsudaira" },
-  { "key": "person_matsudaira_masataka_otaki", "name": "松平正敬", "nameKana": "まつだいらまさたか", "nameRomaji": "Matsudaira Masataka", "imina": "正敬", "clanKey": "clan_okochi_matsudaira" },
+  { "key": "person_matsudaira_masamichi", "name": "松平正路", "nameKana": "まつだいらまさみち", "nameRomaji": "Matsudaira Masamichi", "imina": "正路", "clanKey": "clan_okochi_matsudaira", "fatherKey": "person_matsudaira_masanori_otaki" },
+  { "key": "person_matsudaira_masataka_otaki", "name": "松平正敬", "nameKana": "まつだいらまさたか", "nameRomaji": "Matsudaira Masataka", "imina": "正敬", "clanKey": "clan_okochi_matsudaira", "fatherKey": "person_matsudaira_masamichi" },
   { "key": "person_matsudaira_masayoshi_otaki", "name": "松平正義", "nameKana": "まつだいらまさよし", "nameRomaji": "Matsudaira Masayoshi", "imina": "正義", "clanKey": "clan_okochi_matsudaira" },
-  { "key": "person_matsudaira_masakazu", "name": "松平正和", "nameKana": "まつだいらまさかず", "nameRomaji": "Matsudaira Masakazu", "imina": "正和", "clanKey": "clan_okochi_matsudaira" },
-  { "key": "person_matsudaira_masatada", "name": "松平正質", "nameKana": "まつだいらまさただ", "nameRomaji": "Matsudaira Masatada", "imina": "正質", "clanKey": "clan_okochi_matsudaira" }
+  { "key": "person_matsudaira_masakazu", "name": "松平正和", "nameKana": "まつだいらまさかず", "nameRomaji": "Matsudaira Masakazu", "imina": "正和", "clanKey": "clan_okochi_matsudaira", "fatherKey": "person_matsudaira_masayoshi_otaki" },
+  { "key": "person_matsudaira_masatada", "name": "松平正質", "nameKana": "まつだいらまさただ", "nameRomaji": "Matsudaira Masatada", "imina": "正質", "clanKey": "clan_okochi_matsudaira", "fatherKey": "person_matsudaira_masakazu" }
 ]

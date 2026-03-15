@@ -57,6 +57,17 @@
   { "key": "appt_sakai_tadaatsu_himeji", "personKey": "person_sakai_tadaatsu", "roleType": "藩主", "territoryKey": "territory_himeji", "generation": 31, "startYear": 1867, "endYear": 1868 },
   { "key": "appt_sakai_tadakuni_himeji", "personKey": "person_sakai_tadakuni", "roleType": "藩主", "territoryKey": "territory_himeji", "generation": 32, "startYear": 1868, "endYear": 1871 },
 
+  { "key": "appt_ikeda_mitsumasa_okayama", "personKey": "person_ikeda_mitsumasa", "roleType": "藩主", "territoryKey": "territory_okayama", "generation": 1, "startYear": 1632, "endYear": 1672 },
+  { "key": "appt_ikeda_tsunamasa_okayama", "personKey": "person_ikeda_tsunamasa", "roleType": "藩主", "territoryKey": "territory_okayama", "generation": 2, "startYear": 1672, "endYear": 1714 },
+  { "key": "appt_ikeda_tsugumasa_okayama", "personKey": "person_ikeda_tsugumasa", "roleType": "藩主", "territoryKey": "territory_okayama", "generation": 3, "startYear": 1714, "endYear": 1752 },
+  { "key": "appt_ikeda_munemasa_okayama", "personKey": "person_ikeda_munemasa", "roleType": "藩主", "territoryKey": "territory_okayama", "generation": 4, "startYear": 1752, "endYear": 1764 },
+  { "key": "appt_ikeda_harumasa_okayama", "personKey": "person_ikeda_harumasa", "roleType": "藩主", "territoryKey": "territory_okayama", "generation": 5, "startYear": 1764, "endYear": 1794 },
+  { "key": "appt_ikeda_narimasa_okayama", "personKey": "person_ikeda_narimasa", "roleType": "藩主", "territoryKey": "territory_okayama", "generation": 6, "startYear": 1794, "endYear": 1829 },
+  { "key": "appt_ikeda_naritoshi_okayama", "personKey": "person_ikeda_naritoshi", "roleType": "藩主", "territoryKey": "territory_okayama", "generation": 7, "startYear": 1829, "endYear": 1842 },
+  { "key": "appt_ikeda_yoshimasa_okayama", "personKey": "person_ikeda_yoshimasa", "roleType": "藩主", "territoryKey": "territory_okayama", "generation": 8, "startYear": 1842, "endYear": 1863 },
+  { "key": "appt_ikeda_mochimasa_okayama", "personKey": "person_ikeda_mochimasa", "roleType": "藩主", "territoryKey": "territory_okayama", "generation": 9, "startYear": 1863, "endYear": 1868 },
+  { "key": "appt_ikeda_akimasa_okayama", "personKey": "person_ikeda_akimasa", "roleType": "藩主", "territoryKey": "territory_okayama", "generation": 10, "startYear": 1868, "endYear": 1871 },
+
   { "key": "appt_honda_tadakatsu_otaki", "personKey": "person_honda_tadakatsu", "roleType": "藩主", "territoryKey": "territory_otaki", "generation": 1, "startYear": 1590, "endYear": 1601 },
   { "key": "appt_honda_tadatomo_otaki", "personKey": "person_honda_tadatomo", "roleType": "藩主", "territoryKey": "territory_otaki", "generation": 2, "startYear": 1601, "endYear": 1615 },
   { "key": "appt_honda_masatomo_otaki", "personKey": "person_honda_masatomo", "roleType": "藩主", "territoryKey": "territory_otaki", "generation": 3, "startYear": 1615, "endYear": 1617 },

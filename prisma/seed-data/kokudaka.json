@@ -7,6 +7,8 @@
   { "key": "kokudaka_kumamoto_1632", "territoryKey": "territory_kumamoto", "year": 1632, "amount": 54.0, "changeType": "入封", "changeDetail": "細川家入封" },
   { "key": "kokudaka_hiroshima_1619", "territoryKey": "territory_hiroshima", "year": 1619, "amount": 42.6, "changeType": "入封", "changeDetail": "浅野家入封" },
   { "key": "kokudaka_okayama_1632", "territoryKey": "territory_okayama", "year": 1632, "amount": 31.5, "changeType": "入封", "changeDetail": "池田家入封" },
+  { "key": "kokudaka_okayama_1700", "territoryKey": "territory_okayama", "year": 1700, "amount": 31.5, "changeType": "維持", "changeDetail": "池田家治世安定期" },
+  { "key": "kokudaka_okayama_1830", "territoryKey": "territory_okayama", "year": 1830, "amount": 31.5, "changeType": "維持", "changeDetail": "幕末まで31万5千石で安定" },
   { "key": "kokudaka_saga_1607", "territoryKey": "territory_saga", "year": 1607, "amount": 35.7, "changeType": "立藩", "changeDetail": "肥前国" },
   { "key": "kokudaka_tosa_1601", "territoryKey": "territory_tosa", "year": 1601, "amount": 20.26, "changeType": "立藩", "changeDetail": "土佐一国" },
   { "key": "kokudaka_kishu_1619", "territoryKey": "territory_kishu", "year": 1619, "amount": 55.5, "changeType": "入封", "changeDetail": "徳川頼宣入封" },
