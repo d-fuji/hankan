@@ -64,7 +64,7 @@ export function ClanKokudakaChart({ clanId }: ClanKokudakaChartProps) {
       <div className="space-y-2">
         {data.detail.map((point) => (
           <div
-            key={`${point.year}-${point.territoryName}`}
+            key={`${point.year}-${point.territoryName}-${point.changeType ?? "none"}`}
             className="flex items-center justify-between rounded-lg border border-[var(--color-gold)]/20 bg-white p-3"
           >
             <div>
