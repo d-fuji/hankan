@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { TerritorySearch } from "@/components/territory-search";
 import { TerritoryList } from "@/components/territory-list";
 import { RegionFilter } from "@/components/region-filter";
@@ -19,8 +20,7 @@ export default function Home() {
           </h1>
           <nav className="flex gap-6 text-sm">
             <span className="text-[var(--color-gold)]">領地検索</span>
-            <span className="text-white/60">年代ビュー</span>
-            <span className="text-white/60">将軍一覧</span>
+            <Link href="/shoguns" className="text-white/60 hover:text-white">将軍一覧</Link>
           </nav>
         </div>
       </header>
