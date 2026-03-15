@@ -14,10 +14,7 @@ export async function GET(request: NextRequest) {
 
   const year = Number(yearStr);
   if (Number.isNaN(year) || year < 1603 || year > 1868) {
-    return NextResponse.json(
-      { error: "year must be between 1603 and 1868" },
-      { status: 400 }
-    );
+    return NextResponse.json({ error: "year must be between 1603 and 1868" }, { status: 400 });
   }
 
   // 指定年の将軍を取得

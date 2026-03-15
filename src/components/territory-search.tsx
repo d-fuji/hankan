@@ -15,7 +15,10 @@ export function TerritorySearch({ onSearch }: TerritorySearchProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex overflow-hidden rounded-lg border border-[var(--color-navy)]/20 bg-white shadow-sm">
+    <form
+      onSubmit={handleSubmit}
+      className="flex overflow-hidden rounded-lg border border-[var(--color-navy)]/20 bg-white shadow-sm"
+    >
       <input
         type="text"
         value={value}

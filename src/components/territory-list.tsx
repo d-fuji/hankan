@@ -17,19 +17,14 @@ export function TerritoryList({ query, region }: TerritoryListProps = {}) {
   if (region) params.set("region", region);
   const url = `/api/territories${params.toString() ? `?${params}` : ""}`;
 
-  const { data, error, isLoading } = useSWR<PaginatedResponse<TerritorySummary>>(
-    url,
-    fetcher
-  );
+  const { data, error, isLoading } = useSWR<PaginatedResponse<TerritorySummary>>(url, fetcher);
 
   if (isLoading) {
     return <p className="py-8 text-center text-[var(--color-ink)]/50">読み込み中...</p>;
   }
 
   if (error) {
-    return (
-      <p className="py-8 text-center text-red-600">データの取得に失敗しました</p>
-    );
+    return <p className="py-8 text-center text-red-600">データの取得に失敗しました</p>;
   }
 
   if (!data || data.data.length === 0) {

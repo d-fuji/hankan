@@ -12,9 +12,7 @@ export default function Shoguns() {
           <h2 className="mb-2 font-[family-name:var(--font-noto-serif)] text-2xl font-bold text-[var(--color-navy)]">
             徳川将軍一覧
           </h2>
-          <p className="text-sm text-[var(--color-ink)]/60">
-            江戸幕府 征夷大将軍 15代
-          </p>
+          <p className="text-sm text-[var(--color-ink)]/60">江戸幕府 征夷大将軍 15代</p>
         </section>
 
         <ShogunList />

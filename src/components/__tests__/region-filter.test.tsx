@@ -3,7 +3,17 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { RegionFilter } from "@/components/region-filter";
 
-const REGIONS = ["畿内", "東海道", "東山道", "北陸道", "山陰道", "山陽道", "南海道", "西海道", "北海道"];
+const REGIONS = [
+  "畿内",
+  "東海道",
+  "東山道",
+  "北陸道",
+  "山陰道",
+  "山陽道",
+  "南海道",
+  "西海道",
+  "北海道",
+];
 
 describe("RegionFilter", () => {
   it("全ての地域ボタンを表示する", () => {

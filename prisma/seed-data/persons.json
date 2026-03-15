@@ -1,18 +1,133 @@
 [
-  { "key": "person_tokugawa_ieyasu", "name": "徳川家康", "nameKana": "とくがわいえやす", "nameRomaji": "Tokugawa Ieyasu", "imina": "家康", "commonName": "竹千代", "clanKey": "clan_tokugawa" },
-  { "key": "person_tokugawa_hidetada", "name": "徳川秀忠", "nameKana": "とくがわひでただ", "nameRomaji": "Tokugawa Hidetada", "imina": "秀忠", "clanKey": "clan_tokugawa", "fatherKey": "person_tokugawa_ieyasu", "birthOrder": 3, "birthOrderType": "男" },
-  { "key": "person_tokugawa_iemitsu", "name": "徳川家光", "nameKana": "とくがわいえみつ", "nameRomaji": "Tokugawa Iemitsu", "imina": "家光", "commonName": "竹千代", "clanKey": "clan_tokugawa", "fatherKey": "person_tokugawa_hidetada", "birthOrder": 2, "birthOrderType": "男" },
-  { "key": "person_tokugawa_yoshimune", "name": "徳川吉宗", "nameKana": "とくがわよしむね", "nameRomaji": "Tokugawa Yoshimune", "imina": "吉宗", "commonName": "源六", "clanKey": "clan_tokugawa", "isAdopted": true, "adoptedFromClanKey": "clan_kii_tokugawa" },
-  { "key": "person_tokugawa_yoshinobu", "name": "徳川慶喜", "nameKana": "とくがわよしのぶ", "nameRomaji": "Tokugawa Yoshinobu", "imina": "慶喜", "commonName": "七郎麻呂", "clanKey": "clan_tokugawa", "isAdopted": true, "adoptedFromClanKey": "clan_mito_tokugawa" },
+  {
+    "key": "person_tokugawa_ieyasu",
+    "name": "徳川家康",
+    "nameKana": "とくがわいえやす",
+    "nameRomaji": "Tokugawa Ieyasu",
+    "imina": "家康",
+    "commonName": "竹千代",
+    "clanKey": "clan_tokugawa"
+  },
+  {
+    "key": "person_tokugawa_hidetada",
+    "name": "徳川秀忠",
+    "nameKana": "とくがわひでただ",
+    "nameRomaji": "Tokugawa Hidetada",
+    "imina": "秀忠",
+    "clanKey": "clan_tokugawa",
+    "fatherKey": "person_tokugawa_ieyasu",
+    "birthOrder": 3,
+    "birthOrderType": "男"
+  },
+  {
+    "key": "person_tokugawa_iemitsu",
+    "name": "徳川家光",
+    "nameKana": "とくがわいえみつ",
+    "nameRomaji": "Tokugawa Iemitsu",
+    "imina": "家光",
+    "commonName": "竹千代",
+    "clanKey": "clan_tokugawa",
+    "fatherKey": "person_tokugawa_hidetada",
+    "birthOrder": 2,
+    "birthOrderType": "男"
+  },
+  {
+    "key": "person_tokugawa_yoshimune",
+    "name": "徳川吉宗",
+    "nameKana": "とくがわよしむね",
+    "nameRomaji": "Tokugawa Yoshimune",
+    "imina": "吉宗",
+    "commonName": "源六",
+    "clanKey": "clan_tokugawa",
+    "isAdopted": true,
+    "adoptedFromClanKey": "clan_kii_tokugawa"
+  },
+  {
+    "key": "person_tokugawa_yoshinobu",
+    "name": "徳川慶喜",
+    "nameKana": "とくがわよしのぶ",
+    "nameRomaji": "Tokugawa Yoshinobu",
+    "imina": "慶喜",
+    "commonName": "七郎麻呂",
+    "clanKey": "clan_tokugawa",
+    "isAdopted": true,
+    "adoptedFromClanKey": "clan_mito_tokugawa"
+  },
 
-  { "key": "person_maeda_toshiie", "name": "前田利家", "nameKana": "まえだとしいえ", "nameRomaji": "Maeda Toshiie", "imina": "利家", "commonName": "犬千代", "clanKey": "clan_maeda" },
-  { "key": "person_maeda_toshinaga", "name": "前田利長", "nameKana": "まえだとしなが", "nameRomaji": "Maeda Toshinaga", "imina": "利長", "clanKey": "clan_maeda", "fatherKey": "person_maeda_toshiie", "birthOrder": 1, "birthOrderType": "男" },
+  {
+    "key": "person_maeda_toshiie",
+    "name": "前田利家",
+    "nameKana": "まえだとしいえ",
+    "nameRomaji": "Maeda Toshiie",
+    "imina": "利家",
+    "commonName": "犬千代",
+    "clanKey": "clan_maeda"
+  },
+  {
+    "key": "person_maeda_toshinaga",
+    "name": "前田利長",
+    "nameKana": "まえだとしなが",
+    "nameRomaji": "Maeda Toshinaga",
+    "imina": "利長",
+    "clanKey": "clan_maeda",
+    "fatherKey": "person_maeda_toshiie",
+    "birthOrder": 1,
+    "birthOrderType": "男"
+  },
 
-  { "key": "person_shimazu_yoshihiro", "name": "島津義弘", "nameKana": "しまづよしひろ", "nameRomaji": "Shimazu Yoshihiro", "imina": "義弘", "clanKey": "clan_shimazu" },
-  { "key": "person_shimazu_iehisa", "name": "島津家久", "nameKana": "しまづいえひさ", "nameRomaji": "Shimazu Iehisa", "imina": "家久", "commonName": "忠恒", "clanKey": "clan_shimazu", "fatherKey": "person_shimazu_yoshihiro", "birthOrder": 3, "birthOrderType": "男" },
+  {
+    "key": "person_shimazu_yoshihiro",
+    "name": "島津義弘",
+    "nameKana": "しまづよしひろ",
+    "nameRomaji": "Shimazu Yoshihiro",
+    "imina": "義弘",
+    "clanKey": "clan_shimazu"
+  },
+  {
+    "key": "person_shimazu_iehisa",
+    "name": "島津家久",
+    "nameKana": "しまづいえひさ",
+    "nameRomaji": "Shimazu Iehisa",
+    "imina": "家久",
+    "commonName": "忠恒",
+    "clanKey": "clan_shimazu",
+    "fatherKey": "person_shimazu_yoshihiro",
+    "birthOrder": 3,
+    "birthOrderType": "男"
+  },
 
-  { "key": "person_date_masamune", "name": "伊達政宗", "nameKana": "だてまさむね", "nameRomaji": "Date Masamune", "imina": "政宗", "commonName": "梵天丸", "clanKey": "clan_date" },
-  { "key": "person_mori_terumoto", "name": "毛利輝元", "nameKana": "もうりてるもと", "nameRomaji": "Mori Terumoto", "imina": "輝元", "clanKey": "clan_mori" },
-  { "key": "person_kuroda_nagamasa", "name": "黒田長政", "nameKana": "くろだながまさ", "nameRomaji": "Kuroda Nagamasa", "imina": "長政", "commonName": "松寿丸", "clanKey": "clan_kuroda" },
-  { "key": "person_yamauchi_kazutoyo", "name": "山内一豊", "nameKana": "やまうちかずとよ", "nameRomaji": "Yamauchi Kazutoyo", "imina": "一豊", "clanKey": "clan_yamauchi" }
+  {
+    "key": "person_date_masamune",
+    "name": "伊達政宗",
+    "nameKana": "だてまさむね",
+    "nameRomaji": "Date Masamune",
+    "imina": "政宗",
+    "commonName": "梵天丸",
+    "clanKey": "clan_date"
+  },
+  {
+    "key": "person_mori_terumoto",
+    "name": "毛利輝元",
+    "nameKana": "もうりてるもと",
+    "nameRomaji": "Mori Terumoto",
+    "imina": "輝元",
+    "clanKey": "clan_mori"
+  },
+  {
+    "key": "person_kuroda_nagamasa",
+    "name": "黒田長政",
+    "nameKana": "くろだながまさ",
+    "nameRomaji": "Kuroda Nagamasa",
+    "imina": "長政",
+    "commonName": "松寿丸",
+    "clanKey": "clan_kuroda"
+  },
+  {
+    "key": "person_yamauchi_kazutoyo",
+    "name": "山内一豊",
+    "nameKana": "やまうちかずとよ",
+    "nameRomaji": "Yamauchi Kazutoyo",
+    "imina": "一豊",
+    "clanKey": "clan_yamauchi"
+  }
 ]

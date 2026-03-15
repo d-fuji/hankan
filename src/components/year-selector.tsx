@@ -34,9 +34,7 @@ export function YearSelector({ currentYear }: YearSelectorProps) {
 
   return (
     <div className="rounded-lg border border-[var(--color-gold)]/20 bg-white p-4 shadow-sm">
-      <label className="mb-2 block text-sm font-medium text-[var(--color-ink)]/60">
-        年を選択
-      </label>
+      <label className="mb-2 block text-sm font-medium text-[var(--color-ink)]/60">年を選択</label>
       <div className="flex items-center gap-4">
         <span className="text-xs text-[var(--color-ink)]/40">{MIN_YEAR}</span>
         <input

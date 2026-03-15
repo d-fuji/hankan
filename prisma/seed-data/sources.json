@@ -1,5 +1,22 @@
 [
-  { "key": "source_hanshi_daijiten", "title": "藩史大事典", "author": "雄山閣編集部", "pubYear": 1988, "note": "全8巻。各藩の基本情報の主要出典" },
-  { "key": "source_tokugawa_jikki", "title": "徳川実紀", "author": "成島司直", "note": "江戸幕府の公式記録。将軍家関連の主要出典" },
-  { "key": "source_kashindan_jiten", "title": "大名家家臣団事典", "author": "新人物往来社", "pubYear": 1999, "note": "各藩の家臣団構成の参考資料" }
+  {
+    "key": "source_hanshi_daijiten",
+    "title": "藩史大事典",
+    "author": "雄山閣編集部",
+    "pubYear": 1988,
+    "note": "全8巻。各藩の基本情報の主要出典"
+  },
+  {
+    "key": "source_tokugawa_jikki",
+    "title": "徳川実紀",
+    "author": "成島司直",
+    "note": "江戸幕府の公式記録。将軍家関連の主要出典"
+  },
+  {
+    "key": "source_kashindan_jiten",
+    "title": "大名家家臣団事典",
+    "author": "新人物往来社",
+    "pubYear": 1999,
+    "note": "各藩の家臣団構成の参考資料"
+  }
 ]

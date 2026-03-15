@@ -1,79 +1,562 @@
 [
-  { "key": "province_yamashiro", "name": "山城", "nameKana": "やましろ", "nameRomaji": "Yamashiro", "modernPrefecture": "京都府", "region": "畿内" },
-  { "key": "province_yamato", "name": "大和", "nameKana": "やまと", "nameRomaji": "Yamato", "modernPrefecture": "奈良県", "region": "畿内" },
-  { "key": "province_kawachi", "name": "河内", "nameKana": "かわち", "nameRomaji": "Kawachi", "modernPrefecture": "大阪府", "region": "畿内" },
-  { "key": "province_izumi", "name": "和泉", "nameKana": "いずみ", "nameRomaji": "Izumi", "modernPrefecture": "大阪府", "region": "畿内" },
-  { "key": "province_settsu", "name": "摂津", "nameKana": "せっつ", "nameRomaji": "Settsu", "modernPrefecture": "大阪府・兵庫県", "region": "畿内" },
+  {
+    "key": "province_yamashiro",
+    "name": "山城",
+    "nameKana": "やましろ",
+    "nameRomaji": "Yamashiro",
+    "modernPrefecture": "京都府",
+    "region": "畿内"
+  },
+  {
+    "key": "province_yamato",
+    "name": "大和",
+    "nameKana": "やまと",
+    "nameRomaji": "Yamato",
+    "modernPrefecture": "奈良県",
+    "region": "畿内"
+  },
+  {
+    "key": "province_kawachi",
+    "name": "河内",
+    "nameKana": "かわち",
+    "nameRomaji": "Kawachi",
+    "modernPrefecture": "大阪府",
+    "region": "畿内"
+  },
+  {
+    "key": "province_izumi",
+    "name": "和泉",
+    "nameKana": "いずみ",
+    "nameRomaji": "Izumi",
+    "modernPrefecture": "大阪府",
+    "region": "畿内"
+  },
+  {
+    "key": "province_settsu",
+    "name": "摂津",
+    "nameKana": "せっつ",
+    "nameRomaji": "Settsu",
+    "modernPrefecture": "大阪府・兵庫県",
+    "region": "畿内"
+  },
 
-  { "key": "province_iga", "name": "伊賀", "nameKana": "いが", "nameRomaji": "Iga", "modernPrefecture": "三重県", "region": "東海道" },
-  { "key": "province_ise", "name": "伊勢", "nameKana": "いせ", "nameRomaji": "Ise", "modernPrefecture": "三重県", "region": "東海道" },
-  { "key": "province_shima", "name": "志摩", "nameKana": "しま", "nameRomaji": "Shima", "modernPrefecture": "三重県", "region": "東海道" },
-  { "key": "province_owari", "name": "尾張", "nameKana": "おわり", "nameRomaji": "Owari", "modernPrefecture": "愛知県", "region": "東海道" },
-  { "key": "province_mikawa", "name": "三河", "nameKana": "みかわ", "nameRomaji": "Mikawa", "modernPrefecture": "愛知県", "region": "東海道" },
-  { "key": "province_totomi", "name": "遠江", "nameKana": "とおとうみ", "nameRomaji": "Totomi", "modernPrefecture": "静岡県", "region": "東海道" },
-  { "key": "province_suruga", "name": "駿河", "nameKana": "するが", "nameRomaji": "Suruga", "modernPrefecture": "静岡県", "region": "東海道" },
-  { "key": "province_izu", "name": "伊豆", "nameKana": "いず", "nameRomaji": "Izu", "modernPrefecture": "静岡県", "region": "東海道" },
-  { "key": "province_kai", "name": "甲斐", "nameKana": "かい", "nameRomaji": "Kai", "modernPrefecture": "山梨県", "region": "東海道" },
-  { "key": "province_sagami", "name": "相模", "nameKana": "さがみ", "nameRomaji": "Sagami", "modernPrefecture": "神奈川県", "region": "東海道" },
-  { "key": "province_musashi", "name": "武蔵", "nameKana": "むさし", "nameRomaji": "Musashi", "modernPrefecture": "東京都・埼玉県・神奈川県", "region": "東海道" },
-  { "key": "province_awa_boso", "name": "安房", "nameKana": "あわ", "nameRomaji": "Awa", "modernPrefecture": "千葉県", "region": "東海道" },
-  { "key": "province_kazusa", "name": "上総", "nameKana": "かずさ", "nameRomaji": "Kazusa", "modernPrefecture": "千葉県", "region": "東海道" },
-  { "key": "province_shimosa", "name": "下総", "nameKana": "しもうさ", "nameRomaji": "Shimosa", "modernPrefecture": "千葉県・茨城県", "region": "東海道" },
-  { "key": "province_hitachi", "name": "常陸", "nameKana": "ひたち", "nameRomaji": "Hitachi", "modernPrefecture": "茨城県", "region": "東海道" },
+  {
+    "key": "province_iga",
+    "name": "伊賀",
+    "nameKana": "いが",
+    "nameRomaji": "Iga",
+    "modernPrefecture": "三重県",
+    "region": "東海道"
+  },
+  {
+    "key": "province_ise",
+    "name": "伊勢",
+    "nameKana": "いせ",
+    "nameRomaji": "Ise",
+    "modernPrefecture": "三重県",
+    "region": "東海道"
+  },
+  {
+    "key": "province_shima",
+    "name": "志摩",
+    "nameKana": "しま",
+    "nameRomaji": "Shima",
+    "modernPrefecture": "三重県",
+    "region": "東海道"
+  },
+  {
+    "key": "province_owari",
+    "name": "尾張",
+    "nameKana": "おわり",
+    "nameRomaji": "Owari",
+    "modernPrefecture": "愛知県",
+    "region": "東海道"
+  },
+  {
+    "key": "province_mikawa",
+    "name": "三河",
+    "nameKana": "みかわ",
+    "nameRomaji": "Mikawa",
+    "modernPrefecture": "愛知県",
+    "region": "東海道"
+  },
+  {
+    "key": "province_totomi",
+    "name": "遠江",
+    "nameKana": "とおとうみ",
+    "nameRomaji": "Totomi",
+    "modernPrefecture": "静岡県",
+    "region": "東海道"
+  },
+  {
+    "key": "province_suruga",
+    "name": "駿河",
+    "nameKana": "するが",
+    "nameRomaji": "Suruga",
+    "modernPrefecture": "静岡県",
+    "region": "東海道"
+  },
+  {
+    "key": "province_izu",
+    "name": "伊豆",
+    "nameKana": "いず",
+    "nameRomaji": "Izu",
+    "modernPrefecture": "静岡県",
+    "region": "東海道"
+  },
+  {
+    "key": "province_kai",
+    "name": "甲斐",
+    "nameKana": "かい",
+    "nameRomaji": "Kai",
+    "modernPrefecture": "山梨県",
+    "region": "東海道"
+  },
+  {
+    "key": "province_sagami",
+    "name": "相模",
+    "nameKana": "さがみ",
+    "nameRomaji": "Sagami",
+    "modernPrefecture": "神奈川県",
+    "region": "東海道"
+  },
+  {
+    "key": "province_musashi",
+    "name": "武蔵",
+    "nameKana": "むさし",
+    "nameRomaji": "Musashi",
+    "modernPrefecture": "東京都・埼玉県・神奈川県",
+    "region": "東海道"
+  },
+  {
+    "key": "province_awa_boso",
+    "name": "安房",
+    "nameKana": "あわ",
+    "nameRomaji": "Awa",
+    "modernPrefecture": "千葉県",
+    "region": "東海道"
+  },
+  {
+    "key": "province_kazusa",
+    "name": "上総",
+    "nameKana": "かずさ",
+    "nameRomaji": "Kazusa",
+    "modernPrefecture": "千葉県",
+    "region": "東海道"
+  },
+  {
+    "key": "province_shimosa",
+    "name": "下総",
+    "nameKana": "しもうさ",
+    "nameRomaji": "Shimosa",
+    "modernPrefecture": "千葉県・茨城県",
+    "region": "東海道"
+  },
+  {
+    "key": "province_hitachi",
+    "name": "常陸",
+    "nameKana": "ひたち",
+    "nameRomaji": "Hitachi",
+    "modernPrefecture": "茨城県",
+    "region": "東海道"
+  },
 
-  { "key": "province_omi", "name": "近江", "nameKana": "おうみ", "nameRomaji": "Omi", "modernPrefecture": "滋賀県", "region": "東山道" },
-  { "key": "province_mino", "name": "美濃", "nameKana": "みの", "nameRomaji": "Mino", "modernPrefecture": "岐阜県", "region": "東山道" },
-  { "key": "province_hida", "name": "飛騨", "nameKana": "ひだ", "nameRomaji": "Hida", "modernPrefecture": "岐阜県", "region": "東山道" },
-  { "key": "province_shinano", "name": "信濃", "nameKana": "しなの", "nameRomaji": "Shinano", "modernPrefecture": "長野県", "region": "東山道" },
-  { "key": "province_kozuke", "name": "上野", "nameKana": "こうずけ", "nameRomaji": "Kozuke", "modernPrefecture": "群馬県", "region": "東山道" },
-  { "key": "province_shimotsuke", "name": "下野", "nameKana": "しもつけ", "nameRomaji": "Shimotsuke", "modernPrefecture": "栃木県", "region": "東山道" },
-  { "key": "province_mutsu", "name": "陸奥", "nameKana": "むつ", "nameRomaji": "Mutsu", "modernPrefecture": "福島県・宮城県・岩手県・青森県", "region": "東山道" },
-  { "key": "province_dewa", "name": "出羽", "nameKana": "でわ", "nameRomaji": "Dewa", "modernPrefecture": "山形県・秋田県", "region": "東山道" },
+  {
+    "key": "province_omi",
+    "name": "近江",
+    "nameKana": "おうみ",
+    "nameRomaji": "Omi",
+    "modernPrefecture": "滋賀県",
+    "region": "東山道"
+  },
+  {
+    "key": "province_mino",
+    "name": "美濃",
+    "nameKana": "みの",
+    "nameRomaji": "Mino",
+    "modernPrefecture": "岐阜県",
+    "region": "東山道"
+  },
+  {
+    "key": "province_hida",
+    "name": "飛騨",
+    "nameKana": "ひだ",
+    "nameRomaji": "Hida",
+    "modernPrefecture": "岐阜県",
+    "region": "東山道"
+  },
+  {
+    "key": "province_shinano",
+    "name": "信濃",
+    "nameKana": "しなの",
+    "nameRomaji": "Shinano",
+    "modernPrefecture": "長野県",
+    "region": "東山道"
+  },
+  {
+    "key": "province_kozuke",
+    "name": "上野",
+    "nameKana": "こうずけ",
+    "nameRomaji": "Kozuke",
+    "modernPrefecture": "群馬県",
+    "region": "東山道"
+  },
+  {
+    "key": "province_shimotsuke",
+    "name": "下野",
+    "nameKana": "しもつけ",
+    "nameRomaji": "Shimotsuke",
+    "modernPrefecture": "栃木県",
+    "region": "東山道"
+  },
+  {
+    "key": "province_mutsu",
+    "name": "陸奥",
+    "nameKana": "むつ",
+    "nameRomaji": "Mutsu",
+    "modernPrefecture": "福島県・宮城県・岩手県・青森県",
+    "region": "東山道"
+  },
+  {
+    "key": "province_dewa",
+    "name": "出羽",
+    "nameKana": "でわ",
+    "nameRomaji": "Dewa",
+    "modernPrefecture": "山形県・秋田県",
+    "region": "東山道"
+  },
 
-  { "key": "province_wakasa", "name": "若狭", "nameKana": "わかさ", "nameRomaji": "Wakasa", "modernPrefecture": "福井県", "region": "北陸道" },
-  { "key": "province_echizen", "name": "越前", "nameKana": "えちぜん", "nameRomaji": "Echizen", "modernPrefecture": "福井県", "region": "北陸道" },
-  { "key": "province_kaga", "name": "加賀", "nameKana": "かが", "nameRomaji": "Kaga", "modernPrefecture": "石川県", "region": "北陸道" },
-  { "key": "province_noto", "name": "能登", "nameKana": "のと", "nameRomaji": "Noto", "modernPrefecture": "石川県", "region": "北陸道" },
-  { "key": "province_etchu", "name": "越中", "nameKana": "えっちゅう", "nameRomaji": "Etchu", "modernPrefecture": "富山県", "region": "北陸道" },
-  { "key": "province_echigo", "name": "越後", "nameKana": "えちご", "nameRomaji": "Echigo", "modernPrefecture": "新潟県", "region": "北陸道" },
-  { "key": "province_sado", "name": "佐渡", "nameKana": "さど", "nameRomaji": "Sado", "modernPrefecture": "新潟県", "region": "北陸道" },
+  {
+    "key": "province_wakasa",
+    "name": "若狭",
+    "nameKana": "わかさ",
+    "nameRomaji": "Wakasa",
+    "modernPrefecture": "福井県",
+    "region": "北陸道"
+  },
+  {
+    "key": "province_echizen",
+    "name": "越前",
+    "nameKana": "えちぜん",
+    "nameRomaji": "Echizen",
+    "modernPrefecture": "福井県",
+    "region": "北陸道"
+  },
+  {
+    "key": "province_kaga",
+    "name": "加賀",
+    "nameKana": "かが",
+    "nameRomaji": "Kaga",
+    "modernPrefecture": "石川県",
+    "region": "北陸道"
+  },
+  {
+    "key": "province_noto",
+    "name": "能登",
+    "nameKana": "のと",
+    "nameRomaji": "Noto",
+    "modernPrefecture": "石川県",
+    "region": "北陸道"
+  },
+  {
+    "key": "province_etchu",
+    "name": "越中",
+    "nameKana": "えっちゅう",
+    "nameRomaji": "Etchu",
+    "modernPrefecture": "富山県",
+    "region": "北陸道"
+  },
+  {
+    "key": "province_echigo",
+    "name": "越後",
+    "nameKana": "えちご",
+    "nameRomaji": "Echigo",
+    "modernPrefecture": "新潟県",
+    "region": "北陸道"
+  },
+  {
+    "key": "province_sado",
+    "name": "佐渡",
+    "nameKana": "さど",
+    "nameRomaji": "Sado",
+    "modernPrefecture": "新潟県",
+    "region": "北陸道"
+  },
 
-  { "key": "province_tanba", "name": "丹波", "nameKana": "たんば", "nameRomaji": "Tanba", "modernPrefecture": "京都府・兵庫県", "region": "山陰道" },
-  { "key": "province_tango", "name": "丹後", "nameKana": "たんご", "nameRomaji": "Tango", "modernPrefecture": "京都府", "region": "山陰道" },
-  { "key": "province_tajima", "name": "但馬", "nameKana": "たじま", "nameRomaji": "Tajima", "modernPrefecture": "兵庫県", "region": "山陰道" },
-  { "key": "province_inaba", "name": "因幡", "nameKana": "いなば", "nameRomaji": "Inaba", "modernPrefecture": "鳥取県", "region": "山陰道" },
-  { "key": "province_hoki", "name": "伯耆", "nameKana": "ほうき", "nameRomaji": "Hoki", "modernPrefecture": "鳥取県", "region": "山陰道" },
-  { "key": "province_izumo", "name": "出雲", "nameKana": "いずも", "nameRomaji": "Izumo", "modernPrefecture": "島根県", "region": "山陰道" },
-  { "key": "province_iwami", "name": "石見", "nameKana": "いわみ", "nameRomaji": "Iwami", "modernPrefecture": "島根県", "region": "山陰道" },
-  { "key": "province_oki", "name": "隠岐", "nameKana": "おき", "nameRomaji": "Oki", "modernPrefecture": "島根県", "region": "山陰道" },
+  {
+    "key": "province_tanba",
+    "name": "丹波",
+    "nameKana": "たんば",
+    "nameRomaji": "Tanba",
+    "modernPrefecture": "京都府・兵庫県",
+    "region": "山陰道"
+  },
+  {
+    "key": "province_tango",
+    "name": "丹後",
+    "nameKana": "たんご",
+    "nameRomaji": "Tango",
+    "modernPrefecture": "京都府",
+    "region": "山陰道"
+  },
+  {
+    "key": "province_tajima",
+    "name": "但馬",
+    "nameKana": "たじま",
+    "nameRomaji": "Tajima",
+    "modernPrefecture": "兵庫県",
+    "region": "山陰道"
+  },
+  {
+    "key": "province_inaba",
+    "name": "因幡",
+    "nameKana": "いなば",
+    "nameRomaji": "Inaba",
+    "modernPrefecture": "鳥取県",
+    "region": "山陰道"
+  },
+  {
+    "key": "province_hoki",
+    "name": "伯耆",
+    "nameKana": "ほうき",
+    "nameRomaji": "Hoki",
+    "modernPrefecture": "鳥取県",
+    "region": "山陰道"
+  },
+  {
+    "key": "province_izumo",
+    "name": "出雲",
+    "nameKana": "いずも",
+    "nameRomaji": "Izumo",
+    "modernPrefecture": "島根県",
+    "region": "山陰道"
+  },
+  {
+    "key": "province_iwami",
+    "name": "石見",
+    "nameKana": "いわみ",
+    "nameRomaji": "Iwami",
+    "modernPrefecture": "島根県",
+    "region": "山陰道"
+  },
+  {
+    "key": "province_oki",
+    "name": "隠岐",
+    "nameKana": "おき",
+    "nameRomaji": "Oki",
+    "modernPrefecture": "島根県",
+    "region": "山陰道"
+  },
 
-  { "key": "province_harima", "name": "播磨", "nameKana": "はりま", "nameRomaji": "Harima", "modernPrefecture": "兵庫県", "region": "山陽道" },
-  { "key": "province_mimasaka", "name": "美作", "nameKana": "みまさか", "nameRomaji": "Mimasaka", "modernPrefecture": "岡山県", "region": "山陽道" },
-  { "key": "province_bizen", "name": "備前", "nameKana": "びぜん", "nameRomaji": "Bizen", "modernPrefecture": "岡山県", "region": "山陽道" },
-  { "key": "province_bitchu", "name": "備中", "nameKana": "びっちゅう", "nameRomaji": "Bitchu", "modernPrefecture": "岡山県", "region": "山陽道" },
-  { "key": "province_bingo", "name": "備後", "nameKana": "びんご", "nameRomaji": "Bingo", "modernPrefecture": "広島県", "region": "山陽道" },
-  { "key": "province_aki", "name": "安芸", "nameKana": "あき", "nameRomaji": "Aki", "modernPrefecture": "広島県", "region": "山陽道" },
-  { "key": "province_suo", "name": "周防", "nameKana": "すおう", "nameRomaji": "Suo", "modernPrefecture": "山口県", "region": "山陽道" },
-  { "key": "province_nagato", "name": "長門", "nameKana": "ながと", "nameRomaji": "Nagato", "modernPrefecture": "山口県", "region": "山陽道" },
+  {
+    "key": "province_harima",
+    "name": "播磨",
+    "nameKana": "はりま",
+    "nameRomaji": "Harima",
+    "modernPrefecture": "兵庫県",
+    "region": "山陽道"
+  },
+  {
+    "key": "province_mimasaka",
+    "name": "美作",
+    "nameKana": "みまさか",
+    "nameRomaji": "Mimasaka",
+    "modernPrefecture": "岡山県",
+    "region": "山陽道"
+  },
+  {
+    "key": "province_bizen",
+    "name": "備前",
+    "nameKana": "びぜん",
+    "nameRomaji": "Bizen",
+    "modernPrefecture": "岡山県",
+    "region": "山陽道"
+  },
+  {
+    "key": "province_bitchu",
+    "name": "備中",
+    "nameKana": "びっちゅう",
+    "nameRomaji": "Bitchu",
+    "modernPrefecture": "岡山県",
+    "region": "山陽道"
+  },
+  {
+    "key": "province_bingo",
+    "name": "備後",
+    "nameKana": "びんご",
+    "nameRomaji": "Bingo",
+    "modernPrefecture": "広島県",
+    "region": "山陽道"
+  },
+  {
+    "key": "province_aki",
+    "name": "安芸",
+    "nameKana": "あき",
+    "nameRomaji": "Aki",
+    "modernPrefecture": "広島県",
+    "region": "山陽道"
+  },
+  {
+    "key": "province_suo",
+    "name": "周防",
+    "nameKana": "すおう",
+    "nameRomaji": "Suo",
+    "modernPrefecture": "山口県",
+    "region": "山陽道"
+  },
+  {
+    "key": "province_nagato",
+    "name": "長門",
+    "nameKana": "ながと",
+    "nameRomaji": "Nagato",
+    "modernPrefecture": "山口県",
+    "region": "山陽道"
+  },
 
-  { "key": "province_kii", "name": "紀伊", "nameKana": "きい", "nameRomaji": "Kii", "modernPrefecture": "和歌山県・三重県", "region": "南海道" },
-  { "key": "province_awaji", "name": "淡路", "nameKana": "あわじ", "nameRomaji": "Awaji", "modernPrefecture": "兵庫県", "region": "南海道" },
-  { "key": "province_awa_shikoku", "name": "阿波", "nameKana": "あわ", "nameRomaji": "Awa", "modernPrefecture": "徳島県", "region": "南海道" },
-  { "key": "province_sanuki", "name": "讃岐", "nameKana": "さぬき", "nameRomaji": "Sanuki", "modernPrefecture": "香川県", "region": "南海道" },
-  { "key": "province_iyo", "name": "伊予", "nameKana": "いよ", "nameRomaji": "Iyo", "modernPrefecture": "愛媛県", "region": "南海道" },
-  { "key": "province_tosa", "name": "土佐", "nameKana": "とさ", "nameRomaji": "Tosa", "modernPrefecture": "高知県", "region": "南海道" },
+  {
+    "key": "province_kii",
+    "name": "紀伊",
+    "nameKana": "きい",
+    "nameRomaji": "Kii",
+    "modernPrefecture": "和歌山県・三重県",
+    "region": "南海道"
+  },
+  {
+    "key": "province_awaji",
+    "name": "淡路",
+    "nameKana": "あわじ",
+    "nameRomaji": "Awaji",
+    "modernPrefecture": "兵庫県",
+    "region": "南海道"
+  },
+  {
+    "key": "province_awa_shikoku",
+    "name": "阿波",
+    "nameKana": "あわ",
+    "nameRomaji": "Awa",
+    "modernPrefecture": "徳島県",
+    "region": "南海道"
+  },
+  {
+    "key": "province_sanuki",
+    "name": "讃岐",
+    "nameKana": "さぬき",
+    "nameRomaji": "Sanuki",
+    "modernPrefecture": "香川県",
+    "region": "南海道"
+  },
+  {
+    "key": "province_iyo",
+    "name": "伊予",
+    "nameKana": "いよ",
+    "nameRomaji": "Iyo",
+    "modernPrefecture": "愛媛県",
+    "region": "南海道"
+  },
+  {
+    "key": "province_tosa",
+    "name": "土佐",
+    "nameKana": "とさ",
+    "nameRomaji": "Tosa",
+    "modernPrefecture": "高知県",
+    "region": "南海道"
+  },
 
-  { "key": "province_chikuzen", "name": "筑前", "nameKana": "ちくぜん", "nameRomaji": "Chikuzen", "modernPrefecture": "福岡県", "region": "西海道" },
-  { "key": "province_chikugo", "name": "筑後", "nameKana": "ちくご", "nameRomaji": "Chikugo", "modernPrefecture": "福岡県", "region": "西海道" },
-  { "key": "province_buzen", "name": "豊前", "nameKana": "ぶぜん", "nameRomaji": "Buzen", "modernPrefecture": "福岡県・大分県", "region": "西海道" },
-  { "key": "province_bungo", "name": "豊後", "nameKana": "ぶんご", "nameRomaji": "Bungo", "modernPrefecture": "大分県", "region": "西海道" },
-  { "key": "province_hizen", "name": "肥前", "nameKana": "ひぜん", "nameRomaji": "Hizen", "modernPrefecture": "佐賀県・長崎県", "region": "西海道" },
-  { "key": "province_higo", "name": "肥後", "nameKana": "ひご", "nameRomaji": "Higo", "modernPrefecture": "熊本県", "region": "西海道" },
-  { "key": "province_hyuga", "name": "日向", "nameKana": "ひゅうが", "nameRomaji": "Hyuga", "modernPrefecture": "宮崎県", "region": "西海道" },
-  { "key": "province_osumi", "name": "大隅", "nameKana": "おおすみ", "nameRomaji": "Osumi", "modernPrefecture": "鹿児島県", "region": "西海道" },
-  { "key": "province_satsuma", "name": "薩摩", "nameKana": "さつま", "nameRomaji": "Satsuma", "modernPrefecture": "鹿児島県", "region": "西海道" },
-  { "key": "province_iki", "name": "壱岐", "nameKana": "いき", "nameRomaji": "Iki", "modernPrefecture": "長崎県", "region": "西海道" },
-  { "key": "province_tsushima", "name": "対馬", "nameKana": "つしま", "nameRomaji": "Tsushima", "modernPrefecture": "長崎県", "region": "西海道" },
+  {
+    "key": "province_chikuzen",
+    "name": "筑前",
+    "nameKana": "ちくぜん",
+    "nameRomaji": "Chikuzen",
+    "modernPrefecture": "福岡県",
+    "region": "西海道"
+  },
+  {
+    "key": "province_chikugo",
+    "name": "筑後",
+    "nameKana": "ちくご",
+    "nameRomaji": "Chikugo",
+    "modernPrefecture": "福岡県",
+    "region": "西海道"
+  },
+  {
+    "key": "province_buzen",
+    "name": "豊前",
+    "nameKana": "ぶぜん",
+    "nameRomaji": "Buzen",
+    "modernPrefecture": "福岡県・大分県",
+    "region": "西海道"
+  },
+  {
+    "key": "province_bungo",
+    "name": "豊後",
+    "nameKana": "ぶんご",
+    "nameRomaji": "Bungo",
+    "modernPrefecture": "大分県",
+    "region": "西海道"
+  },
+  {
+    "key": "province_hizen",
+    "name": "肥前",
+    "nameKana": "ひぜん",
+    "nameRomaji": "Hizen",
+    "modernPrefecture": "佐賀県・長崎県",
+    "region": "西海道"
+  },
+  {
+    "key": "province_higo",
+    "name": "肥後",
+    "nameKana": "ひご",
+    "nameRomaji": "Higo",
+    "modernPrefecture": "熊本県",
+    "region": "西海道"
+  },
+  {
+    "key": "province_hyuga",
+    "name": "日向",
+    "nameKana": "ひゅうが",
+    "nameRomaji": "Hyuga",
+    "modernPrefecture": "宮崎県",
+    "region": "西海道"
+  },
+  {
+    "key": "province_osumi",
+    "name": "大隅",
+    "nameKana": "おおすみ",
+    "nameRomaji": "Osumi",
+    "modernPrefecture": "鹿児島県",
+    "region": "西海道"
+  },
+  {
+    "key": "province_satsuma",
+    "name": "薩摩",
+    "nameKana": "さつま",
+    "nameRomaji": "Satsuma",
+    "modernPrefecture": "鹿児島県",
+    "region": "西海道"
+  },
+  {
+    "key": "province_iki",
+    "name": "壱岐",
+    "nameKana": "いき",
+    "nameRomaji": "Iki",
+    "modernPrefecture": "長崎県",
+    "region": "西海道"
+  },
+  {
+    "key": "province_tsushima",
+    "name": "対馬",
+    "nameKana": "つしま",
+    "nameRomaji": "Tsushima",
+    "modernPrefecture": "長崎県",
+    "region": "西海道"
+  },
 
-  { "key": "province_ezo", "name": "蝦夷", "nameKana": "えぞ", "nameRomaji": "Ezo", "modernPrefecture": "北海道", "region": "北海道" }
+  {
+    "key": "province_ezo",
+    "name": "蝦夷",
+    "nameKana": "えぞ",
+    "nameRomaji": "Ezo",
+    "modernPrefecture": "北海道",
+    "region": "北海道"
+  }
 ]

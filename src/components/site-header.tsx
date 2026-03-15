@@ -26,9 +26,11 @@ export function SiteHeader({ currentPath }: SiteHeaderProps) {
               key={item.href}
               href={item.href}
               className={
-                (item.matchPrefix
-                  ? currentPath?.startsWith(item.matchPrefix)
-                  : currentPath === item.href)
+                (
+                  item.matchPrefix
+                    ? currentPath?.startsWith(item.matchPrefix)
+                    : currentPath === item.href
+                )
                   ? "text-gold"
                   : "text-white/60 hover:text-white"
               }

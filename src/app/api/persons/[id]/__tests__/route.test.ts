@@ -43,9 +43,7 @@ describe("GET /api/persons/[id]", () => {
           endYear: 1605,
         },
       ],
-      children: [
-        { id: 2, name: "徳川秀忠", birthOrder: 3, birthOrderType: "男" },
-      ],
+      children: [{ id: 2, name: "徳川秀忠", birthOrder: 3, birthOrderType: "男" }],
     });
 
     const res = await GET(createRequest("1"), { params: Promise.resolve({ id: "1" }) });

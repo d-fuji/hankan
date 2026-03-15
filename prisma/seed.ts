@@ -93,7 +93,7 @@ type SourceData = {
 // ----------------------------------------
 async function resolveId(
   table: "province" | "clan" | "person" | "territory" | "appointment",
-  key: string,
+  key: string
 ): Promise<number> {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const record = await (prisma[table] as any).findUnique({
@@ -171,9 +171,7 @@ async function main() {
   const appointmentsData = loadJson<AppointmentData[]>("appointments.json");
   for (const { key, personKey, territoryKey, ...rest } of appointmentsData) {
     const personId = await resolveId("person", personKey);
-    const territoryId = territoryKey
-      ? await resolveId("territory", territoryKey)
-      : undefined;
+    const territoryId = territoryKey ? await resolveId("territory", territoryKey) : undefined;
     await prisma.appointment.upsert({
       where: { key },
       create: { key, ...rest, personId, territoryId },

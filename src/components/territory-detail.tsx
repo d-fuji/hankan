@@ -14,19 +14,14 @@ type TerritoryDetailProps = {
 };
 
 export function TerritoryDetail({ id }: TerritoryDetailProps) {
-  const { data, error, isLoading } = useSWR<TerritoryDetailType>(
-    `/api/territories/${id}`,
-    fetcher
-  );
+  const { data, error, isLoading } = useSWR<TerritoryDetailType>(`/api/territories/${id}`, fetcher);
 
   if (isLoading) {
     return <p className="py-8 text-center text-[var(--color-ink)]/50">読み込み中...</p>;
   }
 
   if (error || !data) {
-    return (
-      <p className="py-8 text-center text-red-600">領地が見つかりませんでした</p>
-    );
+    return <p className="py-8 text-center text-red-600">領地が見つかりませんでした</p>;
   }
 
   return (
@@ -88,9 +83,7 @@ export function TerritoryDetail({ id }: TerritoryDetailProps) {
               >
                 <div>
                   <span className="font-medium">{lord.name}</span>
-                  <span className="ml-2 text-sm text-[var(--color-ink)]/50">
-                    {lord.clanName}家
-                  </span>
+                  <span className="ml-2 text-sm text-[var(--color-ink)]/50">{lord.clanName}家</span>
                 </div>
                 <div className="text-sm text-[var(--color-ink)]/60">
                   {lord.generation !== undefined && (

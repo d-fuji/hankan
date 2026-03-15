@@ -1,8 +1,5 @@
 import { describe, it, expect } from "vitest";
-import {
-  toTerritorySummary,
-  toTerritoryDetail,
-} from "@/lib/territory-mapper";
+import { toTerritorySummary, toTerritoryDetail } from "@/lib/territory-mapper";
 import type { TerritoryWithRelations, TerritoryDetailRow } from "@/lib/territory-mapper";
 
 describe("toTerritorySummary", () => {

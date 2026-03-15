@@ -15,7 +15,10 @@ describe("SiteHeader", () => {
     render(<SiteHeader />);
 
     expect(screen.getByRole("link", { name: "領地検索" })).toHaveAttribute("href", "/");
-    expect(screen.getByRole("link", { name: "年代ビュー" })).toHaveAttribute("href", "/annual/1700");
+    expect(screen.getByRole("link", { name: "年代ビュー" })).toHaveAttribute(
+      "href",
+      "/annual/1700"
+    );
     expect(screen.getByRole("link", { name: "将軍一覧" })).toHaveAttribute("href", "/shoguns");
   });
 

@@ -9,10 +9,7 @@ describe("toPersonSummary", () => {
       name: "徳川家康",
       nameKana: "とくがわいえやす",
       clan: { name: "徳川" },
-      appointments: [
-        { roleType: "征夷大将軍" },
-        { roleType: "征夷大将軍" },
-      ],
+      appointments: [{ roleType: "征夷大将軍" }, { roleType: "征夷大将軍" }],
     };
 
     const result = toPersonSummary(row);
@@ -64,9 +61,7 @@ describe("toPersonDetail", () => {
           endYear: 1605,
         },
       ],
-      children: [
-        { id: 2, name: "徳川秀忠", birthOrder: 3, birthOrderType: "男" },
-      ],
+      children: [{ id: 2, name: "徳川秀忠", birthOrder: 3, birthOrderType: "男" }],
     };
 
     const result = toPersonDetail(row);

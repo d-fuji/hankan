@@ -6,11 +6,7 @@ import { TerritoryDetail } from "@/components/territory-detail";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 
-export default function TerritoryPage({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
+export default function TerritoryPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
 
   return (

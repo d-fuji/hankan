@@ -56,9 +56,7 @@ export function ShogunList() {
               <span className="font-[family-name:var(--font-noto-serif)] text-lg font-bold text-[var(--color-navy)]">
                 {shogun.name}
               </span>
-              <span className="ml-2 text-sm text-[var(--color-ink)]/50">
-                {shogun.clanName}家
-              </span>
+              <span className="ml-2 text-sm text-[var(--color-ink)]/50">{shogun.clanName}家</span>
             </div>
           </div>
           <div className="text-right text-sm">

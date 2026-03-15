@@ -11,10 +11,7 @@ type AnnualSnapshotViewProps = {
 };
 
 export function AnnualSnapshotView({ year }: AnnualSnapshotViewProps) {
-  const { data, error, isLoading } = useSWR<AnnualSnapshot>(
-    `/api/annual?year=${year}`,
-    fetcher
-  );
+  const { data, error, isLoading } = useSWR<AnnualSnapshot>(`/api/annual?year=${year}`, fetcher);
 
   if (isLoading) {
     return <p className="py-8 text-center text-[var(--color-ink)]/50">読み込み中...</p>;
@@ -61,9 +58,7 @@ export function AnnualSnapshotView({ year }: AnnualSnapshotViewProps) {
           領地一覧（{data.territories.length}件）
         </h2>
         {data.territories.length === 0 ? (
-          <p className="py-4 text-center text-[var(--color-ink)]/50">
-            該当する領地がありません
-          </p>
+          <p className="py-4 text-center text-[var(--color-ink)]/50">該当する領地がありません</p>
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full border-collapse text-sm">

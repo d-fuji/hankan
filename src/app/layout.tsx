@@ -16,8 +16,7 @@ const notoSans = Noto_Sans_JP({
 
 export const metadata: Metadata = {
   title: "藩鑑 - Hankan",
-  description:
-    "江戸時代の藩・藩主・石高を横断的に検索・閲覧できるデータベース",
+  description: "江戸時代の藩・藩主・石高を横断的に検索・閲覧できるデータベース",
 };
 
 export default function RootLayout({

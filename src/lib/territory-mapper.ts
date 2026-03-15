@@ -44,9 +44,7 @@ export type TerritoryDetailRow = {
 export function toTerritorySummary(row: TerritoryWithRelations): TerritorySummary {
   const latestKokudaka =
     row.kokudakaHistory.length > 0
-      ? row.kokudakaHistory.reduce((latest, k) =>
-          (k.year ?? 0) > (latest.year ?? 0) ? k : latest
-        )
+      ? row.kokudakaHistory.reduce((latest, k) => ((k.year ?? 0) > (latest.year ?? 0) ? k : latest))
       : undefined;
 
   return {
