@@ -2,8 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import type { LineageNode } from "@/types/person";
 
-const ANCESTOR_DEPTH_LIMIT = 10;
-const DESCENDANT_DEPTH_LIMIT = 10;
+/** フォーカス人物から何世代上まで遡るか */
+const ANCESTOR_LIMIT = 2;
 
 const personSelect = {
   id: true,
@@ -23,10 +23,11 @@ type PersonRow = {
   adoptedFromClan: { name: string } | null;
 };
 
-/** 先祖を辿ってルート人物を見つける */
-async function findRootAncestor(person: PersonRow): Promise<PersonRow> {
+/** 先祖を辿ってルート人物を見つける（最大 ANCESTOR_LIMIT 世代上） */
+async function findLocalRoot(person: PersonRow): Promise<{ root: PersonRow; depth: number }> {
   let current = person;
-  for (let i = 0; i < ANCESTOR_DEPTH_LIMIT; i++) {
+  let depth = 0;
+  for (let i = 0; i < ANCESTOR_LIMIT; i++) {
     if (!current.fatherId) break;
     const father = await prisma.person.findUnique({
       where: { id: current.fatherId },
@@ -34,22 +35,28 @@ async function findRootAncestor(person: PersonRow): Promise<PersonRow> {
     });
     if (!father) break;
     current = father;
+    depth++;
   }
-  return current;
+  return { root: current, depth };
 }
 
 /** 子孫を再帰的に取得してツリーを構築 */
-async function buildTree(person: PersonRow, focusId: number, depth: number): Promise<LineageNode> {
+async function buildTree(
+  person: PersonRow,
+  focusId: number,
+  depth: number,
+  maxDepth: number
+): Promise<LineageNode> {
   const children: LineageNode[] = [];
 
-  if (depth < DESCENDANT_DEPTH_LIMIT) {
+  if (depth < maxDepth) {
     const childRows = await prisma.person.findMany({
       where: { fatherId: person.id },
       select: personSelect,
       orderBy: { id: "asc" },
     });
     for (const child of childRows) {
-      children.push(await buildTree(child, focusId, depth + 1));
+      children.push(await buildTree(child, focusId, depth + 1, maxDepth));
     }
   }
 
@@ -80,8 +87,10 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
     return NextResponse.json({ error: "Not found" }, { status: 404 });
   }
 
-  const root = await findRootAncestor(person);
-  const tree = await buildTree(root, id, 0);
+  const { root, depth: ancestorDepth } = await findLocalRoot(person);
+  // ルートからの最大深さ = 遡った分 + フォーカス人物から2世代下（子・孫）
+  const maxDepth = ancestorDepth + 2;
+  const tree = await buildTree(root, id, 0, maxDepth);
 
   return NextResponse.json({ tree, focusPersonId: id });
 }

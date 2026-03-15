@@ -19,45 +19,63 @@ function createRequest(id: string) {
 }
 
 // テスト用の人物データ
-const ieyasu = {
+const grandfather = {
   id: 1,
-  name: "徳川家康",
+  name: "祖父",
   clan: { name: "徳川" },
-  fatherId: null,
+  fatherId: 99, // 曽祖父がいるが遡らない
   isAdopted: false,
   adoptedFromClan: null,
 };
 
-const hidetada = {
+const father = {
   id: 2,
-  name: "徳川秀忠",
+  name: "父",
   clan: { name: "徳川" },
   fatherId: 1,
   isAdopted: false,
   adoptedFromClan: null,
 };
 
-const iemitsu = {
+const focusPerson = {
   id: 3,
-  name: "徳川家光",
+  name: "本人",
   clan: { name: "徳川" },
   fatherId: 2,
   isAdopted: false,
   adoptedFromClan: null,
 };
 
-const yoshimune = {
+const child = {
   id: 4,
-  name: "徳川吉宗",
+  name: "子",
   clan: { name: "徳川" },
-  fatherId: 5,
+  fatherId: 3,
+  isAdopted: false,
+  adoptedFromClan: null,
+};
+
+const grandchild = {
+  id: 5,
+  name: "孫",
+  clan: { name: "徳川" },
+  fatherId: 4,
+  isAdopted: false,
+  adoptedFromClan: null,
+};
+
+const adoptedPerson = {
+  id: 10,
+  name: "養子",
+  clan: { name: "徳川" },
+  fatherId: 20,
   isAdopted: true,
   adoptedFromClan: { name: "紀州徳川" },
 };
 
-const mitsusada = {
-  id: 5,
-  name: "徳川光貞",
+const adoptedFather = {
+  id: 20,
+  name: "養父",
   clan: { name: "紀州徳川" },
   fatherId: null,
   isAdopted: false,
@@ -65,62 +83,79 @@ const mitsusada = {
 };
 
 describe("GET /api/persons/[id]/lineage", () => {
-  beforeEach(() => vi.clearAllMocks());
+  beforeEach(() => vi.resetAllMocks());
 
-  it("3世代の血統ツリーを返す（家康→秀忠→家光）", async () => {
-    // findUnique: 対象人物を取得
-    mockFindUnique.mockResolvedValue(hidetada);
-
-    // findMany: 先祖の探索（秀忠の父 → 家康、家康の父 → null）
+  it("祖父→父→本人→子→孫の5世代を返す", async () => {
     mockFindUnique
-      .mockResolvedValueOnce(hidetada) // 最初の呼び出し: 対象人物
-      .mockResolvedValueOnce(ieyasu); // 先祖探索: 家康
+      .mockResolvedValueOnce(focusPerson) // 対象人物
+      .mockResolvedValueOnce(father) // 1世代上: 父
+      .mockResolvedValueOnce(grandfather); // 2世代上: 祖父（ここで止まる）
 
-    // findMany: ルートからの子孫ツリー構築
-    // 家康の子
+    // maxDepth = 2(ancestors) + 2 = 4。depth 4 では展開しないので4回のfindMany
     mockFindMany
-      .mockResolvedValueOnce([hidetada]) // 家康の子供
-      .mockResolvedValueOnce([iemitsu]) // 秀忠の子供
-      .mockResolvedValueOnce([]); // 家光の子供
+      .mockResolvedValueOnce([father]) // depth0: 祖父の子
+      .mockResolvedValueOnce([focusPerson]) // depth1: 父の子
+      .mockResolvedValueOnce([child]) // depth2: 本人の子
+      .mockResolvedValueOnce([grandchild]); // depth3: 子の子（孫）
+    // depth4: 孫は展開されない（4 < 4 = false）
 
-    const res = await GET(createRequest("2"), {
-      params: Promise.resolve({ id: "2" }),
+    const res = await GET(createRequest("3"), {
+      params: Promise.resolve({ id: "3" }),
     });
     const json = await res.json();
 
     expect(res.status).toBe(200);
-    expect(json.focusPersonId).toBe(2);
-    // ルートは家康
-    expect(json.tree.name).toBe("徳川家康");
-    expect(json.tree.isFocusPerson).toBe(false);
-    // 秀忠は家康の子
-    expect(json.tree.children).toHaveLength(1);
-    expect(json.tree.children[0].name).toBe("徳川秀忠");
-    expect(json.tree.children[0].isFocusPerson).toBe(true);
-    // 家光は秀忠の子
-    expect(json.tree.children[0].children).toHaveLength(1);
-    expect(json.tree.children[0].children[0].name).toBe("徳川家光");
+    expect(json.focusPersonId).toBe(3);
+    // ルートは祖父（曽祖父には遡らない）
+    expect(json.tree.name).toBe("祖父");
+    // 祖父→父→本人→子→孫
+    expect(json.tree.children[0].name).toBe("父");
+    expect(json.tree.children[0].children[0].name).toBe("本人");
+    expect(json.tree.children[0].children[0].isFocusPerson).toBe(true);
+    expect(json.tree.children[0].children[0].children[0].name).toBe("子");
+    expect(json.tree.children[0].children[0].children[0].children[0].name).toBe("孫");
+  });
+
+  it("孫より下は表示しない", async () => {
+    // 父なしなので本人がルート、ancestorDepth=0、maxDepth=2
+    mockFindUnique.mockResolvedValueOnce({ ...focusPerson, fatherId: null });
+
+    // maxDepth=2: depth0(本人)展開, depth1(子)展開, depth2(孫)展開しない
+    mockFindMany
+      .mockResolvedValueOnce([child]) // depth0: 本人の子
+      .mockResolvedValueOnce([grandchild]); // depth1: 子の子（孫）
+    // depth2: 孫は展開されない（maxDepth=2）
+
+    const res = await GET(createRequest("3"), {
+      params: Promise.resolve({ id: "3" }),
+    });
+    const json = await res.json();
+
+    const grandchildNode = json.tree.children[0].children[0];
+    expect(grandchildNode.name).toBe("孫");
+    expect(grandchildNode.children).toHaveLength(0);
   });
 
   it("養子関係を正しくマーキングする", async () => {
+    // adoptedPerson(fatherId:20) → adoptedFather(fatherId:null)
+    // ancestorDepth=1, maxDepth=3
     mockFindUnique
-      .mockResolvedValueOnce(yoshimune) // 対象人物
-      .mockResolvedValueOnce(mitsusada); // 父: 光貞
+      .mockResolvedValueOnce(adoptedPerson) // 対象人物
+      .mockResolvedValueOnce(adoptedFather); // 1世代上: 養父（父なしで止まる）
 
     mockFindMany
-      .mockResolvedValueOnce([yoshimune]) // 光貞の子供
-      .mockResolvedValueOnce([]); // 吉宗の子供
+      .mockResolvedValueOnce([adoptedPerson]) // depth0: 養父の子
+      .mockResolvedValueOnce([]); // depth1: 養子の子
 
-    const res = await GET(createRequest("4"), {
-      params: Promise.resolve({ id: "4" }),
+    const res = await GET(createRequest("10"), {
+      params: Promise.resolve({ id: "10" }),
     });
     const json = await res.json();
 
     expect(res.status).toBe(200);
-    // 吉宗は養子
-    const yoshimuneNode = json.tree.children[0];
-    expect(yoshimuneNode.isAdopted).toBe(true);
-    expect(yoshimuneNode.adoptedFromClanName).toBe("紀州徳川");
+    const node = json.tree.children[0];
+    expect(node.isAdopted).toBe(true);
+    expect(node.adoptedFromClanName).toBe("紀州徳川");
   });
 
   it("存在しない人物で404を返す", async () => {
@@ -139,21 +174,19 @@ describe("GET /api/persons/[id]/lineage", () => {
     expect(res.status).toBe(400);
   });
 
-  it("ルート人物（父なし）自身を指定した場合、本人がルートになる", async () => {
-    mockFindUnique.mockResolvedValueOnce(ieyasu); // 対象人物（父なし）
+  it("父なしの人物自身がルートになる", async () => {
+    mockFindUnique.mockResolvedValueOnce({ ...focusPerson, fatherId: null });
 
     mockFindMany
-      .mockResolvedValueOnce([hidetada]) // 家康の子供
-      .mockResolvedValueOnce([]); // 秀忠の子供
+      .mockResolvedValueOnce([child])
+      .mockResolvedValueOnce([]);
 
-    const res = await GET(createRequest("1"), {
-      params: Promise.resolve({ id: "1" }),
+    const res = await GET(createRequest("3"), {
+      params: Promise.resolve({ id: "3" }),
     });
     const json = await res.json();
 
-    expect(res.status).toBe(200);
-    expect(json.tree.name).toBe("徳川家康");
+    expect(json.tree.name).toBe("本人");
     expect(json.tree.isFocusPerson).toBe(true);
-    expect(json.tree.children).toHaveLength(1);
   });
 });
