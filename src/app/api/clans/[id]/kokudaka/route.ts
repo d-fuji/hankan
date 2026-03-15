@@ -18,18 +18,32 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
     return NextResponse.json({ error: "Not found" }, { status: 404 });
   }
 
-  // 家に属する人物が藩主として治めた領地の石高履歴を取得
-  const kokudakaRows = await prisma.kokudaka.findMany({
+  // 家の人物が藩主として治めた領地IDを取得
+  const territories = await prisma.appointment.findMany({
     where: {
-      appointment: {
-        person: { clanId: id },
-      },
+      person: { clanId: id },
+      roleType: "藩主",
+      territoryId: { not: null },
     },
+    select: { territoryId: true },
+    distinct: ["territoryId"],
+  });
+
+  const territoryIds = territories
+    .map((t) => t.territoryId)
+    .filter((id): id is number => id !== null);
+
+  if (territoryIds.length === 0) {
+    return NextResponse.json({ clanId: clan.id, clanName: clan.name, data: [] });
+  }
+
+  // それらの領地の石高履歴を取得
+  const kokudakaRows = await prisma.kokudaka.findMany({
+    where: { territoryId: { in: territoryIds } },
     select: {
       year: true,
       amount: true,
       territory: { select: { name: true } },
-      appointment: { select: { person: { select: { clanId: true } } } },
     },
     orderBy: { year: "asc" },
   });

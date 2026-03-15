@@ -2,16 +2,20 @@ import { describe, it, expect, vi, beforeEach } from "vitest";
 import { GET } from "../route";
 import { NextRequest } from "next/server";
 
-const mockFindUnique = vi.fn();
-const mockQueryRaw = vi.fn();
+const mockClanFindUnique = vi.fn();
+const mockAppointmentFindMany = vi.fn();
+const mockKokudakaFindMany = vi.fn();
 
 vi.mock("@/lib/prisma", () => ({
   prisma: {
     clan: {
-      findUnique: (...args: unknown[]) => mockFindUnique(...args),
+      findUnique: (...args: unknown[]) => mockClanFindUnique(...args),
+    },
+    appointment: {
+      findMany: (...args: unknown[]) => mockAppointmentFindMany(...args),
     },
     kokudaka: {
-      findMany: (...args: unknown[]) => mockQueryRaw(...args),
+      findMany: (...args: unknown[]) => mockKokudakaFindMany(...args),
     },
   },
 }));
@@ -23,21 +27,19 @@ function createRequest(id: string) {
 describe("GET /api/clans/[id]/kokudaka", () => {
   beforeEach(() => vi.resetAllMocks());
 
-  it("家の石高推移データを返す", async () => {
-    mockFindUnique.mockResolvedValue({ id: 1, name: "前田" });
-
-    mockQueryRaw.mockResolvedValue([
+  it("家が治めた領地の石高推移データを返す", async () => {
+    mockClanFindUnique.mockResolvedValue({ id: 1, name: "前田" });
+    mockAppointmentFindMany.mockResolvedValue([{ territoryId: 10 }]);
+    mockKokudakaFindMany.mockResolvedValue([
       {
         year: 1600,
         amount: { toNumber: () => 102.5 },
         territory: { name: "加賀藩" },
-        appointment: { person: { clanId: 1 } },
       },
       {
         year: 1700,
         amount: { toNumber: () => 102.5 },
         territory: { name: "加賀藩" },
-        appointment: { person: { clanId: 1 } },
       },
     ]);
 
@@ -56,7 +58,7 @@ describe("GET /api/clans/[id]/kokudaka", () => {
   });
 
   it("存在しない家で404を返す", async () => {
-    mockFindUnique.mockResolvedValue(null);
+    mockClanFindUnique.mockResolvedValue(null);
 
     const res = await GET(createRequest("999"), {
       params: Promise.resolve({ id: "999" }),
@@ -71,9 +73,9 @@ describe("GET /api/clans/[id]/kokudaka", () => {
     expect(res.status).toBe(400);
   });
 
-  it("石高データがない家は空配列を返す", async () => {
-    mockFindUnique.mockResolvedValue({ id: 2, name: "徳川" });
-    mockQueryRaw.mockResolvedValue([]);
+  it("藩主としての領地がない家は空配列を返す", async () => {
+    mockClanFindUnique.mockResolvedValue({ id: 2, name: "徳川" });
+    mockAppointmentFindMany.mockResolvedValue([]);
 
     const res = await GET(createRequest("2"), {
       params: Promise.resolve({ id: "2" }),
