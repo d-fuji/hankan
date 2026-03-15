@@ -45,3 +45,20 @@ export type PersonChild = {
   birthOrder?: number;
   birthOrderType?: string;
 };
+
+/** 血統ツリーノード */
+export type LineageNode = {
+  id: number;
+  name: string;
+  clanName: string;
+  isAdopted: boolean;
+  adoptedFromClanName?: string;
+  isFocusPerson: boolean;
+  children: LineageNode[];
+};
+
+/** 血統ツリーAPIレスポンス */
+export type LineageResponse = {
+  tree: LineageNode;
+  focusPersonId: number;
+};

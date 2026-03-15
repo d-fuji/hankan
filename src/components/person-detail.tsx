@@ -3,6 +3,7 @@
 import Link from "next/link";
 import useSWR from "swr";
 import type { PersonDetail as PersonDetailType } from "@/types/person";
+import { FamilyTree } from "@/components/family-tree";
 
 const fetcher = async (url: string) => {
   const res = await fetch(url);
@@ -15,19 +16,14 @@ type PersonDetailProps = {
 };
 
 export function PersonDetail({ id }: PersonDetailProps) {
-  const { data, error, isLoading } = useSWR<PersonDetailType>(
-    `/api/persons/${id}`,
-    fetcher
-  );
+  const { data, error, isLoading } = useSWR<PersonDetailType>(`/api/persons/${id}`, fetcher);
 
   if (isLoading) {
     return <p className="py-8 text-center text-[var(--color-ink)]/50">読み込み中...</p>;
   }
 
   if (error || !data) {
-    return (
-      <p className="py-8 text-center text-red-600">人物が見つかりませんでした</p>
-    );
+    return <p className="py-8 text-center text-red-600">人物が見つかりませんでした</p>;
   }
 
   return (
@@ -121,6 +117,9 @@ export function PersonDetail({ id }: PersonDetailProps) {
         </section>
       )}
 
+      {/* 血統ツリー */}
+      <FamilyTree personId={data.id} />
+
       {/* 子供一覧 */}
       {data.children.length > 0 && (
         <section>
@@ -137,7 +136,15 @@ export function PersonDetail({ id }: PersonDetailProps) {
                 <span className="font-medium">{child.name}</span>
                 {child.birthOrder && child.birthOrderType && (
                   <span className="text-sm text-[var(--color-ink)]/60">
-                    {child.birthOrderType}{child.birthOrder === 1 ? "一" : child.birthOrder === 2 ? "二" : child.birthOrder === 3 ? "三" : child.birthOrder}子
+                    {child.birthOrderType}
+                    {child.birthOrder === 1
+                      ? "一"
+                      : child.birthOrder === 2
+                        ? "二"
+                        : child.birthOrder === 3
+                          ? "三"
+                          : child.birthOrder}
+                    子
                   </span>
                 )}
               </Link>
