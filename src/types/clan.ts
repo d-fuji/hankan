@@ -19,11 +19,19 @@ export type ClanDetail = {
   territories: ClanTerritory[];
 };
 
+/** 家の所属人物の役職情報 */
+export type ClanMemberAppointment = {
+  roleType: string;
+  territoryName?: string;
+  generation?: number;
+};
+
 /** 家の所属人物 */
 export type ClanMember = {
   id: number;
   name: string;
-  roles: string[];
+  primaryAppointment?: ClanMemberAppointment;
+  totalAppointments: number;
 };
 
 /** 家が治めた領地（役職履歴→人物→家から導出） */

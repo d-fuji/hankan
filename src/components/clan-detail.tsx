@@ -89,11 +89,22 @@ export function ClanDetail({ id }: ClanDetailProps) {
                 className="flex items-center justify-between rounded-lg border border-[var(--color-gold)]/20 bg-white p-3 hover:shadow-sm"
               >
                 <span className="font-medium">{member.name}</span>
-                {member.roles.length > 0 && (
-                  <span className="text-sm text-[var(--color-ink)]/60">
-                    {member.roles.join("・")}
-                  </span>
-                )}
+                <div className="flex items-center gap-2 text-sm text-[var(--color-ink)]/60">
+                  {member.primaryAppointment && (
+                    <span>
+                      {member.primaryAppointment.generation !== undefined &&
+                        `${member.primaryAppointment.generation === 1 ? "初代" : `${member.primaryAppointment.generation}代`} `}
+                      {member.primaryAppointment.territoryName
+                        ? `${member.primaryAppointment.territoryName} ${member.primaryAppointment.roleType}`
+                        : member.primaryAppointment.roleType}
+                    </span>
+                  )}
+                  {member.totalAppointments > 1 && (
+                    <span className="rounded bg-[var(--color-navy)]/10 px-1.5 py-0.5 text-xs">
+                      +{member.totalAppointments - 1}
+                    </span>
+                  )}
+                </div>
               </Link>
             ))}
           </div>

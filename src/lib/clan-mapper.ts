@@ -1,4 +1,25 @@
-import type { ClanSummary, ClanDetail, ClanTerritory } from "@/types/clan";
+import type { ClanSummary, ClanDetail, ClanTerritory, ClanMemberAppointment } from "@/types/clan";
+
+/** 役職の優先度（小さいほど優先） */
+const ROLE_PRIORITY: Record<string, number> = {
+  征夷大将軍: 0,
+  藩主: 1,
+};
+
+function pickPrimaryAppointment(
+  appointments: { roleType: string; generation: number | null; territory: { name: string } | null }[]
+): ClanMemberAppointment | undefined {
+  if (appointments.length === 0) return undefined;
+  const sorted = [...appointments].sort(
+    (a, b) => (ROLE_PRIORITY[a.roleType] ?? 99) - (ROLE_PRIORITY[b.roleType] ?? 99)
+  );
+  const best = sorted[0];
+  return {
+    roleType: best.roleType,
+    territoryName: best.territory?.name,
+    generation: best.generation ?? undefined,
+  };
+}
 
 /** Prisma queryの戻り値型（一覧用） */
 export type ClanWithMembers = {
@@ -27,6 +48,7 @@ export type ClanDetailRow = {
     name: string;
     appointments: {
       roleType: string;
+      generation: number | null;
       territory: { id: number; name: string; territoryType: string } | null;
     }[];
   }[];
@@ -75,7 +97,8 @@ export function toClanDetail(row: ClanDetailRow): ClanDetail {
     members: row.members.map((m) => ({
       id: m.id,
       name: m.name,
-      roles: [...new Set(m.appointments.map((a) => a.roleType))],
+      primaryAppointment: pickPrimaryAppointment(m.appointments),
+      totalAppointments: m.appointments.length,
     })),
     territories: [...territoriesMap.values()],
   };

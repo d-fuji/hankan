@@ -30,12 +30,12 @@ describe("GET /api/clans/[id]", () => {
         {
           id: 1,
           name: "徳川家康",
-          appointments: [{ roleType: "征夷大将軍", territory: null }],
+          appointments: [{ roleType: "征夷大将軍", generation: 1, territory: null }],
         },
         {
           id: 2,
           name: "徳川秀忠",
-          appointments: [{ roleType: "征夷大将軍", territory: null }],
+          appointments: [{ roleType: "征夷大将軍", generation: 2, territory: null }],
         },
       ],
     });
@@ -50,7 +50,9 @@ describe("GET /api/clans/[id]", () => {
     expect(json.crestName).toBe("三つ葉葵");
     expect(json.members).toHaveLength(2);
     expect(json.members[0].name).toBe("徳川家康");
-    expect(json.members[0].roles).toContain("征夷大将軍");
+    expect(json.members[0].primaryAppointment.roleType).toBe("征夷大将軍");
+    expect(json.members[0].primaryAppointment.generation).toBe(1);
+    expect(json.members[0].totalAppointments).toBe(1);
   });
 
   it("関連領地を導出して返す", async () => {
@@ -67,6 +69,7 @@ describe("GET /api/clans/[id]", () => {
           appointments: [
             {
               roleType: "藩主",
+              generation: null,
               territory: { id: 10, name: "加賀藩", territoryType: "藩" },
             },
           ],
@@ -77,6 +80,7 @@ describe("GET /api/clans/[id]", () => {
           appointments: [
             {
               roleType: "藩主",
+              generation: null,
               territory: { id: 10, name: "加賀藩", territoryType: "藩" },
             },
           ],

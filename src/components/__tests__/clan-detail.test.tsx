@@ -12,8 +12,18 @@ const mockDetail = {
   nameRomaji: "Maeda",
   crestName: "加賀梅鉢",
   members: [
-    { id: 3, name: "前田利家", roles: ["藩主"] },
-    { id: 4, name: "前田利長", roles: ["藩主"] },
+    {
+      id: 3,
+      name: "前田利家",
+      primaryAppointment: { roleType: "藩主", territoryName: "加賀藩", generation: 1 },
+      totalAppointments: 1,
+    },
+    {
+      id: 4,
+      name: "前田利長",
+      primaryAppointment: { roleType: "藩主", territoryName: "加賀藩", generation: 2 },
+      totalAppointments: 2,
+    },
   ],
   territories: [{ id: 10, name: "加賀藩", territoryType: "藩" }],
 };
@@ -59,6 +69,39 @@ describe("ClanDetail", () => {
     });
 
     expect(screen.getByText("前田利長")).toBeInTheDocument();
+  });
+
+  it("人物の役職を表示する（藩主は代数+領地名付き）", async () => {
+    render(
+      <SWRTestProvider>
+        <ClanDetail id={2} />
+      </SWRTestProvider>
+    );
+
+    await waitFor(() => {
+      expect(screen.getByText("前田利家")).toBeInTheDocument();
+    });
+
+    // 初代 加賀藩 藩主
+    expect(screen.getByText(/初代/)).toBeInTheDocument();
+    // 2代 加賀藩 藩主
+    expect(screen.getByText(/2代/)).toBeInTheDocument();
+  });
+
+  it("複数役職がある場合はバッジを表示する", async () => {
+    render(
+      <SWRTestProvider>
+        <ClanDetail id={2} />
+      </SWRTestProvider>
+    );
+
+    await waitFor(() => {
+      expect(screen.getByText("前田利長")).toBeInTheDocument();
+    });
+
+    // 利長はtotalAppointments: 2なので +1 バッジ
+    expect(screen.getByText("+1")).toBeInTheDocument();
+    // 利家はtotalAppointments: 1なのでバッジなし
   });
 
   it("人物名が人物詳細へのリンクになっている", async () => {

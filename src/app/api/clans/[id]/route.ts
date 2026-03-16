@@ -19,6 +19,7 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
           appointments: {
             select: {
               roleType: true,
+              generation: true,
               territory: { select: { id: true, name: true, territoryType: true } },
             },
           },
