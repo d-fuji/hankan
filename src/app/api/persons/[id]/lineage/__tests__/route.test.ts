@@ -26,6 +26,7 @@ const grandfather = {
   fatherId: 99, // 曽祖父がいるが遡らない
   isAdopted: false,
   adoptedFromClan: null,
+  appointments: [],
 };
 
 const father = {
@@ -57,6 +58,7 @@ const child = {
   fatherId: 3,
   isAdopted: false,
   adoptedFromClan: null,
+  appointments: [],
 };
 
 const grandchild = {
@@ -66,6 +68,7 @@ const grandchild = {
   fatherId: 4,
   isAdopted: false,
   adoptedFromClan: null,
+  appointments: [],
 };
 
 const adoptedPerson = {
@@ -75,6 +78,7 @@ const adoptedPerson = {
   fatherId: 20,
   isAdopted: true,
   adoptedFromClan: { name: "紀州徳川" },
+  appointments: [],
 };
 
 const adoptedFather = {
@@ -84,6 +88,7 @@ const adoptedFather = {
   fatherId: null,
   isAdopted: false,
   adoptedFromClan: null,
+  appointments: [],
 };
 
 describe("GET /api/persons/[id]/lineage", () => {

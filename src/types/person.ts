@@ -40,12 +40,28 @@ export type PersonAppointment = {
   endYear?: number;
 };
 
+/** 子供の役職情報（優先表示用） */
+export type ChildAppointment = {
+  roleType: string;
+  territoryName?: string;
+  generation?: number;
+};
+
 /** 子供情報 */
 export type PersonChild = {
   id: number;
   name: string;
   birthOrder?: number;
   birthOrderType?: string;
+  primaryAppointment?: ChildAppointment;
+  totalAppointments: number;
+};
+
+/** 血統ツリーノードの役職情報 */
+export type LineageAppointment = {
+  roleType: string;
+  territoryName?: string;
+  generation?: number;
 };
 
 /** 血統ツリーノード */
@@ -57,6 +73,7 @@ export type LineageNode = {
   adoptedFromClanName?: string;
   birthOrder?: number;
   birthOrderType?: string;
+  primaryAppointment?: LineageAppointment;
   isFocusPerson: boolean;
   children: LineageNode[];
 };

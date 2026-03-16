@@ -24,7 +24,16 @@ const mockDetail = {
       endYear: 1605,
     },
   ],
-  children: [{ id: 2, name: "徳川秀忠", birthOrder: 3, birthOrderType: "男" }],
+  children: [
+    {
+      id: 2,
+      name: "徳川秀忠",
+      birthOrder: 3,
+      birthOrderType: "男",
+      primaryAppointment: { roleType: "征夷大将軍", generation: 2 },
+      totalAppointments: 1,
+    },
+  ],
 };
 
 const server = setupServer(

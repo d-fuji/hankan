@@ -144,20 +144,38 @@ export function PersonDetail({ id }: PersonDetailProps) {
                 href={`/persons/${child.id}`}
                 className="flex items-center justify-between rounded-lg border border-[var(--color-gold)]/20 bg-white p-3 hover:shadow-sm"
               >
-                <span className="font-medium">{child.name}</span>
-                {child.birthOrder && child.birthOrderType && (
-                  <span className="text-sm text-[var(--color-ink)]/60">
-                    {child.birthOrderType}
-                    {child.birthOrder === 1
-                      ? "一"
-                      : child.birthOrder === 2
-                        ? "二"
-                        : child.birthOrder === 3
-                          ? "三"
-                          : child.birthOrder}
-                    子
-                  </span>
-                )}
+                <div>
+                  <span className="font-medium">{child.name}</span>
+                  {child.birthOrder && child.birthOrderType && (
+                    <span className="ml-2 text-sm text-[var(--color-ink)]/60">
+                      {child.birthOrderType}
+                      {child.birthOrder === 1
+                        ? "一"
+                        : child.birthOrder === 2
+                          ? "二"
+                          : child.birthOrder === 3
+                            ? "三"
+                            : child.birthOrder}
+                      子
+                    </span>
+                  )}
+                </div>
+                <div className="flex items-center gap-2 text-sm text-[var(--color-ink)]/60">
+                  {child.primaryAppointment && (
+                    <span>
+                      {child.primaryAppointment.generation !== undefined &&
+                        `${child.primaryAppointment.generation === 1 ? "初代" : `${child.primaryAppointment.generation}代`} `}
+                      {child.primaryAppointment.territoryName
+                        ? `${child.primaryAppointment.territoryName} ${child.primaryAppointment.roleType}`
+                        : child.primaryAppointment.roleType}
+                    </span>
+                  )}
+                  {child.totalAppointments > 1 && (
+                    <span className="rounded bg-[var(--color-navy)]/10 px-1.5 py-0.5 text-xs">
+                      +{child.totalAppointments - 1}
+                    </span>
+                  )}
+                </div>
               </Link>
             ))}
           </div>

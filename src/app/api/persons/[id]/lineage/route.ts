@@ -1,9 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
-import type { LineageNode } from "@/types/person";
+import type { LineageNode, LineageAppointment } from "@/types/person";
 
 /** フォーカス人物から何世代上まで遡るか */
 const ANCESTOR_LIMIT = 2;
+
+/** 役職の優先度（小さいほど優先） */
+const ROLE_PRIORITY: Record<string, number> = {
+  征夷大将軍: 0,
+  藩主: 1,
+};
 
 const personSelect = {
   id: true,
@@ -14,6 +20,13 @@ const personSelect = {
   adoptedFromClan: { select: { name: true } },
   birthOrder: true,
   birthOrderType: true,
+  appointments: {
+    select: {
+      roleType: true,
+      generation: true,
+      territory: { select: { name: true } },
+    },
+  },
 };
 
 type PersonRow = {
@@ -25,7 +38,27 @@ type PersonRow = {
   adoptedFromClan: { name: string } | null;
   birthOrder: number | null;
   birthOrderType: string | null;
+  appointments: {
+    roleType: string;
+    generation: number | null;
+    territory: { name: string } | null;
+  }[];
 };
+
+function pickPrimary(
+  appointments?: PersonRow["appointments"]
+): LineageAppointment | undefined {
+  if (!appointments || appointments.length === 0) return undefined;
+  const sorted = [...appointments].sort(
+    (a, b) => (ROLE_PRIORITY[a.roleType] ?? 99) - (ROLE_PRIORITY[b.roleType] ?? 99)
+  );
+  const best = sorted[0];
+  return {
+    roleType: best.roleType,
+    territoryName: best.territory?.name,
+    generation: best.generation ?? undefined,
+  };
+}
 
 /** 先祖を辿ってルート人物を見つける（最大 ANCESTOR_LIMIT 世代上） */
 async function findLocalRoot(person: PersonRow): Promise<{ root: PersonRow; depth: number }> {
@@ -72,6 +105,7 @@ async function buildTree(
     adoptedFromClanName: person.adoptedFromClan?.name,
     birthOrder: person.birthOrder ?? undefined,
     birthOrderType: person.birthOrderType ?? undefined,
+    primaryAppointment: pickPrimary(person.appointments),
     isFocusPerson: person.id === focusId,
     children,
   };
@@ -94,7 +128,6 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
   }
 
   const { root, depth: ancestorDepth } = await findLocalRoot(person);
-  // ルートからの最大深さ = 遡った分 + フォーカス人物から2世代下（子・孫）
   const maxDepth = ancestorDepth + 2;
   const tree = await buildTree(root, id, 0, maxDepth);
 

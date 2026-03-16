@@ -36,10 +36,18 @@ function formatBirthOrder(order?: number, type?: string): string | null {
 function TreeNode({ node }: { node: LineageNode }) {
   const birthOrderLabel = formatBirthOrder(node.birthOrder, node.birthOrderType);
 
+  const appt = node.primaryAppointment;
+  const roleLabel = appt
+    ? `${appt.generation !== undefined ? (appt.generation === 1 ? "初代" : `${appt.generation}代`) + " " : ""}${appt.territoryName ? appt.territoryName + " " : ""}${appt.roleType}`
+    : null;
+
   const nameContent = (
     <>
       <span className="font-medium">{node.name}</span>
       <span className="ml-1 text-xs text-[var(--color-ink)]/50">{node.clanName}</span>
+      {roleLabel && (
+        <div className="text-xs text-[var(--color-ink)]/40">{roleLabel}</div>
+      )}
     </>
   );
 

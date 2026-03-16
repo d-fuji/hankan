@@ -1,4 +1,24 @@
-import type { PersonSummary, PersonDetail } from "@/types/person";
+import type { PersonSummary, PersonDetail, ChildAppointment } from "@/types/person";
+
+const ROLE_PRIORITY: Record<string, number> = {
+  征夷大将軍: 0,
+  藩主: 1,
+};
+
+function pickChildPrimary(
+  appointments: { roleType: string; generation: number | null; territory: { name: string } | null }[]
+): ChildAppointment | undefined {
+  if (appointments.length === 0) return undefined;
+  const sorted = [...appointments].sort(
+    (a, b) => (ROLE_PRIORITY[a.roleType] ?? 99) - (ROLE_PRIORITY[b.roleType] ?? 99)
+  );
+  const best = sorted[0];
+  return {
+    roleType: best.roleType,
+    territoryName: best.territory?.name,
+    generation: best.generation ?? undefined,
+  };
+}
 
 /** Prisma queryの戻り値型（一覧用） */
 export type PersonWithRelations = {
@@ -36,6 +56,11 @@ export type PersonDetailRow = {
     name: string;
     birthOrder: number | null;
     birthOrderType: string | null;
+    appointments: {
+      roleType: string;
+      generation: number | null;
+      territory: { name: string } | null;
+    }[];
   }[];
 };
 
@@ -81,6 +106,8 @@ export function toPersonDetail(row: PersonDetailRow): PersonDetail {
       name: c.name,
       birthOrder: c.birthOrder ?? undefined,
       birthOrderType: c.birthOrderType ?? undefined,
+      primaryAppointment: pickChildPrimary(c.appointments),
+      totalAppointments: c.appointments.length,
     })),
   };
 }

@@ -22,7 +22,19 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
         orderBy: { startYear: "asc" },
       },
       children: {
-        select: { id: true, name: true, birthOrder: true, birthOrderType: true },
+        select: {
+          id: true,
+          name: true,
+          birthOrder: true,
+          birthOrderType: true,
+          appointments: {
+            select: {
+              roleType: true,
+              generation: true,
+              territory: { select: { name: true } },
+            },
+          },
+        },
         orderBy: { birthOrder: "asc" },
       },
     },
