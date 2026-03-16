@@ -14,8 +14,10 @@
 - 初代藩主は不明が多いが、2代目以降は設定可能
 - 養子の場合も養父のfatherKeyを設定
 
-### 4. isAdopted=true だが adoptedFromClanKey 未設定 — 136人
-- 養子の出自（どの家から来たか）を特定して設定
+### 4. 養子関係の修正
+- isAdopted=true だが adoptedFromClanKey 未設定 — 136人 → 出自を特定して設定
+- isAdopted=false だが実は養子の人物 → isAdopted=true に修正（例: 板倉勝静）
+- 養子元の家が clans.json に存在しない場合は家も追加
 
 ### 5. appointmentのない人物 — 11人
 - 徳川宗尹・治済・綱重（血統接続用） → 正しい
