@@ -10,6 +10,15 @@ url.searchParams.set("idle_in_transaction_session_timeout", "300000");
 const adapter = new PrismaPg({ connectionString: url.toString() });
 const prisma = new PrismaClient({ adapter });
 
+function progress(label: string, current: number, total: number) {
+  const width = 30;
+  const filled = Math.round((current / total) * width);
+  const bar = "█".repeat(filled) + "░".repeat(width - filled);
+  const pct = Math.round((current / total) * 100);
+  process.stdout.write(`\r  ${label} [${bar}] ${current}/${total} (${pct}%)`);
+  if (current === total) process.stdout.write("\n");
+}
+
 function loadJson<T>(filename: string): T {
   const path = join(__dirname, "seed-data", filename);
   return JSON.parse(readFileSync(path, "utf-8"));
@@ -121,101 +130,78 @@ async function main() {
   // 旧国マスタ
   // ========================================
   const provincesData = loadJson<ProvinceData[]>("provinces.json");
-  for (const { key, ...data } of provincesData) {
-    await prisma.province.upsert({
-      where: { key },
-      create: { key, ...data },
-      update: data,
-    });
+  for (let i = 0; i < provincesData.length; i++) {
+    const { key, ...data } = provincesData[i];
+    await prisma.province.upsert({ where: { key }, create: { key, ...data }, update: data });
+    progress("旧国", i + 1, provincesData.length);
   }
-  console.log(`  ${provincesData.length} provinces upserted.`);
 
   // ========================================
   // 家
   // ========================================
   const clansData = loadJson<ClanData[]>("clans.json");
-  for (const { key, ...data } of clansData) {
-    await prisma.clan.upsert({
-      where: { key },
-      create: { key, ...data },
-      update: data,
-    });
+  for (let i = 0; i < clansData.length; i++) {
+    const { key, ...data } = clansData[i];
+    await prisma.clan.upsert({ where: { key }, create: { key, ...data }, update: data });
+    progress("家  ", i + 1, clansData.length);
   }
-  console.log(`  ${clansData.length} clans upserted.`);
 
   // ========================================
   // 領地
   // ========================================
   const territoriesData = loadJson<TerritoryData[]>("territories.json");
-  for (const { key, provinceKey, ...rest } of territoriesData) {
+  for (let i = 0; i < territoriesData.length; i++) {
+    const { key, provinceKey, ...rest } = territoriesData[i];
     const provinceId = await resolveId("province", provinceKey);
-    await prisma.territory.upsert({
-      where: { key },
-      create: { key, ...rest, provinceId },
-      update: { ...rest, provinceId },
-    });
+    await prisma.territory.upsert({ where: { key }, create: { key, ...rest, provinceId }, update: { ...rest, provinceId } });
+    progress("領地", i + 1, territoriesData.length);
   }
-  console.log(`  ${territoriesData.length} territories upserted.`);
 
   // ========================================
   // 人物（fatherKey依存があるため順次処理）
   // ========================================
   const personsData = loadJson<PersonData[]>("persons.json");
-  for (const { key, clanKey, fatherKey, adoptedFromClanKey, ...rest } of personsData) {
+  for (let i = 0; i < personsData.length; i++) {
+    const { key, clanKey, fatherKey, adoptedFromClanKey, ...rest } = personsData[i];
     const clanId = await resolveId("clan", clanKey);
     const fatherId = fatherKey ? await resolveId("person", fatherKey) : undefined;
-    const adoptedFromClanId = adoptedFromClanKey
-      ? await resolveId("clan", adoptedFromClanKey)
-      : undefined;
-    await prisma.person.upsert({
-      where: { key },
-      create: { key, ...rest, clanId, fatherId, adoptedFromClanId },
-      update: { ...rest, clanId, fatherId, adoptedFromClanId },
-    });
+    const adoptedFromClanId = adoptedFromClanKey ? await resolveId("clan", adoptedFromClanKey) : undefined;
+    await prisma.person.upsert({ where: { key }, create: { key, ...rest, clanId, fatherId, adoptedFromClanId }, update: { ...rest, clanId, fatherId, adoptedFromClanId } });
+    progress("人物", i + 1, personsData.length);
   }
-  console.log(`  ${personsData.length} persons upserted.`);
 
   // ========================================
   // 役職履歴
   // ========================================
   const appointmentsData = loadJson<AppointmentData[]>("appointments.json");
-  for (const { key, personKey, territoryKey, ...rest } of appointmentsData) {
+  for (let i = 0; i < appointmentsData.length; i++) {
+    const { key, personKey, territoryKey, ...rest } = appointmentsData[i];
     const personId = await resolveId("person", personKey);
     const territoryId = territoryKey ? await resolveId("territory", territoryKey) : undefined;
-    await prisma.appointment.upsert({
-      where: { key },
-      create: { key, ...rest, personId, territoryId },
-      update: { ...rest, personId, territoryId },
-    });
+    await prisma.appointment.upsert({ where: { key }, create: { key, ...rest, personId, territoryId }, update: { ...rest, personId, territoryId } });
+    progress("役職", i + 1, appointmentsData.length);
   }
-  console.log(`  ${appointmentsData.length} appointments upserted.`);
 
   // ========================================
   // 石高履歴
   // ========================================
   const kokudakaData = loadJson<KokudakaData[]>("kokudaka.json");
-  for (const { key, territoryKey, ...rest } of kokudakaData) {
+  for (let i = 0; i < kokudakaData.length; i++) {
+    const { key, territoryKey, ...rest } = kokudakaData[i];
     const territoryId = await resolveId("territory", territoryKey);
-    await prisma.kokudaka.upsert({
-      where: { key },
-      create: { key, ...rest, territoryId },
-      update: { ...rest, territoryId },
-    });
+    await prisma.kokudaka.upsert({ where: { key }, create: { key, ...rest, territoryId }, update: { ...rest, territoryId } });
+    progress("石高", i + 1, kokudakaData.length);
   }
-  console.log(`  ${kokudakaData.length} kokudaka records upserted.`);
 
   // ========================================
   // 出典
   // ========================================
   const sourcesData = loadJson<SourceData[]>("sources.json");
-  for (const { key, ...data } of sourcesData) {
-    await prisma.source.upsert({
-      where: { key },
-      create: { key, ...data },
-      update: data,
-    });
+  for (let i = 0; i < sourcesData.length; i++) {
+    const { key, ...data } = sourcesData[i];
+    await prisma.source.upsert({ where: { key }, create: { key, ...data }, update: data });
+    progress("出典", i + 1, sourcesData.length);
   }
-  console.log(`  ${sourcesData.length} sources upserted.`);
 
   console.log("Seed completed.");
 }
