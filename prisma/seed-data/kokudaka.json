@@ -305,5 +305,218 @@
   { "key": "kokudaka_hikone_1615_kazo", "territoryKey": "territory_hikone", "year": 1615, "amount": 25.0, "changeType": "加増", "changeDetail": "井伊直孝、大坂夏の陣の功により25万石に加増" },
   { "key": "kokudaka_matsuyama_1635_tenpou", "territoryKey": "territory_matsuyama", "year": 1635, "amount": 15.0, "changeType": "入封", "changeDetail": "松平定行、伊勢桑名藩より伊予松山藩に転封。久松松平家15万石" },
   { "key": "kokudaka_kokura_1600_hosokawa", "territoryKey": "territory_kokura", "year": 1600, "amount": 39.9, "changeType": "入封", "changeDetail": "細川忠興、関ヶ原の功により丹後宮津12万石から豊前小倉39万9千石に加増転封" },
-  { "key": "kokudaka_kumamoto_1632_hosokawa_tenpou", "territoryKey": "territory_kumamoto", "year": 1632, "amount": 54.0, "changeType": "入封", "changeDetail": "細川忠利、豊前小倉より肥後熊本54万石に転封。加藤家改易の後を受ける" }
+  { "key": "kokudaka_kumamoto_1632_hosokawa_tenpou", "territoryKey": "territory_kumamoto", "year": 1632, "amount": 54.0, "changeType": "入封", "changeDetail": "細川忠利、豊前小倉より肥後熊本54万石に転封。加藤家改易の後を受ける" },
+
+  { "key": "kokudaka_satsuma_1863", "territoryKey": "territory_satsuma", "year": 1863, "amount": 77.0, "changeType": "維持", "changeDetail": "薩英戦争を経て77万石を維持、軍備近代化を推進。幕末の雄藩" },
+  { "key": "kokudaka_satsuma_1609_ryukyu", "territoryKey": "territory_satsuma", "year": 1609, "amount": 72.95, "changeType": "加増", "changeDetail": "琉球侵攻により琉球12万石を実効支配、表高は変わらず72万9千5百石" },
+  { "key": "kokudaka_satsuma_1868", "territoryKey": "territory_satsuma", "year": 1868, "amount": 77.0, "changeType": "維持", "changeDetail": "戊辰戦争で新政府軍の中核、77万石。廃藩置県まで維持" },
+
+  { "key": "kokudaka_sendai_1868_boshin", "territoryKey": "territory_sendai", "year": 1868, "amount": 28.0, "changeType": "減封", "changeDetail": "戊辰戦争で奥羽越列藩同盟の盟主として敗北、62万石から28万石に減封" },
+  { "key": "kokudaka_sendai_1869_restore", "territoryKey": "territory_sendai", "year": 1869, "amount": 28.0, "changeType": "維持", "changeDetail": "減封後の28万石で版籍奉還、伊達慶邦は知藩事に" },
+
+  { "key": "kokudaka_choshu_1863", "territoryKey": "territory_choshu", "year": 1863, "amount": 36.9, "changeType": "維持", "changeDetail": "下関戦争・禁門の変を経て36万9千石を維持。倒幕の中心藩" },
+  { "key": "kokudaka_choshu_1865", "territoryKey": "territory_choshu", "year": 1865, "amount": 36.9, "changeType": "維持", "changeDetail": "第二次長州征討に勝利、36万9千石。高杉晋作・木戸孝允らの藩政改革" },
+
+  { "key": "kokudaka_fukuoka_1784_bunchi", "territoryKey": "territory_fukuoka", "year": 1784, "amount": 47.3, "changeType": "維持", "changeDetail": "黒田家47万3千石で安定、天明の飢饉で藩財政は逼迫" },
+  { "key": "kokudaka_fukuoka_1865", "territoryKey": "territory_fukuoka", "year": 1865, "amount": 47.3, "changeType": "維持", "changeDetail": "幕末期の47万3千石、乙丑の獄で勤王派弾圧後に新政府側に転向" },
+
+  { "key": "kokudaka_tosa_1865", "territoryKey": "territory_tosa", "year": 1865, "amount": 20.26, "changeType": "維持", "changeDetail": "山内家20万2千6百石、坂本龍馬・後藤象二郎らが大政奉還を建白" },
+  { "key": "kokudaka_tosa_1868", "territoryKey": "territory_tosa", "year": 1868, "amount": 20.26, "changeType": "維持", "changeDetail": "戊辰戦争で新政府軍として参戦、薩長土肥の一角。20万2千6百石" },
+
+  { "key": "kokudaka_kumamoto_1747_hosokawa", "territoryKey": "territory_kumamoto", "year": 1747, "amount": 54.0, "changeType": "維持", "changeDetail": "細川重賢による宝暦の改革開始、54万石。藩校時習館を設立" },
+  { "key": "kokudaka_kumamoto_1868", "territoryKey": "territory_kumamoto", "year": 1868, "amount": 54.0, "changeType": "維持", "changeDetail": "戊辰戦争では新政府側に与する。細川家54万石で廃藩置県まで" },
+
+  { "key": "kokudaka_kishu_1868", "territoryKey": "territory_kishu", "year": 1868, "amount": 55.5, "changeType": "維持", "changeDetail": "紀伊徳川家55万5千石、戊辰戦争では早期に新政府に恭順" },
+  { "key": "kokudaka_kishu_1846", "territoryKey": "territory_kishu", "year": 1846, "amount": 55.5, "changeType": "維持", "changeDetail": "徳川慶福（後の14代将軍家茂）を輩出、55万5千石" },
+
+  { "key": "kokudaka_mito_1829_tenpo", "territoryKey": "territory_mito", "year": 1829, "amount": 35.0, "changeType": "維持", "changeDetail": "徳川斉昭藩主就任、天保の改革着手。藩校弘道館を創設。35万石" },
+  { "key": "kokudaka_mito_1868", "territoryKey": "territory_mito", "year": 1868, "amount": 35.0, "changeType": "維持", "changeDetail": "天狗党の乱後の混乱を経て35万石、戊辰戦争では新政府側に" },
+
+  { "key": "kokudaka_owari_1868", "territoryKey": "territory_owari", "year": 1868, "amount": 61.95, "changeType": "維持", "changeDetail": "尾張徳川家61万9千5百石、戊辰戦争では早期に新政府に恭順。御三家筆頭" },
+  { "key": "kokudaka_owari_1799", "territoryKey": "territory_owari", "year": 1799, "amount": 61.95, "changeType": "維持", "changeDetail": "徳川宗睦による藩政改革（明和の改革）を経て61万9千5百石で安定" },
+
+  { "key": "kokudaka_hikone_1860_sakuradamon", "territoryKey": "territory_hikone", "year": 1860, "amount": 25.0, "changeType": "減封", "changeDetail": "桜田門外の変で井伊直弼横死、幕府より10万石減封の処分。35万石から25万石に" },
+  { "key": "kokudaka_hikone_1862_restore", "territoryKey": "territory_hikone", "year": 1862, "amount": 30.0, "changeType": "加増", "changeDetail": "幕府の温情により5万石を復旧、30万石に" },
+
+  { "key": "kokudaka_yonezawa_1830_reform", "territoryKey": "territory_yonezawa", "year": 1830, "amount": 15.0, "changeType": "維持", "changeDetail": "上杉鷹山の藩政改革（殖産興業・倹約令）の成果継続、15万石ながら財政再建" },
+  { "key": "kokudaka_yonezawa_1868_boshin", "territoryKey": "territory_yonezawa", "year": 1868, "amount": 14.0, "changeType": "減封", "changeDetail": "戊辰戦争で奥羽越列藩同盟に参加、敗北により14万石に減封" },
+
+  { "key": "kokudaka_kaga_1868", "territoryKey": "territory_kaga", "year": 1868, "amount": 102.5, "changeType": "維持", "changeDetail": "前田家102万5千石、戊辰戦争では新政府側に。諸藩最大の石高を幕末まで維持" },
+
+  { "key": "kokudaka_tottori_1868", "territoryKey": "territory_tottori", "year": 1868, "amount": 32.0, "changeType": "維持", "changeDetail": "池田家32万石、戊辰戦争では新政府軍として山陰道鎮撫に参加" },
+  { "key": "kokudaka_tottori_1770_reform", "territoryKey": "territory_tottori", "year": 1770, "amount": 32.0, "changeType": "維持", "changeDetail": "池田治道による藩政改革、32万石。藩校尚徳館を設立" },
+
+  { "key": "kokudaka_tokushima_1700", "territoryKey": "territory_tokushima", "year": 1700, "amount": 25.7, "changeType": "維持", "changeDetail": "蜂須賀家25万7千石で安定、藍の生産で繁栄" },
+  { "key": "kokudaka_tokushima_1868", "territoryKey": "territory_tokushima", "year": 1868, "amount": 25.7, "changeType": "維持", "changeDetail": "蜂須賀家25万7千石、戊辰戦争では新政府軍として参戦" },
+
+  { "key": "kokudaka_saga_1850_youshiki", "territoryKey": "territory_saga", "year": 1850, "amount": 35.7, "changeType": "維持", "changeDetail": "鍋島直正による洋式軍備整備、反射炉建設。35万7千石ながら軍事力は諸藩随一" },
+  { "key": "kokudaka_saga_1868", "territoryKey": "territory_saga", "year": 1868, "amount": 35.7, "changeType": "維持", "changeDetail": "戊辰戦争ではアームストロング砲を擁し新政府軍の主力。35万7千石" },
+
+  { "key": "kokudaka_hiroshima_1868", "territoryKey": "territory_hiroshima", "year": 1868, "amount": 42.6, "changeType": "維持", "changeDetail": "浅野家42万6千石、戊辰戦争では新政府軍として参戦" },
+  { "key": "kokudaka_hiroshima_1720_reform", "territoryKey": "territory_hiroshima", "year": 1720, "amount": 42.6, "changeType": "維持", "changeDetail": "浅野吉長による藩政改革、42万6千石。藩校学問所を整備" },
+
+  { "key": "kokudaka_okayama_1868", "territoryKey": "territory_okayama", "year": 1868, "amount": 31.5, "changeType": "維持", "changeDetail": "池田家31万5千石、戊辰戦争では新政府軍として参戦" },
+
+  { "key": "kokudaka_himeji_1749_sakai", "territoryKey": "territory_himeji", "year": 1749, "amount": 15.0, "changeType": "入封", "changeDetail": "酒井忠恭入封、15万石。以後酒井家が幕末まで在封" },
+  { "key": "kokudaka_himeji_1868", "territoryKey": "territory_himeji", "year": 1868, "amount": 15.0, "changeType": "維持", "changeDetail": "酒井家15万石、戊辰戦争では新政府軍に恭順。姫路城は無傷で残る" },
+
+  { "key": "kokudaka_fukui_1686_genpou", "territoryKey": "territory_fukui", "year": 1686, "amount": 25.0, "changeType": "減封", "changeDetail": "松平光通の急死後、養子問題で7万石減封、25万石に" },
+  { "key": "kokudaka_fukui_1868", "territoryKey": "territory_fukui", "year": 1868, "amount": 32.0, "changeType": "維持", "changeDetail": "松平春嶽が藩政改革を主導、32万石。幕末の四賢侯の一人" },
+
+  { "key": "kokudaka_matsue_1868", "territoryKey": "territory_matsue", "year": 1868, "amount": 18.6, "changeType": "維持", "changeDetail": "松平家18万6千石、戊辰戦争では新政府軍に恭順" },
+
+  { "key": "kokudaka_hirosaki_1868", "territoryKey": "territory_hirosaki", "year": 1868, "amount": 10.0, "changeType": "維持", "changeDetail": "津軽家10万石、戊辰戦争では奥羽越列藩同盟を脱退し新政府側に" },
+
+  { "key": "kokudaka_morioka_1868_boshin", "territoryKey": "territory_morioka", "year": 1868, "amount": 13.0, "changeType": "減封", "changeDetail": "戊辰戦争で奥羽越列藩同盟に参加、敗北により20万石から13万石に減封" },
+
+  { "key": "kokudaka_kubota_1868", "territoryKey": "territory_kubota", "year": 1868, "amount": 20.5, "changeType": "維持", "changeDetail": "佐竹家20万5千石、戊辰戦争では奥羽越列藩同盟を脱退し新政府側で奮戦" },
+
+  { "key": "kokudaka_tsu_1868", "territoryKey": "territory_tsu", "year": 1868, "amount": 32.3, "changeType": "維持", "changeDetail": "藤堂家32万3千石、鳥羽・伏見の戦いで旧幕府軍から新政府軍に寝返り" },
+
+  { "key": "kokudaka_matsuyama_1868", "territoryKey": "territory_matsuyama", "year": 1868, "amount": 15.0, "changeType": "維持", "changeDetail": "久松松平家15万石、戊辰戦争では旧幕府側に付くも早期に恭順" },
+
+  { "key": "kokudaka_nagaoka_1868_boshin", "territoryKey": "territory_nagaoka", "year": 1868, "amount": 2.4, "changeType": "減封", "changeDetail": "北越戊辰戦争で河井継之助が奮戦するも敗北、7万4千石から2万4千石に減封" },
+  { "key": "kokudaka_nagaoka_1869_restore", "territoryKey": "territory_nagaoka", "year": 1869, "amount": 7.4, "changeType": "加増", "changeDetail": "明治政府の恩赦により旧高7万4千石に復帰" },
+
+  { "key": "kokudaka_shonai_1868_boshin", "territoryKey": "territory_shonai", "year": 1868, "amount": 12.0, "changeType": "減封", "changeDetail": "戊辰戦争で奥羽越列藩同盟に参加、敗北により14万石から12万石に減封" },
+
+  { "key": "kokudaka_aizu_1862_kyoto", "territoryKey": "territory_aizu", "year": 1862, "amount": 23.0, "changeType": "維持", "changeDetail": "松平容保が京都守護職に就任、23万石。藩財政を大きく圧迫" },
+
+  { "key": "kokudaka_yamagata_1622_mogami_kaieki", "territoryKey": "territory_yamagata", "year": 1622, "amount": 57.0, "changeType": "改易", "changeDetail": "最上義俊、御家騒動（最上騒動）により57万石を改易" },
+  { "key": "kokudaka_yamagata_1622_torii", "territoryKey": "territory_yamagata", "year": 1622, "amount": 22.0, "changeType": "入封", "changeDetail": "鳥居忠政入封、出羽国山形22万石。最上家改易後を受ける" },
+
+  { "key": "kokudaka_uwajima_1858_reform", "territoryKey": "territory_uwajima", "year": 1858, "amount": 10.0, "changeType": "維持", "changeDetail": "伊達宗城による藩政改革、10万石。幕末の四賢侯の一人" },
+
+  { "key": "kokudaka_takamatsu_1868", "territoryKey": "territory_takamatsu", "year": 1868, "amount": 12.0, "changeType": "維持", "changeDetail": "高松松平家12万石、朝敵とされるも恭順し赦免" },
+
+  { "key": "kokudaka_kokura_1866_choshu", "territoryKey": "territory_kokura", "year": 1866, "amount": 15.0, "changeType": "維持", "changeDetail": "第二次長州征討で小倉口の戦い、敗北し小倉城を自焼。15万石" },
+
+  { "key": "kokudaka_yanagawa_1868", "territoryKey": "territory_yanagawa", "year": 1868, "amount": 10.9, "changeType": "維持", "changeDetail": "立花家10万9千石、戊辰戦争では新政府軍として参戦" },
+
+  { "key": "kokudaka_sakura_1868", "territoryKey": "territory_sakura", "year": 1868, "amount": 11.0, "changeType": "維持", "changeDetail": "堀田家11万石、順天堂を設立した蘭学・洋学の先進藩" },
+
+  { "key": "kokudaka_toyama_1868", "territoryKey": "territory_toyama", "year": 1868, "amount": 10.0, "changeType": "維持", "changeDetail": "富山前田家10万石、加賀藩に従い新政府側に" },
+
+  { "key": "kokudaka_matsushiro_1864_kinmon", "territoryKey": "territory_matsushiro", "year": 1864, "amount": 10.0, "changeType": "維持", "changeDetail": "真田家10万石、禁門の変で京都警備に参加" },
+
+  { "key": "kokudaka_nihonmatsu_1868_boshin", "territoryKey": "territory_nihonmatsu", "year": 1868, "amount": 10.0, "changeType": "維持", "changeDetail": "丹羽家10万石、戊辰戦争で少年隊が奮戦するも敗北" },
+
+  { "key": "kokudaka_shimabara_1637_rebellion", "territoryKey": "territory_shimabara", "year": 1637, "amount": 4.0, "changeType": "改易", "changeDetail": "島原の乱の責任を問われ松倉勝家改易、斬首。島原4万石は没収" },
+  { "key": "kokudaka_shimabara_1638_takuryo", "territoryKey": "territory_shimabara", "year": 1638, "amount": 4.0, "changeType": "入封", "changeDetail": "高力忠房入封、島原の乱後の復興に従事。4万石" },
+
+  { "key": "kokudaka_karatsu_1647_terasawa_kaieki", "territoryKey": "territory_karatsu", "year": 1647, "amount": 12.3, "changeType": "改易", "changeDetail": "寺沢堅高、島原の乱後の天草領没収と精神錯乱により改易・自害" },
+  { "key": "kokudaka_karatsu_1649_okubo", "territoryKey": "territory_karatsu", "year": 1649, "amount": 8.3, "changeType": "入封", "changeDetail": "大久保忠職入封、8万3千石。寺沢家改易後を受ける" },
+
+  { "key": "kokudaka_matsumae_1807_tenryo", "territoryKey": "territory_matsumae", "year": 1807, "amount": 1.0, "changeType": "維持", "changeDetail": "ロシア船来航により蝦夷地の大半が幕府直轄に。松前家は梁川に移封" },
+  { "key": "kokudaka_matsumae_1821_fukkou", "territoryKey": "territory_matsumae", "year": 1821, "amount": 1.0, "changeType": "入封", "changeDetail": "松前家、蝦夷地に復帰。1万石格" },
+
+  { "key": "kokudaka_fukuyama_1868", "territoryKey": "territory_fukuyama", "year": 1868, "amount": 10.0, "changeType": "維持", "changeDetail": "阿部家10万石、老中阿部正弘を輩出した名門。戊辰戦争では新政府に恭順" },
+
+  { "key": "kokudaka_odawara_1868", "territoryKey": "territory_odawara", "year": 1868, "amount": 11.3, "changeType": "維持", "changeDetail": "大久保家11万3千石、戊辰戦争では新政府に恭順" },
+
+  { "key": "kokudaka_kawagoe_1868", "territoryKey": "territory_kawagoe", "year": 1868, "amount": 17.0, "changeType": "維持", "changeDetail": "松平家17万石、戊辰戦争では新政府に恭順" },
+
+  { "key": "kokudaka_ogaki_1868", "territoryKey": "territory_ogaki", "year": 1868, "amount": 10.0, "changeType": "維持", "changeDetail": "戸田家10万石、戊辰戦争では新政府軍として東山道を進軍" },
+
+  { "key": "kokudaka_tsuyama_1868", "territoryKey": "territory_tsuyama", "year": 1868, "amount": 10.0, "changeType": "維持", "changeDetail": "松平家10万石、戊辰戦争では新政府に恭順" },
+
+  { "key": "kokudaka_takada_1868", "territoryKey": "territory_takada", "year": 1868, "amount": 15.0, "changeType": "維持", "changeDetail": "榊原家15万石、戊辰戦争では新政府軍の北陸道拠点となる" },
+
+  { "key": "kokudaka_obama_1868", "territoryKey": "territory_obama", "year": 1868, "amount": 10.35, "changeType": "維持", "changeDetail": "酒井家10万3千5百石、戊辰戦争では新政府に恭順" },
+
+  { "key": "kokudaka_kuwana_1868_boshin", "territoryKey": "territory_kuwana", "year": 1868, "amount": 6.0, "changeType": "減封", "changeDetail": "松平定敬が旧幕府側で戦い敗北、11万石から6万石に減封" },
+
+  { "key": "kokudaka_koga_1762_doi", "territoryKey": "territory_koga", "year": 1762, "amount": 8.0, "changeType": "入封", "changeDetail": "土井利里入封、8万石。以後土井家が幕末まで在封" },
+
+  { "key": "kokudaka_oshi_1868", "territoryKey": "territory_oshi", "year": 1868, "amount": 10.0, "changeType": "維持", "changeDetail": "松平家10万石、戊辰戦争では新政府に恭順" },
+
+  { "key": "kokudaka_maebashi_1868", "territoryKey": "territory_maebashi", "year": 1868, "amount": 17.0, "changeType": "加増", "changeDetail": "松平直克、前橋に帰城。17万石に高直し" },
+
+  { "key": "kokudaka_shibata_1868_boshin", "territoryKey": "territory_shibata", "year": 1868, "amount": 5.0, "changeType": "維持", "changeDetail": "溝口家5万石、戊辰戦争では奥羽越列藩同盟に参加するも早期に恭順" },
+
+  { "key": "kokudaka_soma_1868_boshin", "territoryKey": "territory_soma", "year": 1868, "amount": 6.0, "changeType": "維持", "changeDetail": "相馬家6万石、戊辰戦争で奥羽越列藩同盟に参加するも早期に恭順" },
+
+  { "key": "kokudaka_iwaki_taira_1868_boshin", "territoryKey": "territory_iwaki_taira", "year": 1868, "amount": 4.0, "changeType": "減封", "changeDetail": "安藤家、戊辰戦争で奥羽越列藩同盟に参加して敗北、7万石から4万石に減封" },
+
+  { "key": "kokudaka_hirado_1868", "territoryKey": "territory_hirado", "year": 1868, "amount": 6.1, "changeType": "維持", "changeDetail": "松浦家6万1千石、戊辰戦争では新政府軍として参戦" },
+
+  { "key": "kokudaka_nakatsu_1868", "territoryKey": "territory_nakatsu", "year": 1868, "amount": 10.0, "changeType": "維持", "changeDetail": "奥平家10万石、福澤諭吉を輩出。戊辰戦争では新政府に恭順" },
+
+  { "key": "kokudaka_tsushima_1861", "territoryKey": "territory_tsushima", "year": 1861, "amount": 10.0, "changeType": "維持", "changeDetail": "ロシア軍艦ポサドニック号による対馬占領事件。宗家10万石格" },
+
+  { "key": "kokudaka_iwakuni_1868", "territoryKey": "territory_iwakuni", "year": 1868, "amount": 6.0, "changeType": "維持", "changeDetail": "吉川家6万石、長州藩と共に新政府軍の中核として参戦" },
+
+  { "key": "kokudaka_daishoji_1868", "territoryKey": "territory_daishoji", "year": 1868, "amount": 10.0, "changeType": "維持", "changeDetail": "前田家10万石、加賀藩と共に新政府側に。北陸道鎮撫に参加" },
+
+  { "key": "kokudaka_koriyama_1868", "territoryKey": "territory_koriyama", "year": 1868, "amount": 15.0, "changeType": "維持", "changeDetail": "柳沢家15万石、戊辰戦争では新政府に恭順" },
+
+  { "key": "kokudaka_akashi_1868", "territoryKey": "territory_akashi", "year": 1868, "amount": 10.0, "changeType": "維持", "changeDetail": "松平家10万石、戊辰戦争では新政府に恭順" },
+
+  { "key": "kokudaka_utsunomiya_1868_boshin", "territoryKey": "territory_utsunomiya", "year": 1868, "amount": 7.7, "changeType": "維持", "changeDetail": "戸田家7万7千石、宇都宮城の戦いで旧幕府軍と交戦し新政府側で奮戦" },
+
+  { "key": "kokudaka_shirakawa_1868_boshin", "territoryKey": "territory_shirakawa", "year": 1868, "amount": 11.0, "changeType": "維持", "changeDetail": "阿部家11万石、白河口の戦いで新政府軍と奥羽越列藩同盟が激戦" },
+
+  { "key": "kokudaka_obi_1868", "territoryKey": "territory_obi", "year": 1868, "amount": 5.1, "changeType": "維持", "changeDetail": "伊東家5万1千石、小村寿太郎を輩出。戊辰戦争では新政府に恭順" },
+
+  { "key": "kokudaka_omura_1868", "territoryKey": "territory_omura", "year": 1868, "amount": 2.7, "changeType": "維持", "changeDetail": "大村家2万7千石、戊辰戦争では新政府軍として参戦" },
+
+  { "key": "kokudaka_hitoyoshi_1868", "territoryKey": "territory_hitoyoshi", "year": 1868, "amount": 2.2, "changeType": "維持", "changeDetail": "相良家2万2千石、戊辰戦争では新政府に恭順" },
+
+  { "key": "kokudaka_iida_1868", "territoryKey": "territory_iida", "year": 1868, "amount": 2.0, "changeType": "維持", "changeDetail": "堀家2万石、戊辰戦争では新政府に恭順" },
+
+  { "key": "kokudaka_hachinohe_1868_boshin", "territoryKey": "territory_hachinohe", "year": 1868, "amount": 2.0, "changeType": "維持", "changeDetail": "南部分家2万石、盛岡藩と共に奥羽越列藩同盟に参加するも恭順" },
+
+  { "key": "kokudaka_ichinoseki_1868_boshin", "territoryKey": "territory_ichinoseki", "year": 1868, "amount": 3.0, "changeType": "維持", "changeDetail": "田村家3万石、仙台藩と共に奥羽越列藩同盟に参加するも恭順" },
+
+  { "key": "kokudaka_marugame_1868", "territoryKey": "territory_marugame", "year": 1868, "amount": 5.1, "changeType": "維持", "changeDetail": "京極家5万1千石、戊辰戦争では新政府に恭順" },
+
+  { "key": "kokudaka_imabari_1868", "territoryKey": "territory_imabari", "year": 1868, "amount": 3.5, "changeType": "維持", "changeDetail": "久松松平家3万5千石、戊辰戦争では新政府に恭順" },
+
+  { "key": "kokudaka_ozu_1868", "territoryKey": "territory_ozu", "year": 1868, "amount": 6.0, "changeType": "維持", "changeDetail": "加藤家6万石、戊辰戦争では新政府に恭順" },
+
+  { "key": "kokudaka_nobeoka_1868", "territoryKey": "territory_nobeoka", "year": 1868, "amount": 7.0, "changeType": "維持", "changeDetail": "内藤家7万石、戊辰戦争では新政府に恭順" },
+
+  { "key": "kokudaka_toba_1868", "territoryKey": "territory_toba", "year": 1868, "amount": 3.0, "changeType": "維持", "changeDetail": "稲垣家3万石、鳥羽・伏見の戦いの舞台近隣。新政府に恭順" },
+
+  { "key": "kokudaka_kishiwada_1868", "territoryKey": "territory_kishiwada", "year": 1868, "amount": 5.3, "changeType": "維持", "changeDetail": "岡部家5万3千石、戊辰戦争では新政府に恭順" },
+
+  { "key": "kokudaka_tatsuno_1868", "territoryKey": "territory_tatsuno", "year": 1868, "amount": 5.3, "changeType": "維持", "changeDetail": "脇坂家5万3千石、戊辰戦争では新政府に恭順" },
+
+  { "key": "kokudaka_izushi_1868", "territoryKey": "territory_izushi", "year": 1868, "amount": 5.8, "changeType": "維持", "changeDetail": "仙石家5万8千石、戊辰戦争では新政府に恭順" },
+
+  { "key": "kokudaka_kakegawa_1868", "territoryKey": "territory_kakegawa", "year": 1868, "amount": 5.0, "changeType": "維持", "changeDetail": "太田家5万石、戊辰戦争では新政府に恭順" },
+
+  { "key": "kokudaka_matsumoto_1868", "territoryKey": "territory_matsumoto", "year": 1868, "amount": 6.0, "changeType": "維持", "changeDetail": "戸田家6万石、戊辰戦争では新政府軍として信越方面に出兵" },
+
+  { "key": "kokudaka_murakami_1868_boshin", "territoryKey": "territory_murakami", "year": 1868, "amount": 5.0, "changeType": "維持", "changeDetail": "内藤家5万石、戊辰戦争では奥羽越列藩同盟に参加するも恭順" },
+
+  { "key": "kokudaka_tanagura_1868_boshin", "territoryKey": "territory_tanagura", "year": 1868, "amount": 5.0, "changeType": "維持", "changeDetail": "阿部家5万石、棚倉城の戦いで新政府軍と交戦" },
+
+  { "key": "kokudaka_zeze_1868", "territoryKey": "territory_zeze", "year": 1868, "amount": 7.0, "changeType": "維持", "changeDetail": "本多家7万石、戊辰戦争では新政府に恭順" },
+
+  { "key": "kokudaka_minakuchi_1868", "territoryKey": "territory_minakuchi", "year": 1868, "amount": 2.5, "changeType": "維持", "changeDetail": "加藤家2万5千石、戊辰戦争では新政府に恭順" },
+
+  { "key": "kokudaka_maruoka_1868", "territoryKey": "territory_maruoka", "year": 1868, "amount": 5.0, "changeType": "維持", "changeDetail": "有馬家5万石、戊辰戦争では新政府に恭順" },
+
+  { "key": "kokudaka_saiki_1868", "territoryKey": "territory_saiki", "year": 1868, "amount": 2.0, "changeType": "維持", "changeDetail": "毛利家2万石、戊辰戦争では新政府に恭順" },
+
+  { "key": "kokudaka_takanabe_1868", "territoryKey": "territory_takanabe", "year": 1868, "amount": 2.7, "changeType": "維持", "changeDetail": "秋月家2万7千石、秋月種樹は幕末の文人大名として知られる" },
+
+  { "key": "kokudaka_funai_1868", "territoryKey": "territory_funai", "year": 1868, "amount": 2.2, "changeType": "維持", "changeDetail": "大給松平家2万2千石、戊辰戦争では新政府に恭順" },
+
+  { "key": "kokudaka_usuki_1868", "territoryKey": "territory_usuki", "year": 1868, "amount": 5.0, "changeType": "維持", "changeDetail": "稲葉家5万石、戊辰戦争では新政府に恭順" },
+
+  { "key": "kokudaka_shimabara_1868", "territoryKey": "territory_shimabara", "year": 1868, "amount": 7.0, "changeType": "加増", "changeDetail": "深溝松平家、幕末に高直しにより7万石に" },
+
+  { "key": "kokudaka_uwajima_1868", "territoryKey": "territory_uwajima", "year": 1868, "amount": 10.0, "changeType": "維持", "changeDetail": "伊達家10万石、戊辰戦争では新政府軍として参戦" },
+
+  { "key": "kokudaka_okazaki_1868", "territoryKey": "territory_okazaki", "year": 1868, "amount": 5.0, "changeType": "維持", "changeDetail": "本多家5万石、徳川家康誕生の地。戊辰戦争では新政府に恭順" },
+
+  { "key": "kokudaka_sasayama_1868", "territoryKey": "territory_sasayama", "year": 1868, "amount": 5.0, "changeType": "維持", "changeDetail": "青山家5万石、戊辰戦争では新政府に恭順" },
+
+  { "key": "kokudaka_bicchu_matsuyama_1868", "territoryKey": "territory_bicchu_matsuyama", "year": 1868, "amount": 5.0, "changeType": "維持", "changeDetail": "板倉家5万石、老中板倉勝静は旧幕府側の中枢だったが藩は恭順" },
+
+  { "key": "kokudaka_hamamatsu_1868", "territoryKey": "territory_hamamatsu", "year": 1868, "amount": 6.0, "changeType": "維持", "changeDetail": "井上家6万石、戊辰戦争では新政府に恭順" },
+
+  { "key": "kokudaka_numazu_1868", "territoryKey": "territory_numazu", "year": 1868, "amount": 5.0, "changeType": "維持", "changeDetail": "水野家5万石、戊辰戦争では新政府に恭順" }
 ]
