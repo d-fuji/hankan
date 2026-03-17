@@ -10,7 +10,8 @@ url.searchParams.set("idle_in_transaction_session_timeout", "300000");
 const adapter = new PrismaPg({ connectionString: url.toString() });
 const prisma = new PrismaClient({ adapter });
 
-const BATCH_SIZE = 50;
+const IS_REMOTE = url.hostname.includes("neon.tech") || url.hostname.includes("pooler");
+const BATCH_SIZE = IS_REMOTE ? 20 : 100;
 
 // ----------------------------------------
 // ユーティリティ
@@ -26,8 +27,7 @@ function progress(label: string, current: number, total: number) {
 }
 
 function loadJson<T>(filename: string): T {
-  const path = join(__dirname, "seed-data", filename);
-  return JSON.parse(readFileSync(path, "utf-8"));
+  return JSON.parse(readFileSync(join(__dirname, "seed-data", filename), "utf-8"));
 }
 
 // ----------------------------------------
@@ -42,26 +42,33 @@ type KokudakaData = { key: string; territoryKey: string; year: number; amount: n
 type SourceData = { key: string; title: string; author?: string; pubYear?: number; url?: string; note?: string };
 
 // ----------------------------------------
-// key → id 解決用ヘルパー（キャッシュ付き）
+// IDキャッシュ（起動時に全テーブルをプリロード）
 // ----------------------------------------
 const idCache = new Map<string, number>();
 
-async function resolveId(
-  table: "province" | "clan" | "person" | "territory" | "appointment",
-  key: string
-): Promise<number> {
-  const cacheKey = `${table}:${key}`;
-  const cached = idCache.get(cacheKey);
-  if (cached !== undefined) return cached;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const record = await (prisma[table] as any).findUnique({ where: { key }, select: { id: true } });
-  if (!record) throw new Error(`${table} with key "${key}" not found`);
-  idCache.set(cacheKey, record.id);
-  return record.id;
+async function preloadIds() {
+  const tables = ["province", "clan", "territory", "person", "appointment"] as const;
+  for (const table of tables) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const records = await (prisma[table] as any).findMany({ select: { id: true, key: true } });
+    for (const r of records) {
+      idCache.set(`${table}:${r.key}`, r.id);
+    }
+  }
+}
+
+function resolveIdSync(table: string, key: string): number {
+  const id = idCache.get(`${table}:${key}`);
+  if (id === undefined) throw new Error(`${table} with key "${key}" not found in cache`);
+  return id;
+}
+
+function tryResolveIdSync(table: string, key: string): number | undefined {
+  return idCache.get(`${table}:${key}`);
 }
 
 // ----------------------------------------
-// 汎用バッチupsert
+// バッチupsert
 // ----------------------------------------
 async function batchUpsert<T>(
   label: string,
@@ -89,7 +96,7 @@ async function batchUpsert<T>(
   progress(label, data.length, data.length);
 }
 
-/** バッチをフラッシュして結果からperson idをキャッシュ */
+/** 人物バッチフラッシュ（結果からIDをキャッシュ） */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function flushPersonBatch(batch: any[]): Promise<void> {
   if (batch.length === 0) return;
@@ -108,6 +115,10 @@ async function main() {
   const startTime = Date.now();
   console.log("Seeding database...");
 
+  // 全テーブルのIDをプリロード（2回目以降はresolveIdでDBアクセスゼロ）
+  await preloadIds();
+  console.log(`  Cache: ${idCache.size} IDs preloaded (${Date.now() - startTime}ms)`);
+
   // 旧国マスタ
   const provincesData = loadJson<ProvinceData[]>("provinces.json");
   await batchUpsert("旧国", provincesData, ({ key, ...data }) =>
@@ -120,15 +131,16 @@ async function main() {
     prisma.clan.upsert({ where: { key }, create: { key, ...data }, update: data })
   );
 
-  // 領地（provinceKey → id を事前解決）
+  // IDキャッシュ更新（新規追加分を拾うため）
+  await preloadIds();
+
+  // 領地
   const territoriesData = loadJson<TerritoryData[]>("territories.json");
-  const territoryOps = await Promise.all(
-    territoriesData.map(async ({ key, provinceKey, ...rest }) => ({
-      key,
-      provinceId: await resolveId("province", provinceKey),
-      rest,
-    }))
-  );
+  const territoryOps = territoriesData.map(({ key, provinceKey, ...rest }) => ({
+    key,
+    provinceId: resolveIdSync("province", provinceKey),
+    rest,
+  }));
   await batchUpsert("領地", territoryOps, ({ key, provinceId, rest }) =>
     prisma.territory.upsert({
       where: { key },
@@ -137,15 +149,18 @@ async function main() {
     })
   );
 
-  // 人物（fatherKey依存あり — 未解決のfatherが同バッチにいる場合のみフラッシュ）
+  // IDキャッシュ更新
+  await preloadIds();
+
+  // 人物（fatherKey依存あり — 同バッチ内の依存がある場合のみフラッシュ）
   const personsData = loadJson<PersonData[]>("persons.json");
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let personBatch: any[] = [];
-  const pendingKeys = new Set<string>(); // このバッチ内でupsert予定のkey
+  const pendingKeys = new Set<string>();
   let personProcessed = 0;
 
   for (const { key, clanKey, fatherKey, adoptedFromClanKey, ...rest } of personsData) {
-    // fatherKeyがバッチ内にある場合は先にフラッシュ（順序保証）
+    // fatherKeyが同バッチ内にあり、まだDBに反映されていない場合はフラッシュ
     if (fatherKey && pendingKeys.has(fatherKey)) {
       await flushPersonBatch(personBatch);
       personProcessed += personBatch.length;
@@ -154,19 +169,43 @@ async function main() {
       pendingKeys.clear();
     }
 
-    const clanId = await resolveId("clan", clanKey);
-    const fatherId = fatherKey ? await resolveId("person", fatherKey) : undefined;
+    const clanId = resolveIdSync("clan", clanKey);
+    // fatherIdはキャッシュにあればそこから、なければ同バッチで新規作成される前提
+    const fatherId = fatherKey ? tryResolveIdSync("person", fatherKey) : undefined;
     const adoptedFromClanId = adoptedFromClanKey
-      ? await resolveId("clan", adoptedFromClanKey)
+      ? tryResolveIdSync("clan", adoptedFromClanKey)
       : undefined;
 
-    personBatch.push(
-      prisma.person.upsert({
-        where: { key },
-        create: { key, ...rest, clanId, fatherId, adoptedFromClanId },
-        update: { ...rest, clanId, fatherId, adoptedFromClanId },
-      })
-    );
+    // fatherKeyがあるがキャッシュにない場合は先にフラッシュ
+    if (fatherKey && fatherId === undefined) {
+      await flushPersonBatch(personBatch);
+      personProcessed += personBatch.length;
+      progress("人物", personProcessed, personsData.length);
+      personBatch = [];
+      pendingKeys.clear();
+      // フラッシュ後にIDキャッシュ更新
+      await preloadIds();
+      // リトライ
+      const resolvedFatherId = tryResolveIdSync("person", fatherKey);
+      if (resolvedFatherId === undefined) {
+        throw new Error(`person with key "${fatherKey}" not found after flush`);
+      }
+      personBatch.push(
+        prisma.person.upsert({
+          where: { key },
+          create: { key, ...rest, clanId, fatherId: resolvedFatherId, adoptedFromClanId },
+          update: { ...rest, clanId, fatherId: resolvedFatherId, adoptedFromClanId },
+        })
+      );
+    } else {
+      personBatch.push(
+        prisma.person.upsert({
+          where: { key },
+          create: { key, ...rest, clanId, fatherId, adoptedFromClanId },
+          update: { ...rest, clanId, fatherId, adoptedFromClanId },
+        })
+      );
+    }
     pendingKeys.add(key);
 
     if (personBatch.length >= BATCH_SIZE) {
@@ -183,16 +222,17 @@ async function main() {
   }
   progress("人物", personsData.length, personsData.length);
 
-  // 役職履歴（personKey/territoryKey事前解決）
+  // IDキャッシュ更新（新規person分）
+  await preloadIds();
+
+  // 役職履歴
   const appointmentsData = loadJson<AppointmentData[]>("appointments.json");
-  const apptOps = await Promise.all(
-    appointmentsData.map(async ({ key, personKey, territoryKey, ...rest }) => ({
-      key,
-      personId: await resolveId("person", personKey),
-      territoryId: territoryKey ? await resolveId("territory", territoryKey) : undefined,
-      rest,
-    }))
-  );
+  const apptOps = appointmentsData.map(({ key, personKey, territoryKey, ...rest }) => ({
+    key,
+    personId: resolveIdSync("person", personKey),
+    territoryId: territoryKey ? resolveIdSync("territory", territoryKey) : undefined,
+    rest,
+  }));
   await batchUpsert("役職", apptOps, ({ key, personId, territoryId, rest }) =>
     prisma.appointment.upsert({
       where: { key },
@@ -203,13 +243,11 @@ async function main() {
 
   // 石高履歴
   const kokudakaData = loadJson<KokudakaData[]>("kokudaka.json");
-  const kokudakaOps = await Promise.all(
-    kokudakaData.map(async ({ key, territoryKey, ...rest }) => ({
-      key,
-      territoryId: await resolveId("territory", territoryKey),
-      rest,
-    }))
-  );
+  const kokudakaOps = kokudakaData.map(({ key, territoryKey, ...rest }) => ({
+    key,
+    territoryId: resolveIdSync("territory", territoryKey),
+    rest,
+  }));
   await batchUpsert("石高", kokudakaOps, ({ key, territoryId, rest }) =>
     prisma.kokudaka.upsert({
       where: { key },
