@@ -1,5 +1,6 @@
 import { PrismaClient } from "../src/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
+import { createHash } from "crypto";
 import { readFileSync } from "fs";
 import { join } from "path";
 
@@ -17,17 +18,23 @@ const BATCH_SIZE = IS_REMOTE ? 20 : 100;
 // ユーティリティ
 // ----------------------------------------
 
-function progress(label: string, current: number, total: number) {
-  const width = 30;
+function progress(label: string, current: number, total: number, extra?: string) {
+  const width = 25;
   const filled = Math.round((current / total) * width);
   const bar = "█".repeat(filled) + "░".repeat(width - filled);
   const pct = Math.round((current / total) * 100);
-  process.stdout.write(`\r  ${label} [${bar}] ${current}/${total} (${pct}%)`);
+  process.stdout.write(`\r  ${label} [${bar}] ${current}/${total} (${pct}%) ${extra ?? ""}`);
   if (current === total) process.stdout.write("\n");
 }
 
 function loadJson<T>(filename: string): T {
   return JSON.parse(readFileSync(join(__dirname, "seed-data", filename), "utf-8"));
+}
+
+/** データのハッシュを生成（比較用・キー順序不依存） */
+function hashData(data: Record<string, unknown>): string {
+  const sorted = Object.keys(data).sort().reduce((acc, k) => { acc[k] = data[k]; return acc; }, {} as Record<string, unknown>);
+  return createHash("md5").update(JSON.stringify(sorted)).digest("hex");
 }
 
 // ----------------------------------------
@@ -42,58 +49,99 @@ type KokudakaData = { key: string; territoryKey: string; year: number; amount: n
 type SourceData = { key: string; title: string; author?: string; pubYear?: number; url?: string; note?: string };
 
 // ----------------------------------------
-// IDキャッシュ（起動時に全テーブルをプリロード）
+// IDキャッシュ + 既存データハッシュ
 // ----------------------------------------
 const idCache = new Map<string, number>();
+const existingHashes = new Map<string, string>(); // "table:key" -> hash
 
-async function preloadIds() {
-  const tables = ["province", "clan", "territory", "person", "appointment"] as const;
-  for (const table of tables) {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const records = await (prisma[table] as any).findMany({ select: { id: true, key: true } });
+/** 全テーブルのID+データをプリロード */
+async function preloadAll() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  async function load(table: string, model: any) {
+    const records = await model.findMany();
     for (const r of records) {
       idCache.set(`${table}:${r.key}`, r.id);
+      // null/undefined/falseフィールドとidを除外してハッシュ化
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const clean: Record<string, any> = {};
+      for (const [k, v] of Object.entries(r)) {
+        if (k === "id" || v === null || v === undefined || v === false) continue;
+        // Decimal型を数値に変換
+        clean[k] = typeof v === "object" && v !== null && "toNumber" in v ? v.toNumber() : v;
+      }
+      existingHashes.set(`${table}:${r.key}`, hashData(clean));
     }
   }
+  await Promise.all([
+    load("province", prisma.province),
+    load("clan", prisma.clan),
+    load("territory", prisma.territory),
+    load("person", prisma.person),
+    load("appointment", prisma.appointment),
+    load("kokudaka", prisma.kokudaka),
+    load("source", prisma.source),
+  ]);
 }
 
-function resolveIdSync(table: string, key: string): number {
+function resolveId(table: string, key: string): number {
   const id = idCache.get(`${table}:${key}`);
   if (id === undefined) throw new Error(`${table} with key "${key}" not found in cache`);
   return id;
 }
 
-function tryResolveIdSync(table: string, key: string): number | undefined {
+function tryResolveId(table: string, key: string): number | undefined {
   return idCache.get(`${table}:${key}`);
 }
 
+/** データが既存と同じか判定 */
+function isUnchanged(table: string, key: string, data: Record<string, unknown>): boolean {
+  const existing = existingHashes.get(`${table}:${key}`);
+  if (!existing) return false; // 新規
+  // null/undefined/falseのフィールドを除外して比較（DB側と合わせる）
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const clean: Record<string, any> = { key };
+  for (const [k, v] of Object.entries(data)) {
+    if (v === null || v === undefined || v === false) continue;
+    clean[k] = v;
+  }
+  return existing === hashData(clean);
+}
+
 // ----------------------------------------
-// バッチupsert
+// 差分バッチupsert
 // ----------------------------------------
-async function batchUpsert<T>(
+async function diffBatchUpsert<T>(
   label: string,
+  table: string,
   data: T[],
+  getKey: (item: T) => string,
+  getCompareData: (item: T) => Record<string, unknown>,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   upsertFn: (item: T) => any
 ) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const batch: any[] = [];
   let processed = 0;
+  let skipped = 0;
 
   for (const item of data) {
-    batch.push(upsertFn(item));
+    if (isUnchanged(table, getKey(item), getCompareData(item))) {
+      skipped++;
+    } else {
+      batch.push(upsertFn(item));
+    }
+    processed++;
+
     if (batch.length >= BATCH_SIZE) {
       await prisma.$transaction(batch);
-      processed += batch.length;
-      progress(label, processed, data.length);
+      progress(label, processed, data.length, `new/upd:${processed - skipped} skip:${skipped}`);
       batch.length = 0;
     }
   }
   if (batch.length > 0) {
     await prisma.$transaction(batch);
-    processed += batch.length;
   }
-  progress(label, data.length, data.length);
+  progress(label, data.length, data.length, `new/upd:${data.length - skipped} skip:${skipped}`);
 }
 
 /** 人物バッチフラッシュ（結果からIDをキャッシュ） */
@@ -115,103 +163,106 @@ async function main() {
   const startTime = Date.now();
   console.log("Seeding database...");
 
-  // 全テーブルのIDをプリロード（2回目以降はresolveIdでDBアクセスゼロ）
-  await preloadIds();
-  console.log(`  Cache: ${idCache.size} IDs preloaded (${Date.now() - startTime}ms)`);
+  await preloadAll();
+  console.log(`  Cache: ${idCache.size} IDs, ${existingHashes.size} hashes (${Date.now() - startTime}ms)`);
 
   // 旧国マスタ
   const provincesData = loadJson<ProvinceData[]>("provinces.json");
-  await batchUpsert("旧国", provincesData, ({ key, ...data }) =>
-    prisma.province.upsert({ where: { key }, create: { key, ...data }, update: data })
+  await diffBatchUpsert("旧国", "province", provincesData,
+    (d) => d.key,
+    ({ key, ...rest }) => ({ key, ...rest }),
+    ({ key, ...data }) => prisma.province.upsert({ where: { key }, create: { key, ...data }, update: data })
   );
 
   // 家
   const clansData = loadJson<ClanData[]>("clans.json");
-  await batchUpsert("家  ", clansData, ({ key, ...data }) =>
-    prisma.clan.upsert({ where: { key }, create: { key, ...data }, update: data })
+  await diffBatchUpsert("家  ", "clan", clansData,
+    (d) => d.key,
+    ({ key, ...rest }) => ({ key, ...rest }),
+    ({ key, ...data }) => prisma.clan.upsert({ where: { key }, create: { key, ...data }, update: data })
   );
 
-  // IDキャッシュ更新（新規追加分を拾うため）
-  await preloadIds();
+  // IDキャッシュ更新（新規追加分）
+  await preloadAll();
 
   // 領地
   const territoriesData = loadJson<TerritoryData[]>("territories.json");
   const territoryOps = territoriesData.map(({ key, provinceKey, ...rest }) => ({
-    key,
-    provinceId: resolveIdSync("province", provinceKey),
-    rest,
+    key, provinceKey, provinceId: resolveId("province", provinceKey), rest,
   }));
-  await batchUpsert("領地", territoryOps, ({ key, provinceId, rest }) =>
-    prisma.territory.upsert({
-      where: { key },
-      create: { key, ...rest, provinceId },
-      update: { ...rest, provinceId },
+  await diffBatchUpsert("領地", "territory", territoryOps,
+    (d) => d.key,
+    (d) => ({ key: d.key, ...d.rest, provinceId: d.provinceId }),
+    ({ key, provinceId, rest }) => prisma.territory.upsert({
+      where: { key }, create: { key, ...rest, provinceId }, update: { ...rest, provinceId },
     })
   );
 
-  // IDキャッシュ更新
-  await preloadIds();
+  await preloadAll();
 
-  // 人物（fatherKey依存あり — 同バッチ内の依存がある場合のみフラッシュ）
+  // 人物（fatherKey依存あり — 差分検出付き）
   const personsData = loadJson<PersonData[]>("persons.json");
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let personBatch: any[] = [];
   const pendingKeys = new Set<string>();
   let personProcessed = 0;
+  let personSkipped = 0;
 
   for (const { key, clanKey, fatherKey, adoptedFromClanKey, ...rest } of personsData) {
-    // fatherKeyが同バッチ内にあり、まだDBに反映されていない場合はフラッシュ
+    // 依存フラッシュ
     if (fatherKey && pendingKeys.has(fatherKey)) {
       await flushPersonBatch(personBatch);
       personProcessed += personBatch.length;
-      progress("人物", personProcessed, personsData.length);
+      progress("人物", personProcessed + personSkipped, personsData.length,
+        `new/upd:${personProcessed} skip:${personSkipped}`);
       personBatch = [];
       pendingKeys.clear();
     }
 
-    const clanId = resolveIdSync("clan", clanKey);
-    // fatherIdはキャッシュにあればそこから、なければ同バッチで新規作成される前提
-    const fatherId = fatherKey ? tryResolveIdSync("person", fatherKey) : undefined;
-    const adoptedFromClanId = adoptedFromClanKey
-      ? tryResolveIdSync("clan", adoptedFromClanKey)
-      : undefined;
+    const clanId = resolveId("clan", clanKey);
+    const fatherId = fatherKey ? tryResolveId("person", fatherKey) : undefined;
+    const adoptedFromClanId = adoptedFromClanKey ? tryResolveId("clan", adoptedFromClanKey) : undefined;
 
-    // fatherKeyがあるがキャッシュにない場合は先にフラッシュ
+    // fatherKeyがキャッシュにない場合はフラッシュ+再取得
     if (fatherKey && fatherId === undefined) {
       await flushPersonBatch(personBatch);
       personProcessed += personBatch.length;
-      progress("人物", personProcessed, personsData.length);
       personBatch = [];
       pendingKeys.clear();
-      // フラッシュ後にIDキャッシュ更新
-      await preloadIds();
-      // リトライ
-      const resolvedFatherId = tryResolveIdSync("person", fatherKey);
+      await preloadAll();
+      const resolvedFatherId = tryResolveId("person", fatherKey);
       if (resolvedFatherId === undefined) {
         throw new Error(`person with key "${fatherKey}" not found after flush`);
       }
-      personBatch.push(
-        prisma.person.upsert({
+      const compareData = { key, ...rest, clanId, fatherId: resolvedFatherId, adoptedFromClanId };
+      if (isUnchanged("person", key, compareData)) {
+        personSkipped++;
+      } else {
+        personBatch.push(prisma.person.upsert({
           where: { key },
           create: { key, ...rest, clanId, fatherId: resolvedFatherId, adoptedFromClanId },
           update: { ...rest, clanId, fatherId: resolvedFatherId, adoptedFromClanId },
-        })
-      );
+        }));
+      }
     } else {
-      personBatch.push(
-        prisma.person.upsert({
+      const compareData = { key, ...rest, clanId, fatherId, adoptedFromClanId };
+      if (isUnchanged("person", key, compareData)) {
+        personSkipped++;
+      } else {
+        personBatch.push(prisma.person.upsert({
           where: { key },
           create: { key, ...rest, clanId, fatherId, adoptedFromClanId },
           update: { ...rest, clanId, fatherId, adoptedFromClanId },
-        })
-      );
+        }));
+      }
     }
     pendingKeys.add(key);
 
     if (personBatch.length >= BATCH_SIZE) {
       await flushPersonBatch(personBatch);
       personProcessed += personBatch.length;
-      progress("人物", personProcessed, personsData.length);
+      progress("人物", personProcessed + personSkipped, personsData.length,
+        `new/upd:${personProcessed} skip:${personSkipped}`);
       personBatch = [];
       pendingKeys.clear();
     }
@@ -220,46 +271,44 @@ async function main() {
     await flushPersonBatch(personBatch);
     personProcessed += personBatch.length;
   }
-  progress("人物", personsData.length, personsData.length);
+  progress("人物", personsData.length, personsData.length,
+    `new/upd:${personProcessed} skip:${personSkipped}`);
 
-  // IDキャッシュ更新（新規person分）
-  await preloadIds();
+  await preloadAll();
 
   // 役職履歴
   const appointmentsData = loadJson<AppointmentData[]>("appointments.json");
   const apptOps = appointmentsData.map(({ key, personKey, territoryKey, ...rest }) => ({
-    key,
-    personId: resolveIdSync("person", personKey),
-    territoryId: territoryKey ? resolveIdSync("territory", territoryKey) : undefined,
-    rest,
+    key, personId: resolveId("person", personKey),
+    territoryId: territoryKey ? resolveId("territory", territoryKey) : undefined, rest,
   }));
-  await batchUpsert("役職", apptOps, ({ key, personId, territoryId, rest }) =>
-    prisma.appointment.upsert({
-      where: { key },
-      create: { key, ...rest, personId, territoryId },
-      update: { ...rest, personId, territoryId },
+  await diffBatchUpsert("役職", "appointment", apptOps,
+    (d) => d.key,
+    (d) => ({ key: d.key, ...d.rest, personId: d.personId, territoryId: d.territoryId }),
+    ({ key, personId, territoryId, rest }) => prisma.appointment.upsert({
+      where: { key }, create: { key, ...rest, personId, territoryId }, update: { ...rest, personId, territoryId },
     })
   );
 
   // 石高履歴
   const kokudakaData = loadJson<KokudakaData[]>("kokudaka.json");
   const kokudakaOps = kokudakaData.map(({ key, territoryKey, ...rest }) => ({
-    key,
-    territoryId: resolveIdSync("territory", territoryKey),
-    rest,
+    key, territoryId: resolveId("territory", territoryKey), rest,
   }));
-  await batchUpsert("石高", kokudakaOps, ({ key, territoryId, rest }) =>
-    prisma.kokudaka.upsert({
-      where: { key },
-      create: { key, ...rest, territoryId },
-      update: { ...rest, territoryId },
+  await diffBatchUpsert("石高", "kokudaka", kokudakaOps,
+    (d) => d.key,
+    (d) => ({ key: d.key, ...d.rest, territoryId: d.territoryId }),
+    ({ key, territoryId, rest }) => prisma.kokudaka.upsert({
+      where: { key }, create: { key, ...rest, territoryId }, update: { ...rest, territoryId },
     })
   );
 
   // 出典
   const sourcesData = loadJson<SourceData[]>("sources.json");
-  await batchUpsert("出典", sourcesData, ({ key, ...data }) =>
-    prisma.source.upsert({ where: { key }, create: { key, ...data }, update: data })
+  await diffBatchUpsert("出典", "source", sourcesData,
+    (d) => d.key,
+    ({ key, ...rest }) => ({ key, ...rest }),
+    ({ key, ...data }) => prisma.source.upsert({ where: { key }, create: { key, ...data }, update: data })
   );
 
   const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
