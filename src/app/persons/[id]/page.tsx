@@ -16,7 +16,7 @@ export default function PersonPage({ params }: { params: Promise<{ id: string }>
       <main className="mx-auto w-full max-w-6xl flex-1 px-6 py-8">
         <Link
           href="/"
-          className="mb-6 inline-block text-sm text-[var(--color-navy)] hover:underline"
+          className="mb-6 inline-block text-sm text-navy hover:underline"
         >
           ← 戻る
         </Link>

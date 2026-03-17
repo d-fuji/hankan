@@ -19,7 +19,7 @@ export function PersonDetail({ id }: PersonDetailProps) {
   const { data, error, isLoading } = useSWR<PersonDetailType>(`/api/persons/${id}`, fetcher);
 
   if (isLoading) {
-    return <p className="py-8 text-center text-[var(--color-ink)]/50">読み込み中...</p>;
+    return <p className="py-8 text-center text-ink/50">読み込み中...</p>;
   }
 
   if (error || !data) {
@@ -30,43 +30,43 @@ export function PersonDetail({ id }: PersonDetailProps) {
     <div className="space-y-8">
       {/* 基本情報 */}
       <section>
-        <h2 className="mb-4 font-[family-name:var(--font-noto-serif)] text-3xl font-bold text-[var(--color-navy)]">
+        <h2 className="mb-4 font-(family-name:--font-noto-serif) text-3xl font-bold text-navy">
           {data.name}
         </h2>
         <dl className="grid grid-cols-2 gap-x-8 gap-y-3 text-sm sm:grid-cols-3">
           <div>
-            <dt className="text-[var(--color-ink)]/50">家</dt>
+            <dt className="text-ink/50">家</dt>
             <dd className="font-medium">
-              <Link href={`/clans/${data.clanId}`} className="text-[var(--color-navy)] hover:underline">
+              <Link href={`/clans/${data.clanId}`} className="text-navy hover:underline">
                 {data.clanName}
               </Link>
             </dd>
           </div>
           {data.imina && (
             <div>
-              <dt className="text-[var(--color-ink)]/50">諱</dt>
+              <dt className="text-ink/50">諱</dt>
               <dd className="font-medium">{data.imina}</dd>
             </div>
           )}
           {data.commonName && (
             <div>
-              <dt className="text-[var(--color-ink)]/50">通称</dt>
+              <dt className="text-ink/50">通称</dt>
               <dd className="font-medium">{data.commonName}</dd>
             </div>
           )}
           {data.crestName && (
             <div>
-              <dt className="text-[var(--color-ink)]/50">家紋</dt>
+              <dt className="text-ink/50">家紋</dt>
               <dd className="font-medium">{data.crestName}</dd>
             </div>
           )}
           {data.fatherName && (
             <div>
-              <dt className="text-[var(--color-ink)]/50">父</dt>
+              <dt className="text-ink/50">父</dt>
               <dd className="font-medium">
                 <Link
                   href={`/persons/${data.fatherId}`}
-                  className="text-[var(--color-navy)] hover:underline"
+                  className="text-navy hover:underline"
                 >
                   {data.fatherName}
                 </Link>
@@ -75,11 +75,11 @@ export function PersonDetail({ id }: PersonDetailProps) {
           )}
           {data.isAdopted && data.adoptedFromClanName && (
             <div>
-              <dt className="text-[var(--color-ink)]/50">養子元</dt>
+              <dt className="text-ink/50">養子元</dt>
               <dd className="font-medium">
                 <Link
                   href={`/clans/${data.adoptedFromClanId}`}
-                  className="text-[var(--color-navy)] hover:underline"
+                  className="text-navy hover:underline"
                 >
                   {data.adoptedFromClanName}家
                 </Link>
@@ -92,27 +92,27 @@ export function PersonDetail({ id }: PersonDetailProps) {
       {/* 役職履歴 */}
       {data.appointments.length > 0 && (
         <section>
-          <h3 className="mb-3 font-[family-name:var(--font-noto-serif)] text-xl font-bold text-[var(--color-navy)]">
+          <h3 className="mb-3 font-(family-name:--font-noto-serif) text-xl font-bold text-navy">
             役職履歴
           </h3>
           <div className="space-y-2">
             {data.appointments.map((a, i) => (
               <div
                 key={i}
-                className="flex items-center justify-between rounded-lg border border-[var(--color-gold)]/20 bg-white p-3"
+                className="flex items-center justify-between rounded-lg border border-gold/20 bg-white p-3"
               >
                 <div>
                   <span className="font-medium">{a.roleType}</span>
                   {a.territoryName && (
                     <Link
                       href={`/territories/${a.territoryId}`}
-                      className="ml-2 text-sm text-[var(--color-navy)] hover:underline"
+                      className="ml-2 text-sm text-navy hover:underline"
                     >
                       {a.territoryName}
                     </Link>
                   )}
                 </div>
-                <div className="text-sm text-[var(--color-ink)]/60">
+                <div className="text-sm text-ink/60">
                   {a.generation !== undefined && (
                     <span className="mr-3">
                       {a.generation === 1 ? "初代" : `${a.generation}代`}
@@ -134,7 +134,7 @@ export function PersonDetail({ id }: PersonDetailProps) {
       {/* 子供一覧 */}
       {data.children.length > 0 && (
         <section>
-          <h3 className="mb-3 font-[family-name:var(--font-noto-serif)] text-xl font-bold text-[var(--color-navy)]">
+          <h3 className="mb-3 font-(family-name:--font-noto-serif) text-xl font-bold text-navy">
             子女
           </h3>
           <div className="space-y-2">
@@ -142,12 +142,12 @@ export function PersonDetail({ id }: PersonDetailProps) {
               <Link
                 key={child.id}
                 href={`/persons/${child.id}`}
-                className="flex items-center justify-between rounded-lg border border-[var(--color-gold)]/20 bg-white p-3 hover:shadow-sm"
+                className="flex items-center justify-between rounded-lg border border-gold/20 bg-white p-3 hover:shadow-sm"
               >
                 <div>
                   <span className="font-medium">{child.name}</span>
                   {child.birthOrder && child.birthOrderType && (
-                    <span className="ml-2 text-sm text-[var(--color-ink)]/60">
+                    <span className="ml-2 text-sm text-ink/60">
                       {child.birthOrderType}
                       {child.birthOrder === 1
                         ? "一"
@@ -160,7 +160,7 @@ export function PersonDetail({ id }: PersonDetailProps) {
                     </span>
                   )}
                 </div>
-                <div className="flex items-center gap-2 text-sm text-[var(--color-ink)]/60">
+                <div className="flex items-center gap-2 text-sm text-ink/60">
                   {child.primaryAppointment && (
                     <span>
                       {child.primaryAppointment.generation !== undefined &&
@@ -171,7 +171,7 @@ export function PersonDetail({ id }: PersonDetailProps) {
                     </span>
                   )}
                   {child.totalAppointments > 1 && (
-                    <span className="rounded bg-[var(--color-navy)]/10 px-1.5 py-0.5 text-xs">
+                    <span className="rounded bg-navy/10 px-1.5 py-0.5 text-xs">
                       +{child.totalAppointments - 1}
                     </span>
                   )}

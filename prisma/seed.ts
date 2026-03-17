@@ -67,7 +67,10 @@ async function preloadAll() {
       for (const [k, v] of Object.entries(r)) {
         if (k === "id" || v === null || v === undefined || v === false) continue;
         // Decimal型を数値に変換
-        clean[k] = typeof v === "object" && v !== null && "toNumber" in v ? v.toNumber() : v;
+        clean[k] =
+          typeof v === "object" && v !== null && "toNumber" in v
+            ? (v as { toNumber(): number }).toNumber()
+            : v;
       }
       existingHashes.set(`${table}:${r.key}`, hashData(clean));
     }

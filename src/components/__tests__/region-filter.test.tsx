@@ -39,7 +39,7 @@ describe("RegionFilter", () => {
     render(<RegionFilter selected="北陸道" onSelect={vi.fn()} />);
 
     const button = screen.getByRole("button", { name: "北陸道" });
-    expect(button.className).toContain("bg-[var(--color-navy)]");
+    expect(button.className).toContain("bg-navy");
   });
 
   it("すべてボタンを押すとonSelect(undefined)が呼ばれる", async () => {

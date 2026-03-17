@@ -22,10 +22,10 @@ export default async function AnnualPage({ params }: AnnualPageProps) {
 
       <main className="mx-auto w-full max-w-6xl flex-1 px-6 py-8">
         <section className="mb-6">
-          <h2 className="mb-2 font-[family-name:var(--font-noto-serif)] text-2xl font-bold text-[var(--color-navy)]">
+          <h2 className="mb-2 font-(family-name:--font-noto-serif) text-2xl font-bold text-navy">
             年代ビュー
           </h2>
-          <p className="text-sm text-[var(--color-ink)]/60">
+          <p className="text-sm text-ink/60">
             指定した年の将軍・領地・石高のスナップショット
           </p>
         </section>

@@ -33,12 +33,12 @@ export function ClanKokudakaChart({ clanId }: ClanKokudakaChartProps) {
 
   return (
     <section>
-      <h3 className="mb-4 font-[family-name:var(--font-noto-serif)] text-xl font-bold text-[var(--color-navy)]">
+      <h3 className="mb-4 font-(family-name:--font-noto-serif) text-xl font-bold text-navy">
         石高推移
       </h3>
 
       {/* グラフ（年別合計） */}
-      <div className="mb-4 rounded-lg border border-[var(--color-gold)]/20 bg-white p-4">
+      <div className="mb-4 rounded-lg border border-gold/20 bg-white p-4">
         <ResponsiveContainer width="100%" height={300}>
           <LineChart data={data.summary}>
             <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
@@ -65,21 +65,21 @@ export function ClanKokudakaChart({ clanId }: ClanKokudakaChartProps) {
         {data.detail.map((point) => (
           <div
             key={`${point.year}-${point.territoryName}-${point.changeType ?? "none"}`}
-            className="flex items-center justify-between rounded-lg border border-[var(--color-gold)]/20 bg-white p-3"
+            className="flex items-center justify-between rounded-lg border border-gold/20 bg-white p-3"
           >
             <div>
               <span className="font-medium">{point.year}年</span>
-              <span className="ml-2 text-sm text-[var(--color-ink)]/50">{point.territoryName}</span>
+              <span className="ml-2 text-sm text-ink/50">{point.territoryName}</span>
               {point.changeType && (
-                <span className="ml-2 rounded bg-[var(--color-navy)]/10 px-2 py-0.5 text-xs text-[var(--color-navy)]">
+                <span className="ml-2 rounded bg-navy/10 px-2 py-0.5 text-xs text-navy">
                   {point.changeType}
                 </span>
               )}
               {point.changeDetail && (
-                <span className="ml-2 text-xs text-[var(--color-ink)]/40">{point.changeDetail}</span>
+                <span className="ml-2 text-xs text-ink/40">{point.changeDetail}</span>
               )}
             </div>
-            <span className="font-[family-name:var(--font-noto-serif)] text-lg font-bold text-[var(--color-navy)]">
+            <span className="font-(family-name:--font-noto-serif) text-lg font-bold text-navy">
               {point.amount}万石
             </span>
           </div>

@@ -19,7 +19,7 @@ export function ClanDetail({ id }: ClanDetailProps) {
   const { data, error, isLoading } = useSWR<ClanDetailType>(`/api/clans/${id}`, fetcher);
 
   if (isLoading) {
-    return <p className="py-8 text-center text-[var(--color-ink)]/50">読み込み中...</p>;
+    return <p className="py-8 text-center text-ink/50">読み込み中...</p>;
   }
 
   if (error || !data) {
@@ -30,21 +30,21 @@ export function ClanDetail({ id }: ClanDetailProps) {
     <div className="space-y-8">
       {/* 基本情報 */}
       <section>
-        <h2 className="mb-4 font-[family-name:var(--font-noto-serif)] text-3xl font-bold text-[var(--color-navy)]">
+        <h2 className="mb-4 font-(family-name:--font-noto-serif) text-3xl font-bold text-navy">
           {data.name}家
         </h2>
         <dl className="grid grid-cols-2 gap-x-8 gap-y-3 text-sm sm:grid-cols-3">
           <div>
-            <dt className="text-[var(--color-ink)]/50">読み</dt>
+            <dt className="text-ink/50">読み</dt>
             <dd className="font-medium">{data.nameKana}</dd>
           </div>
           <div>
-            <dt className="text-[var(--color-ink)]/50">ローマ字</dt>
+            <dt className="text-ink/50">ローマ字</dt>
             <dd className="font-medium">{data.nameRomaji}</dd>
           </div>
           {data.crestName && (
             <div>
-              <dt className="text-[var(--color-ink)]/50">家紋</dt>
+              <dt className="text-ink/50">家紋</dt>
               <dd className="font-medium">{data.crestName}</dd>
             </div>
           )}
@@ -54,7 +54,7 @@ export function ClanDetail({ id }: ClanDetailProps) {
       {/* 関連領地 */}
       {data.territories.length > 0 && (
         <section>
-          <h3 className="mb-3 font-[family-name:var(--font-noto-serif)] text-xl font-bold text-[var(--color-navy)]">
+          <h3 className="mb-3 font-(family-name:--font-noto-serif) text-xl font-bold text-navy">
             関連領地
           </h3>
           <div className="flex flex-wrap gap-2">
@@ -62,10 +62,10 @@ export function ClanDetail({ id }: ClanDetailProps) {
               <Link
                 key={t.id}
                 href={`/territories/${t.id}`}
-                className="rounded-lg border border-[var(--color-gold)]/20 bg-white px-4 py-2 text-sm hover:shadow-sm"
+                className="rounded-lg border border-gold/20 bg-white px-4 py-2 text-sm hover:shadow-sm"
               >
                 <span className="font-medium">{t.name}</span>
-                <span className="ml-2 text-xs text-[var(--color-ink)]/50">{t.territoryType}</span>
+                <span className="ml-2 text-xs text-ink/50">{t.territoryType}</span>
               </Link>
             ))}
           </div>
@@ -78,7 +78,7 @@ export function ClanDetail({ id }: ClanDetailProps) {
       {/* 所属人物一覧 */}
       {data.members.length > 0 && (
         <section>
-          <h3 className="mb-3 font-[family-name:var(--font-noto-serif)] text-xl font-bold text-[var(--color-navy)]">
+          <h3 className="mb-3 font-(family-name:--font-noto-serif) text-xl font-bold text-navy">
             所属人物
           </h3>
           <div className="space-y-2">
@@ -86,10 +86,10 @@ export function ClanDetail({ id }: ClanDetailProps) {
               <Link
                 key={member.id}
                 href={`/persons/${member.id}`}
-                className="flex items-center justify-between rounded-lg border border-[var(--color-gold)]/20 bg-white p-3 hover:shadow-sm"
+                className="flex items-center justify-between rounded-lg border border-gold/20 bg-white p-3 hover:shadow-sm"
               >
                 <span className="font-medium">{member.name}</span>
-                <div className="flex items-center gap-2 text-sm text-[var(--color-ink)]/60">
+                <div className="flex items-center gap-2 text-sm text-ink/60">
                   {member.primaryAppointment && (
                     <span>
                       {member.primaryAppointment.generation !== undefined &&
@@ -100,7 +100,7 @@ export function ClanDetail({ id }: ClanDetailProps) {
                     </span>
                   )}
                   {member.totalAppointments > 1 && (
-                    <span className="rounded bg-[var(--color-navy)]/10 px-1.5 py-0.5 text-xs">
+                    <span className="rounded bg-navy/10 px-1.5 py-0.5 text-xs">
                       +{member.totalAppointments - 1}
                     </span>
                   )}

@@ -24,8 +24,8 @@ export function RegionFilter({ selected, onSelect }: RegionFilterProps) {
         onClick={() => onSelect(undefined)}
         className={`rounded-full px-3 py-1 text-sm transition-colors ${
           selected === undefined
-            ? "bg-[var(--color-navy)] text-white"
-            : "bg-[var(--color-navy)]/10 text-[var(--color-navy)] hover:bg-[var(--color-navy)]/20"
+            ? "bg-navy text-white"
+            : "bg-navy/10 text-navy hover:bg-navy/20"
         }`}
       >
         すべて
@@ -36,8 +36,8 @@ export function RegionFilter({ selected, onSelect }: RegionFilterProps) {
           onClick={() => onSelect(region)}
           className={`rounded-full px-3 py-1 text-sm transition-colors ${
             selected === region
-              ? "bg-[var(--color-navy)] text-white"
-              : "bg-[var(--color-navy)]/10 text-[var(--color-navy)] hover:bg-[var(--color-navy)]/20"
+              ? "bg-navy text-white"
+              : "bg-navy/10 text-navy hover:bg-navy/20"
           }`}
         >
           {region}

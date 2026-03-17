@@ -25,7 +25,7 @@ export function ShogunList() {
   );
 
   if (isLoading) {
-    return <p className="py-8 text-center text-[var(--color-ink)]/50">読み込み中...</p>;
+    return <p className="py-8 text-center text-ink/50">読み込み中...</p>;
   }
 
   if (error) {
@@ -33,7 +33,7 @@ export function ShogunList() {
   }
 
   if (!data || data.data.length === 0) {
-    return <p className="py-8 text-center text-[var(--color-ink)]/50">データがありません</p>;
+    return <p className="py-8 text-center text-ink/50">データがありません</p>;
   }
 
   return (
@@ -42,10 +42,10 @@ export function ShogunList() {
         <Link
           key={shogun.id}
           href={`/persons/${shogun.id}`}
-          className="flex items-center justify-between rounded-lg border border-[var(--color-gold)]/20 bg-white p-4 shadow-sm transition-shadow hover:shadow-md"
+          className="flex items-center justify-between rounded-lg border border-gold/20 bg-white p-4 shadow-sm transition-shadow hover:shadow-md"
         >
           <div className="flex items-center gap-4">
-            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-navy)] font-[family-name:var(--font-noto-serif)] text-sm font-bold text-white">
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-navy font-(family-name:--font-noto-serif) text-sm font-bold text-white">
               {shogun.generation !== undefined
                 ? shogun.generation === 1
                   ? "初"
@@ -53,14 +53,14 @@ export function ShogunList() {
                 : "—"}
             </span>
             <div>
-              <span className="font-[family-name:var(--font-noto-serif)] text-lg font-bold text-[var(--color-navy)]">
+              <span className="font-(family-name:--font-noto-serif) text-lg font-bold text-navy">
                 {shogun.name}
               </span>
-              <span className="ml-2 text-sm text-[var(--color-ink)]/50">{shogun.clanName}家</span>
+              <span className="ml-2 text-sm text-ink/50">{shogun.clanName}家</span>
             </div>
           </div>
           <div className="text-right text-sm">
-            <span className="text-[var(--color-ink)]/60">
+            <span className="text-ink/60">
               {shogun.generation !== undefined && (
                 <span className="mr-3 font-medium">
                   {shogun.generation === 1 ? "初代" : `${shogun.generation}代`}

@@ -44,9 +44,9 @@ function TreeNode({ node }: { node: LineageNode }) {
   const nameContent = (
     <>
       <span className="font-medium">{node.name}</span>
-      <span className="ml-1 text-xs text-[var(--color-ink)]/50">{node.clanName}</span>
+      <span className="ml-1 text-xs text-ink/50">{node.clanName}</span>
       {roleLabel && (
-        <div className="text-xs text-[var(--color-ink)]/40">{roleLabel}</div>
+        <div className="text-xs text-ink/40">{roleLabel}</div>
       )}
     </>
   );
@@ -58,21 +58,21 @@ function TreeNode({ node }: { node: LineageNode }) {
         data-focus={node.isFocusPerson}
         className={`rounded-lg border px-4 py-2 text-center text-sm ${
           node.isFocusPerson
-            ? "border-[var(--color-gold)] bg-[var(--color-gold)]/10 ring-2 ring-[var(--color-gold)]"
-            : "border-[var(--color-navy)]/20 bg-white"
+            ? "border-gold bg-gold/10 ring-2 ring-gold"
+            : "border-navy/20 bg-white"
         }`}
       >
         {node.isFocusPerson ? (
           <div>{nameContent}</div>
         ) : (
-          <Link href={`/persons/${node.id}`} className="text-[var(--color-navy)] hover:underline">
+          <Link href={`/persons/${node.id}`} className="text-navy hover:underline">
             {nameContent}
           </Link>
         )}
         {(node.isAdopted || birthOrderLabel) && (
-          <div className="mt-1 text-xs text-[var(--color-ink)]/60">
+          <div className="mt-1 text-xs text-ink/60">
             {birthOrderLabel && (
-              <span className="rounded bg-[var(--color-navy)]/10 px-1.5 py-0.5">
+              <span className="rounded bg-navy/10 px-1.5 py-0.5">
                 {birthOrderLabel}
               </span>
             )}
@@ -96,7 +96,7 @@ function TreeNode({ node }: { node: LineageNode }) {
       {node.children.length > 0 && (
         <>
           {/* 縦線 */}
-          <div className="h-6 w-px bg-[var(--color-navy)]/20" />
+          <div className="h-6 w-px bg-navy/20" />
 
           <div className="flex gap-6">
             {node.children.map((child, i) => (
@@ -104,7 +104,7 @@ function TreeNode({ node }: { node: LineageNode }) {
                 {/* 横線（兄弟ノード接続） */}
                 {node.children.length > 1 && (
                   <div
-                    className={`absolute top-0 h-px bg-[var(--color-navy)]/20 ${
+                    className={`absolute top-0 h-px bg-navy/20 ${
                       i === 0
                         ? "left-1/2 right-0"
                         : i === node.children.length - 1
@@ -117,8 +117,8 @@ function TreeNode({ node }: { node: LineageNode }) {
                 <div
                   className={`h-6 w-px ${
                     child.isAdopted
-                      ? "border-l border-dashed border-[var(--color-navy)]/30"
-                      : "bg-[var(--color-navy)]/20"
+                      ? "border-l border-dashed border-navy/30"
+                      : "bg-navy/20"
                   }`}
                 />
                 <TreeNode node={child} />
@@ -142,10 +142,10 @@ export function FamilyTree({ personId }: FamilyTreeProps) {
 
   return (
     <section>
-      <h3 className="mb-4 font-[family-name:var(--font-noto-serif)] text-xl font-bold text-[var(--color-navy)]">
+      <h3 className="mb-4 font-(family-name:--font-noto-serif) text-xl font-bold text-navy">
         血統
       </h3>
-      <div className="overflow-x-auto rounded-lg border border-[var(--color-gold)]/20 bg-[var(--color-cream)] p-6">
+      <div className="overflow-x-auto rounded-lg border border-gold/20 bg-cream p-6">
         <TreeNode node={data.tree} />
       </div>
     </section>
