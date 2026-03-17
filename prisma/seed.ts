@@ -4,8 +4,9 @@ import { readFileSync } from "fs";
 import { join } from "path";
 
 const url = new URL(process.env.DATABASE_URL!);
-url.searchParams.set("connect_timeout", "60");
-url.searchParams.set("statement_timeout", "60000");
+url.searchParams.set("connect_timeout", "120");
+url.searchParams.set("statement_timeout", "120000");
+url.searchParams.set("idle_in_transaction_session_timeout", "300000");
 const adapter = new PrismaPg({ connectionString: url.toString() });
 const prisma = new PrismaClient({ adapter });
 
@@ -92,18 +93,24 @@ type SourceData = {
 };
 
 // ----------------------------------------
-// key → id 解決用ヘルパー
+// key → id 解決用ヘルパー（キャッシュ付き）
 // ----------------------------------------
+const idCache = new Map<string, number>();
+
 async function resolveId(
   table: "province" | "clan" | "person" | "territory" | "appointment",
   key: string
 ): Promise<number> {
+  const cacheKey = `${table}:${key}`;
+  const cached = idCache.get(cacheKey);
+  if (cached !== undefined) return cached;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const record = await (prisma[table] as any).findUnique({
     where: { key },
     select: { id: true },
   });
   if (!record) throw new Error(`${table} with key "${key}" not found`);
+  idCache.set(cacheKey, record.id);
   return record.id;
 }
 
